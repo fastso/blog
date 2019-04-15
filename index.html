@@ -100,13 +100,19 @@
 <p>启动本地服务器。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">[info] Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
 <p>这样就可以通过浏览器阅览 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 博客了。</p>
-<h2 id="部署到GitHub"><a href="#部署到GitHub" class="headerlink" title="部署到GitHub"></a>部署到GitHub</h2><p>_config.yml</p>
-<p>・・・(省略)・・・</p>
-<h1 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h1><h2 id="Docs-http-hexo-io-docs-deployment-html"><a href="#Docs-http-hexo-io-docs-deployment-html" class="headerlink" title="Docs: http://hexo.io/docs/deployment.html"></a>Docs: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="noopener">http://hexo.io/docs/deployment.html</a></h2><p>deploy:<br>  type: github<br>  repo: <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:n0bisuke/n0bisuke.github.io.git<br>  branch: master</p>
-<h1 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h1><h2 id="If-your-site-is-put-in-a-subdirectory-set-url-as-‘http-yoursite-com-child-39-and-root-as-‘-child-‘"><a href="#If-your-site-is-put-in-a-subdirectory-set-url-as-‘http-yoursite-com-child-39-and-root-as-‘-child-‘" class="headerlink" title="If your site is put in a subdirectory, set url as ‘http://yoursite.com/child&#39; and root as ‘/child/‘"></a>If your site is put in a subdirectory, set url as ‘<a href="http://yoursite.com/child&#39;" target="_blank" rel="noopener">http://yoursite.com/child&#39;</a> and root as ‘/child/‘</h2><p>url: <a href="http://fastso.github.io/blog">http://fastso.github.io/blog</a><br>root: /blog/</p>
-<p>$ hexo deploy -g</p>
-<h2 id="发文"><a href="#发文" class="headerlink" title="发文"></a>发文</h2><p>$ hexo new “新規ページタイトル”</p>
-<p>$ vi source/_posts/hexoについて.md</p>
+<h2 id="部署到GitHub"><a href="#部署到GitHub" class="headerlink" title="部署到GitHub"></a>部署到GitHub</h2><p>部署到GitHub需要修改 _config.yml 文件。<br>git的设置如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">・・・(省略)・・・</span><br><span class="line"># Deployment</span><br><span class="line">## Docs: http://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/fastso/blog.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p>还需要设置url，注意url不对会影响网页css正常显示。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;</span><br><span class="line">url: http://fastso.github.io/blog</span><br><span class="line">root: /blog/</span><br></pre></td></tr></table></figure>
+<p>以上修改完毕后，执行一下命令来生成和部署到 GitHub。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy -g</span><br></pre></td></tr></table></figure>
+<p>这样就可以成功的访问自己的blog了。</p>
+<p>注意：GitHub 的 Setting -&gt; GitHub Pages -&gt; Source 要设置为master，<br>否则会无法显示(404 error)。</p>
+<h2 id="发文"><a href="#发文" class="headerlink" title="发文"></a>发文</h2><p>以下命令可以生成新的文章。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"新規ページタイトル"</span></span><br></pre></td></tr></table></figure>
+<p>然后使用任意的编辑器修改文章就大功告成了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi <span class="built_in">source</span>/_posts/hexoについて.md</span><br></pre></td></tr></table></figure>
+<p>end</p>
 
       
     </div>
