@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>解耦与得墨忒耳法则 (Decoupling and the law of demeter) | fastso&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="使耦合减至最少 (Minimize Coupling)函数的得墨忒耳法则 (The Law of Demeter for Functions)函数的得墨忒耳法则规定，某个对象的任何方法都应该只调用属于以下情形的方法：  函数自身 传入该方法的任何参数 它创建的任何对象 任何直接持有的组件  12345678910111213141516171819class Demeter &amp;#123;    p">
+<meta name="keywords" content="The Pragmatic Programmer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解耦与得墨忒耳法则 (Decoupling and the law of demeter)">
+<meta property="og:url" content="http://fastso.github.io/blog/2019/04/17/解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter/index.html">
+<meta property="og:site_name" content="fastso&#39;s blog">
+<meta property="og:description" content="使耦合减至最少 (Minimize Coupling)函数的得墨忒耳法则 (The Law of Demeter for Functions)函数的得墨忒耳法则规定，某个对象的任何方法都应该只调用属于以下情形的方法：  函数自身 传入该方法的任何参数 它创建的任何对象 任何直接持有的组件  12345678910111213141516171819class Demeter &amp;#123;    p">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-17T07:59:36.813Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="解耦与得墨忒耳法则 (Decoupling and the law of demeter)">
+<meta name="twitter:description" content="使耦合减至最少 (Minimize Coupling)函数的得墨忒耳法则 (The Law of Demeter for Functions)函数的得墨忒耳法则规定，某个对象的任何方法都应该只调用属于以下情形的方法：  函数自身 传入该方法的任何参数 它创建的任何对象 任何直接持有的组件  12345678910111213141516171819class Demeter &amp;#123;    p">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="fastso&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/blog/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">fastso&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://fastso.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2019/04/17/解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter/" class="article-date">
+  <time datetime="2019-04-17T07:57:35.000Z" itemprop="datePublished">2019-04-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      解耦与得墨忒耳法则 (Decoupling and the law of demeter)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="使耦合减至最少-Minimize-Coupling"><a href="#使耦合减至最少-Minimize-Coupling" class="headerlink" title="使耦合减至最少 (Minimize Coupling)"></a>使耦合减至最少 (Minimize Coupling)</h2><h2 id="函数的得墨忒耳法则-The-Law-of-Demeter-for-Functions"><a href="#函数的得墨忒耳法则-The-Law-of-Demeter-for-Functions" class="headerlink" title="函数的得墨忒耳法则 (The Law of Demeter for Functions)"></a>函数的得墨忒耳法则 (The Law of Demeter for Functions)</h2><p>函数的得墨忒耳法则规定，某个对象的任何方法都应该只调用属于以下情形的方法：</p>
+<ul>
+<li>函数自身</li>
+<li>传入该方法的任何参数</li>
+<li>它创建的任何对象</li>
+<li>任何直接持有的组件</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demeter</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> A a;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">func</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">example</span><span class="params">(B b)</span> </span>&#123;</span><br><span class="line">        C c;</span><br><span class="line"></span><br><span class="line">        func(); <span class="comment">// itself</span></span><br><span class="line"></span><br><span class="line">        b.invert(); <span class="comment">// any parameters that were passed in to the method</span></span><br><span class="line"></span><br><span class="line">        a = <span class="keyword">new</span> A();</span><br><span class="line">        a.setActive(); <span class="comment">// any object it created</span></span><br><span class="line"></span><br><span class="line">        c.print(); <span class="comment">// any directly held component objects</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fastso.github.io/blog/2019/04/17/解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter/" data-id="cjukxepuo0005l4as1gkqi059" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2019/04/16/累積和-and-尺取法/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">累積和 and 尺取法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Algorithm/">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/blog/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/blog/tags/The-Pragmatic-Programmer/" style="font-size: 10px;">The Pragmatic Programmer</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2019/04/17/解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter/">解耦与得墨忒耳法则 (Decoupling and the law of demeter)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/04/16/累積和-and-尺取法/">累積和 and 尺取法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/04/12/GitHub-Pages-Hexo-搭建个人博客/">GitHub Pages + Hexo 搭建个人博客</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/04/12/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Hui Li<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
