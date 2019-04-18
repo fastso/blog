@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>时间耦合 (Temporal Coupling) | fastso&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="时间是软件架构中常常被忽视。时间有两个方面很重要:  并发(事情在同一时间发生) 次序(事情在时间中的相对位置)  如果在编程时，不对时间进行思考，会带来时间耦合。时间耦合的例子如下：  方法 A 总是在方法 B 之前调用 同时只能运行一个报告 在接收到按钮点击前，你必须等待屏幕重画 嘀必须发生在嗒之前  我们有必要在工作流分析，架构，设计，部署等开发领域中减少任何基于时间的依赖。 工作流 (Wo">
+<meta name="keywords" content="The Pragmatic Programmer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="时间耦合 (Temporal Coupling)">
+<meta property="og:url" content="http://fastso.github.io/blog/2019/04/18/时间耦合-Temporal-Coupling/index.html">
+<meta property="og:site_name" content="fastso&#39;s blog">
+<meta property="og:description" content="时间是软件架构中常常被忽视。时间有两个方面很重要:  并发(事情在同一时间发生) 次序(事情在时间中的相对位置)  如果在编程时，不对时间进行思考，会带来时间耦合。时间耦合的例子如下：  方法 A 总是在方法 B 之前调用 同时只能运行一个报告 在接收到按钮点击前，你必须等待屏幕重画 嘀必须发生在嗒之前  我们有必要在工作流分析，架构，设计，部署等开发领域中减少任何基于时间的依赖。 工作流 (Wo">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-18T04:10:07.620Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="时间耦合 (Temporal Coupling)">
+<meta name="twitter:description" content="时间是软件架构中常常被忽视。时间有两个方面很重要:  并发(事情在同一时间发生) 次序(事情在时间中的相对位置)  如果在编程时，不对时间进行思考，会带来时间耦合。时间耦合的例子如下：  方法 A 总是在方法 B 之前调用 同时只能运行一个报告 在接收到按钮点击前，你必须等待屏幕重画 嘀必须发生在嗒之前  我们有必要在工作流分析，架构，设计，部署等开发领域中减少任何基于时间的依赖。 工作流 (Wo">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="fastso&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/blog/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">fastso&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://fastso.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-时间耦合-Temporal-Coupling" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2019/04/18/时间耦合-Temporal-Coupling/" class="article-date">
+  <time datetime="2019-04-18T04:09:00.000Z" itemprop="datePublished">2019-04-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      时间耦合 (Temporal Coupling)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>时间是软件架构中常常被忽视。<br>时间有两个方面很重要:</p>
+<ul>
+<li>并发(事情在同一时间发生)</li>
+<li>次序(事情在时间中的相对位置)</li>
+</ul>
+<p>如果在编程时，不对时间进行思考，会带来时间耦合。时间耦合的例子如下：</p>
+<ul>
+<li>方法 A 总是在方法 B 之前调用</li>
+<li>同时只能运行一个报告</li>
+<li>在接收到按钮点击前，你必须等待屏幕重画</li>
+<li>嘀必须发生在嗒之前</li>
+</ul>
+<p>我们有必要在工作流分析，架构，设计，部署等开发领域中减少任何基于时间的依赖。</p>
+<h4 id="工作流-Workflow"><a href="#工作流-Workflow" class="headerlink" title="工作流 (Workflow)"></a>工作流 (Workflow)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">分析工作流，以改善并发性</span><br><span class="line">Analyze Workflow to Improve Concurrency</span><br></pre></td></tr></table></figure>
+<h4 id="架构-Architecture"><a href="#架构-Architecture" class="headerlink" title="架构 (Architecture)"></a>架构 (Architecture)</h4><p>饥饿的消费者模型 (the hungry consumer model)<br>用多个独立的消费者任务 (independent consumer tasks) 和一个集中式工作队列 centralized work queue() 取代中央调度器 (central scheduler)。<br>各个消费者任务从工作队列中抓取一项，并对其进行处理。当各个任务完成其工作时，回到工作队列抓取下一项。<br>这样，如果任何任务陷入停滞，其他任务可以利用这一空闲，各个组件都可以按照自己的步伐前进，每个组件都在时间上解除了与其他组件的耦合。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">用服务进行设计</span><br><span class="line">Design Using Services</span><br></pre></td></tr></table></figure>
+<p>实际上我们不是在创建组件，而是服务 (定义良好，一致接口的独立，并发对象)。</p>
+<h4 id="并发设计-Design-for-Concurrency"><a href="#并发设计-Design-for-Concurrency" class="headerlink" title="并发设计 (Design for Concurrency)"></a>并发设计 (Design for Concurrency)</h4><p>必须对全局或静态变量加以保护，使其免于并发访问。<br>不管调用的次序是什么，都要确保给出的是一致的状态信息。状态信息如果在某些调用之间处于无效状态，你就是在依赖一个巧合：没有人会在那个时间调用你的对象。</p>
+<p>对并发和次序依赖进行思考还能够引导你设计更整洁的接口 (Cleaner Interfaces)。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">总是为并发进行设计</span><br><span class="line">Always Design for Concurrency</span><br></pre></td></tr></table></figure>
+<h4 id="部署-Deployment"><a href="#部署-Deployment" class="headerlink" title="部署 (Deployment)"></a>部署 (Deployment)</h4><p>一旦设计了具有并发要素的架构，就可以灵活的处理应用的部署方式：单机，客户端-服务器，或者n层 (n-tier)。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fastso.github.io/blog/2019/04/18/时间耦合-Temporal-Coupling/" data-id="cjum4mt0a000ap8asln2rqw52" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2019/04/17/元程序设计-Metaprogramming/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">元程序设计 (Metaprogramming)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Algorithm/">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/blog/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/blog/tags/The-Pragmatic-Programmer/" style="font-size: 20px;">The Pragmatic Programmer</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2019/04/18/时间耦合-Temporal-Coupling/">时间耦合 (Temporal Coupling)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/04/17/元程序设计-Metaprogramming/">元程序设计 (Metaprogramming)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/04/17/解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter/">解耦与得墨忒耳法则 (Decoupling and the law of demeter)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/04/16/累積和-and-尺取法/">累積和 and 尺取法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/04/12/GitHub-Pages-Hexo-搭建个人博客/">GitHub Pages + Hexo 搭建个人博客</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Hui Li<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

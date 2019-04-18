@@ -62,6 +62,65 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-时间耦合-Temporal-Coupling" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2019/04/18/时间耦合-Temporal-Coupling/" class="article-date">
+  <time datetime="2019-04-18T04:09:00.000Z" itemprop="datePublished">2019-04-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2019/04/18/时间耦合-Temporal-Coupling/">时间耦合 (Temporal Coupling)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>时间是软件架构中常常被忽视。<br>时间有两个方面很重要:</p>
+<ul>
+<li>并发(事情在同一时间发生)</li>
+<li>次序(事情在时间中的相对位置)</li>
+</ul>
+<p>如果在编程时，不对时间进行思考，会带来时间耦合。时间耦合的例子如下：</p>
+<ul>
+<li>方法 A 总是在方法 B 之前调用</li>
+<li>同时只能运行一个报告</li>
+<li>在接收到按钮点击前，你必须等待屏幕重画</li>
+<li>嘀必须发生在嗒之前</li>
+</ul>
+<p>我们有必要在工作流分析，架构，设计，部署等开发领域中减少任何基于时间的依赖。</p>
+<h4 id="工作流-Workflow"><a href="#工作流-Workflow" class="headerlink" title="工作流 (Workflow)"></a>工作流 (Workflow)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">分析工作流，以改善并发性</span><br><span class="line">Analyze Workflow to Improve Concurrency</span><br></pre></td></tr></table></figure>
+<h4 id="架构-Architecture"><a href="#架构-Architecture" class="headerlink" title="架构 (Architecture)"></a>架构 (Architecture)</h4><p>饥饿的消费者模型 (the hungry consumer model)<br>用多个独立的消费者任务 (independent consumer tasks) 和一个集中式工作队列 centralized work queue() 取代中央调度器 (central scheduler)。<br>各个消费者任务从工作队列中抓取一项，并对其进行处理。当各个任务完成其工作时，回到工作队列抓取下一项。<br>这样，如果任何任务陷入停滞，其他任务可以利用这一空闲，各个组件都可以按照自己的步伐前进，每个组件都在时间上解除了与其他组件的耦合。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">用服务进行设计</span><br><span class="line">Design Using Services</span><br></pre></td></tr></table></figure>
+<p>实际上我们不是在创建组件，而是服务 (定义良好，一致接口的独立，并发对象)。</p>
+<h4 id="并发设计-Design-for-Concurrency"><a href="#并发设计-Design-for-Concurrency" class="headerlink" title="并发设计 (Design for Concurrency)"></a>并发设计 (Design for Concurrency)</h4><p>必须对全局或静态变量加以保护，使其免于并发访问。<br>不管调用的次序是什么，都要确保给出的是一致的状态信息。状态信息如果在某些调用之间处于无效状态，你就是在依赖一个巧合：没有人会在那个时间调用你的对象。</p>
+<p>对并发和次序依赖进行思考还能够引导你设计更整洁的接口 (Cleaner Interfaces)。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">总是为并发进行设计</span><br><span class="line">Always Design for Concurrency</span><br></pre></td></tr></table></figure>
+<h4 id="部署-Deployment"><a href="#部署-Deployment" class="headerlink" title="部署 (Deployment)"></a>部署 (Deployment)</h4><p>一旦设计了具有并发要素的架构，就可以灵活的处理应用的部署方式：单机，客户端-服务器，或者n层 (n-tier)。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fastso.github.io/blog/2019/04/18/时间耦合-Temporal-Coupling/" data-id="cjum4mt0a000ap8asln2rqw52" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-元程序设计-Metaprogramming" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2019/04/17/元程序设计-Metaprogramming/" class="article-date">
@@ -106,7 +165,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fastso.github.io/blog/2019/04/17/元程序设计-Metaprogramming/" data-id="cjul5feoo000al0asmgsxtqav" class="article-share-link">Share</a>
+      <a data-url="http://fastso.github.io/blog/2019/04/17/元程序设计-Metaprogramming/" data-id="cjum4mszh0001p8ashaaum9pk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
@@ -151,7 +210,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fastso.github.io/blog/2019/04/17/解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter/" data-id="cjul5feo70002l0as0lsf4iy7" class="article-share-link">Share</a>
+      <a data-url="http://fastso.github.io/blog/2019/04/17/解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter/" data-id="cjum4mt0c000bp8asa18eyykc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
@@ -195,7 +254,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fastso.github.io/blog/2019/04/16/累積和-and-尺取法/" data-id="cjul5feob0004l0as5gc359ci" class="article-share-link">Share</a>
+      <a data-url="http://fastso.github.io/blog/2019/04/16/累積和-and-尺取法/" data-id="cjum4mszy0007p8asd02b0zo3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Algorithm/">Algorithm</a></li></ul>
@@ -262,7 +321,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fastso.github.io/blog/2019/04/12/GitHub-Pages-Hexo-搭建个人博客/" data-id="cjul5feo30001l0as2p2m9vhs" class="article-share-link">Share</a>
+      <a data-url="http://fastso.github.io/blog/2019/04/12/GitHub-Pages-Hexo-搭建个人博客/" data-id="cjum4mszb0000p8asjar2p0l0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Hexo/">Hexo</a></li></ul>
@@ -309,7 +368,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fastso.github.io/blog/2019/04/12/hello-world/" data-id="cjul5fenx0000l0asdy48khnq" class="article-share-link">Share</a>
+      <a data-url="http://fastso.github.io/blog/2019/04/12/hello-world/" data-id="cjum4mszw0006p8as5sc13wfo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -364,6 +423,10 @@
       <ul>
         
           <li>
+            <a href="/blog/2019/04/18/时间耦合-Temporal-Coupling/">时间耦合 (Temporal Coupling)</a>
+          </li>
+        
+          <li>
             <a href="/blog/2019/04/17/元程序设计-Metaprogramming/">元程序设计 (Metaprogramming)</a>
           </li>
         
@@ -377,10 +440,6 @@
         
           <li>
             <a href="/blog/2019/04/12/GitHub-Pages-Hexo-搭建个人博客/">GitHub Pages + Hexo 搭建个人博客</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2019/04/12/hello-world/">Hello World</a>
           </li>
         
       </ul>
