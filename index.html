@@ -62,6 +62,59 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-它只是视图-It-s-just-a-view" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2019/04/19/它只是视图-It-s-just-a-view/" class="article-date">
+  <time datetime="2019-04-19T05:27:58.000Z" itemprop="datePublished">2019-04-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2019/04/19/它只是视图-It-s-just-a-view/">它只是视图 (It&#39;s just a view)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>那人依然只听到<br>他想要听到的东西<br>而不顾其他</p>
+</blockquote>
+<blockquote>
+<p>Still, a man hears<br>What he wants to hear<br>And disregards the rest<br> –Simon and Garfunkel, “The Boxer”</p>
+</blockquote>
+<p>我们应该把程序性划分成模块，每个模块都有其自身的责任。<br>这会产生一些新的问题，模块之间怎样相互交谈？怎样管理他们的逻辑依赖？如何对不同模块的状态变化进行同步？<br>我们想要每个模块只听到它想听到的东西。</p>
+<h2 id="发布-订阅-Publish-Subscribe"><a href="#发布-订阅-Publish-Subscribe" class="headerlink" title="发布/订阅 (Publish/Subscribe)"></a>发布/订阅 (Publish/Subscribe)</h2><p>对象应该能进行登记，只接受他们需要的事件。</p>
+<h2 id="Model-View-Controller"><a href="#Model-View-Controller" class="headerlink" title="Model-View-Controller"></a>Model-View-Controller</h2><p>关键概念：既让模型与表示模型的GUI分离，也让模型与管理视图的控件分离。<br>这样做，可以支持同一数据模型的多个视图，可以在许多不同的数据模型上使用公共的查看器，甚至还可以使用多个控制器提供非传统的输入机制。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">使视图与模型分离</span><br><span class="line">Separate Views from Models</span><br></pre></td></tr></table></figure>
+<h2 id="超越GUI-Beyond-GUIs"><a href="#超越GUI-Beyond-GUIs" class="headerlink" title="超越GUI (Beyond GUIs)"></a>超越GUI (Beyond GUIs)</h2><p>MVC不只是在GUI开发中，它是一种通用的编程技术。<br>视图是对模型的一种解释，它无需是图形化的。控制器更是一种协调机制，不一定要与任何种类的输入设备有关。</p>
+<ul>
+<li>模型：目标对象的抽象数据模型。模型对任何视图和控制器都没有直接的了解。</li>
+<li>视图：解释模型的方式。它订阅模型中的变化和来自控制器的逻辑事件。</li>
+<li>控制器：控制视图。并向模型提供新数据的途径。它既向模型，也向视图发布事件。</li>
+</ul>
+<h2 id="仍然有耦合-Still-Coupled"><a href="#仍然有耦合-Still-Coupled" class="headerlink" title="仍然有耦合 (Still Coupled)"></a>仍然有耦合 (Still Coupled)</h2><p>尽管耦合减少了，但订阅者和发布者间仍然需要有一些相互了解。<br>比如Java中必须对公共接口定义和调用约定达成一致。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fastso.github.io/blog/2019/04/19/它只是视图-It-s-just-a-view/" data-id="cjunmwpp10004ggaslm6irz4u" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-时间耦合-Temporal-Coupling" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2019/04/18/时间耦合-Temporal-Coupling/" class="article-date">
@@ -109,7 +162,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fastso.github.io/blog/2019/04/18/时间耦合-Temporal-Coupling/" data-id="cjum4mt0a000ap8asln2rqw52" class="article-share-link">Share</a>
+      <a data-url="http://fastso.github.io/blog/2019/04/18/时间耦合-Temporal-Coupling/" data-id="cjunmwpp20005ggas13vbvvx2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
@@ -165,7 +218,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fastso.github.io/blog/2019/04/17/元程序设计-Metaprogramming/" data-id="cjum4mszh0001p8ashaaum9pk" class="article-share-link">Share</a>
+      <a data-url="http://fastso.github.io/blog/2019/04/17/元程序设计-Metaprogramming/" data-id="cjunmwpot0001ggasov4nxtto" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
@@ -210,7 +263,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fastso.github.io/blog/2019/04/17/解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter/" data-id="cjum4mt0c000bp8asa18eyykc" class="article-share-link">Share</a>
+      <a data-url="http://fastso.github.io/blog/2019/04/17/解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter/" data-id="cjunmwpp50008ggaswjyk520o" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
@@ -254,7 +307,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fastso.github.io/blog/2019/04/16/累積和-and-尺取法/" data-id="cjum4mszy0007p8asd02b0zo3" class="article-share-link">Share</a>
+      <a data-url="http://fastso.github.io/blog/2019/04/16/累積和-and-尺取法/" data-id="cjunmwpp60009ggas163ay5kq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Algorithm/">Algorithm</a></li></ul>
@@ -321,7 +374,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fastso.github.io/blog/2019/04/12/GitHub-Pages-Hexo-搭建个人博客/" data-id="cjum4mszb0000p8asjar2p0l0" class="article-share-link">Share</a>
+      <a data-url="http://fastso.github.io/blog/2019/04/12/GitHub-Pages-Hexo-搭建个人博客/" data-id="cjunmwpom0000ggasg03bgcv5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Hexo/">Hexo</a></li></ul>
@@ -368,7 +421,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fastso.github.io/blog/2019/04/12/hello-world/" data-id="cjum4mszw0006p8as5sc13wfo" class="article-share-link">Share</a>
+      <a data-url="http://fastso.github.io/blog/2019/04/12/hello-world/" data-id="cjunmwpoy0003ggasqd246flz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -423,6 +476,10 @@
       <ul>
         
           <li>
+            <a href="/blog/2019/04/19/它只是视图-It-s-just-a-view/">它只是视图 (It&#39;s just a view)</a>
+          </li>
+        
+          <li>
             <a href="/blog/2019/04/18/时间耦合-Temporal-Coupling/">时间耦合 (Temporal Coupling)</a>
           </li>
         
@@ -436,10 +493,6 @@
         
           <li>
             <a href="/blog/2019/04/16/累積和-and-尺取法/">累積和 and 尺取法</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2019/04/12/GitHub-Pages-Hexo-搭建个人博客/">GitHub Pages + Hexo 搭建个人博客</a>
           </li>
         
       </ul>
