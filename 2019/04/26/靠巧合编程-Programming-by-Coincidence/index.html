@@ -5,20 +5,20 @@
   
 
   
-  <title>元程序设计 (Metaprogramming) | fastso&#39;s blog</title>
+  <title>靠巧合编程 (Programming by Coincidence) | fastso&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="没有多少天才可以克服对细节的关注。 –Levy第八法则   No amount of genius can overcome a preoccupation with detail.  –Levy’s Eighth Law  动态配置 (Dynamic Configuration)12要配置，不要集成Configure, Don&amp;apos;t Integrate 要用元数据描述应用的配置选项：调">
+  <meta name="description" content="老式的黑白战争片：一个士兵站在一片空旷地，那里有地雷吗？他试探性的用枪挑了挑，发现没事于是大步走着被炸成了碎片。 士兵起初的探测没有发现地雷，但这只不过是侥幸，他由此得出了错误的结论。 怎样靠巧合编程 (How to Program by Coincidence)Fred不知道代码为什么会失败，因为他一开始就不知道它为什么会工作。 即使是修改的代码可以工作，那也很可能仅仅是一个巧合。  语境的偶然">
 <meta name="keywords" content="The Pragmatic Programmer">
 <meta property="og:type" content="article">
-<meta property="og:title" content="元程序设计 (Metaprogramming)">
-<meta property="og:url" content="http://fastso.github.io/blog/2019/04/17/元程序设计-Metaprogramming/index.html">
+<meta property="og:title" content="靠巧合编程 (Programming by Coincidence)">
+<meta property="og:url" content="http://fastso.github.io/blog/2019/04/26/靠巧合编程-Programming-by-Coincidence/index.html">
 <meta property="og:site_name" content="fastso&#39;s blog">
-<meta property="og:description" content="没有多少天才可以克服对细节的关注。 –Levy第八法则   No amount of genius can overcome a preoccupation with detail.  –Levy’s Eighth Law  动态配置 (Dynamic Configuration)12要配置，不要集成Configure, Don&amp;apos;t Integrate 要用元数据描述应用的配置选项：调">
+<meta property="og:description" content="老式的黑白战争片：一个士兵站在一片空旷地，那里有地雷吗？他试探性的用枪挑了挑，发现没事于是大步走着被炸成了碎片。 士兵起初的探测没有发现地雷，但这只不过是侥幸，他由此得出了错误的结论。 怎样靠巧合编程 (How to Program by Coincidence)Fred不知道代码为什么会失败，因为他一开始就不知道它为什么会工作。 即使是修改的代码可以工作，那也很可能仅仅是一个巧合。  语境的偶然">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-17T11:44:40.173Z">
+<meta property="og:updated_time" content="2019-04-26T07:19:34.857Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="元程序设计 (Metaprogramming)">
-<meta name="twitter:description" content="没有多少天才可以克服对细节的关注。 –Levy第八法则   No amount of genius can overcome a preoccupation with detail.  –Levy’s Eighth Law  动态配置 (Dynamic Configuration)12要配置，不要集成Configure, Don&amp;apos;t Integrate 要用元数据描述应用的配置选项：调">
+<meta name="twitter:title" content="靠巧合编程 (Programming by Coincidence)">
+<meta name="twitter:description" content="老式的黑白战争片：一个士兵站在一片空旷地，那里有地雷吗？他试探性的用枪挑了挑，发现没事于是大步走着被炸成了碎片。 士兵起初的探测没有发现地雷，但这只不过是侥幸，他由此得出了错误的结论。 怎样靠巧合编程 (How to Program by Coincidence)Fred不知道代码为什么会失败，因为他一开始就不知道它为什么会工作。 即使是修改的代码可以工作，那也很可能仅仅是一个巧合。  语境的偶然">
   
     <link rel="alternate" href="/blog/atom.xml" title="fastso&#39;s blog" type="application/atom+xml">
   
@@ -65,10 +65,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-元程序设计-Metaprogramming" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-靠巧合编程-Programming-by-Coincidence" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2019/04/17/元程序设计-Metaprogramming/" class="article-date">
-  <time datetime="2019-04-17T11:43:05.000Z" itemprop="datePublished">2019-04-17</time>
+    <a href="/blog/2019/04/26/靠巧合编程-Programming-by-Coincidence/" class="article-date">
+  <time datetime="2019-04-26T07:16:32.000Z" itemprop="datePublished">2019-04-26</time>
 </a>
     
   </div>
@@ -79,7 +79,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      元程序设计 (Metaprogramming)
+      靠巧合编程 (Programming by Coincidence)
     </h1>
   
 
@@ -87,29 +87,32 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>没有多少天才可以克服对细节的关注。 –Levy第八法则</p>
-</blockquote>
-<blockquote>
-<p>No amount of genius can overcome a preoccupation with detail.  –Levy’s Eighth Law</p>
-</blockquote>
-<h2 id="动态配置-Dynamic-Configuration"><a href="#动态配置-Dynamic-Configuration" class="headerlink" title="动态配置 (Dynamic Configuration)"></a>动态配置 (Dynamic Configuration)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">要配置，不要集成</span><br><span class="line">Configure, Don&apos;t Integrate</span><br></pre></td></tr></table></figure>
-<p>要用元数据描述应用的配置选项：调谐参数，用户偏好，安装目录等等。<br>Use metadata to describe configuration options for an application: tuning parameters, user preferences, the installation directory, and so on.</p>
-<p>Metadata是什么？<br>严格的说，Metadata是关于数据的数据。<br>从宽泛的意义上来讲，Metadata是任何对应用进行描述的数据–应用该怎样运行，它应该使用什么资源等等。典型的情况下，Metadata在运行时，而不是编译时被访问和使用。</p>
-<h2 id="元数据驱动的应用-Metadata-Driven-Applications"><a href="#元数据驱动的应用-Metadata-Driven-Applications" class="headerlink" title="元数据驱动的应用 (Metadata-Driven Applications)"></a>元数据驱动的应用 (Metadata-Driven Applications)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">将抽象放进代码，细节放进元数据</span><br><span class="line">Put Abstractions in Code, Details in Metadata</span><br></pre></td></tr></table></figure>
-<p>元数据驱动的好处：</p>
+        <p>老式的黑白战争片：一个士兵站在一片空旷地，那里有地雷吗？他试探性的用枪挑了挑，发现没事于是大步走着被炸成了碎片。</p>
+<p>士兵起初的探测没有发现地雷，但这只不过是侥幸，他由此得出了错误的结论。</p>
+<h2 id="怎样靠巧合编程-How-to-Program-by-Coincidence"><a href="#怎样靠巧合编程-How-to-Program-by-Coincidence" class="headerlink" title="怎样靠巧合编程 (How to Program by Coincidence)"></a>怎样靠巧合编程 (How to Program by Coincidence)</h2><p>Fred不知道代码为什么会失败，因为他一开始就不知道它为什么会工作。</p>
+<p>即使是修改的代码可以工作，那也很可能仅仅是一个巧合。</p>
 <ul>
-<li>迫使解耦，带来更灵活，可适应性更好的程序。</li>
-<li>迫使推迟细节处理，创建更强健，更抽象的设计。</li>
-<li>无需重新编译应用。</li>
-<li>可以通过接近问题领域 (problem domain) 的方式表示元数据。</li>
-<li>可以使用相同的应用引擎和不同的元数据，实现不同的项目。</li>
+<li><p>语境的偶然 (Accidents of Context)<br>假设你正在编写一个 utility 模块， 只是因为你现在实在为GUI环境编写代码，该模块就必须依存GUI吗？你还依存什么没有保障的东西？</p>
+</li>
+<li><p>隐含的假定 (Implicit Assumptions)<br>巧合可以在所有层面上让人误入歧途。在所有层面上人们带着许多的假定工作，但是这些假定很少被写入文档，甚至在不同开发者之间是相互冲突的。<br>并非以明确的事实为基础的假定是所有项目的祸害。<br>不要假定它，证明它。don’t assume it, prove it.</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">不要靠巧合编程</span><br><span class="line">Don&apos;t Program by Coincidence</span><br></pre></td></tr></table></figure>
+<h2 id="怎样深思熟虑的编程"><a href="#怎样深思熟虑的编程" class="headerlink" title="怎样深思熟虑的编程"></a>怎样深思熟虑的编程</h2><ul>
+<li>总是意识到你在做什么。</li>
+<li>不要盲目的编程。试图构建不完全理解的应用，或是使用不熟悉的技术，就是希望自己被巧合误导。</li>
+<li>按照计划行事。</li>
+<li>依靠可靠的事物。</li>
+<li>为你的假定建立文档。</li>
+<li>不要只是测试你的代码，还要测试你的假定。</li>
+<li>为你的工作划分优先级，把时间花在重要的方面。</li>
+<li>不要做历史的奴隶。不要让已有的代码支配将来的代码。</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fastso.github.io/blog/2019/04/17/元程序设计-Metaprogramming/" data-id="cjuxqxn9h00039kasuuaxrbcx" class="article-share-link">Share</a>
+      <a data-url="http://fastso.github.io/blog/2019/04/26/靠巧合编程-Programming-by-Coincidence/" data-id="cjuxqxn9m00059kas8t87iww6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
@@ -120,19 +123,10 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/2019/04/18/时间耦合-Temporal-Coupling/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          时间耦合 (Temporal Coupling)
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/2019/04/17/解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2019/04/22/黑板-Blackboards/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">解耦与得墨忒耳法则 (Decoupling and the law of demeter)</div>
+      <div class="article-nav-title">黑板 (Blackboards)</div>
     </a>
   
 </nav>
