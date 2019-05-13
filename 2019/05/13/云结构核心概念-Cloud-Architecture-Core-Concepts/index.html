@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>云结构核心概念 (Cloud Architecture Core Concepts) | fastso&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="IntroductionCloud architecture basics:  Requirements Technology Security Governance DevOps  You need to understand:  Legacy technologies Cloud technologies Security approaches and technologies DevOps">
+<meta name="keywords" content="Cloud">
+<meta property="og:type" content="article">
+<meta property="og:title" content="云结构核心概念 (Cloud Architecture Core Concepts)">
+<meta property="og:url" content="http://fastso.github.io/blog/2019/05/13/云结构核心概念-Cloud-Architecture-Core-Concepts/index.html">
+<meta property="og:site_name" content="fastso&#39;s blog">
+<meta property="og:description" content="IntroductionCloud architecture basics:  Requirements Technology Security Governance DevOps  You need to understand:  Legacy technologies Cloud technologies Security approaches and technologies DevOps">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-13T15:10:31.194Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="云结构核心概念 (Cloud Architecture Core Concepts)">
+<meta name="twitter:description" content="IntroductionCloud architecture basics:  Requirements Technology Security Governance DevOps  You need to understand:  Legacy technologies Cloud technologies Security approaches and technologies DevOps">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="fastso&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/blog/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">fastso&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://fastso.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-云结构核心概念-Cloud-Architecture-Core-Concepts" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2019/05/13/云结构核心概念-Cloud-Architecture-Core-Concepts/" class="article-date">
+  <time datetime="2019-05-13T13:37:35.000Z" itemprop="datePublished">2019-05-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      云结构核心概念 (Cloud Architecture Core Concepts)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Cloud architecture basics:</p>
+<ul>
+<li>Requirements</li>
+<li>Technology</li>
+<li>Security</li>
+<li>Governance</li>
+<li>DevOps</li>
+</ul>
+<p>You need to understand:</p>
+<ul>
+<li>Legacy technologies</li>
+<li>Cloud technologies</li>
+<li>Security approaches and technologies</li>
+<li>DevOps</li>
+<li>Methodology</li>
+</ul>
+<h2 id="Understand-the-Business-Needs"><a href="#Understand-the-Business-Needs" class="headerlink" title="Understand the Business Needs"></a>Understand the Business Needs</h2><h2 id="It’s-all-about-the-Cloud-Parts"><a href="#It’s-all-about-the-Cloud-Parts" class="headerlink" title="It’s all about the Cloud Parts"></a>It’s all about the Cloud Parts</h2><h3 id="Cloud-Storage"><a href="#Cloud-Storage" class="headerlink" title="Cloud Storage"></a>Cloud Storage</h3><ul>
+<li><p>Object storage<br>It is optimized for storing large volumes of unstructured data.<br>Data is stored as immutable objects.<br>The contents can only be witten in entirety.</p>
+<ul>
+<li>AWS S3</li>
+<li>Microsoft Azure Blob storage</li>
+</ul>
+</li>
+<li><p>Block storage<br>It provides a virtualized storage area network with logical volume management provisioning via a simplified web services interface.</p>
+<ul>
+<li>AWS Elastic Block Storage</li>
+</ul>
+</li>
+<li><p>File storage</p>
+</li>
+</ul>
+<h3 id="Cloud-CPUs"><a href="#Cloud-CPUs" class="headerlink" title="Cloud CPUs"></a>Cloud CPUs</h3><h3 id="Cloud-Databases"><a href="#Cloud-Databases" class="headerlink" title="Cloud Databases"></a>Cloud Databases</h3><h3 id="Additional-Cloud-Services"><a href="#Additional-Cloud-Services" class="headerlink" title="Additional Cloud Services"></a>Additional Cloud Services</h3><h2 id="From-Requirements-to-Solution"><a href="#From-Requirements-to-Solution" class="headerlink" title="From Requirements to Solution"></a>From Requirements to Solution</h2><h3 id="Storage-level"><a href="#Storage-level" class="headerlink" title="Storage level"></a>Storage level</h3><ul>
+<li>Physical storage</li>
+<li>Logical storage</li>
+</ul>
+<h3 id="Data-level"><a href="#Data-level" class="headerlink" title="Data level"></a>Data level</h3><ul>
+<li>Transactional</li>
+<li>Big Data / Analytics</li>
+</ul>
+<h3 id="Processing-level"><a href="#Processing-level" class="headerlink" title="Processing level"></a>Processing level</h3><ul>
+<li>CPUs</li>
+<li>Host Platforms</li>
+</ul>
+<h3 id="Network-level"><a href="#Network-level" class="headerlink" title="Network level"></a>Network level</h3><ul>
+<li>DNS</li>
+<li>Intra cloud</li>
+<li>Inter cloud</li>
+</ul>
+<h3 id="Application-level"><a href="#Application-level" class="headerlink" title="Application level"></a>Application level</h3><ul>
+<li>Application Services</li>
+<li>Containers</li>
+<li>Languages</li>
+<li>User Interfaces</li>
+</ul>
+<h3 id="Making-sense-of-it-all"><a href="#Making-sense-of-it-all" class="headerlink" title="Making sense of it all"></a>Making sense of it all</h3><ul>
+<li>Logical Architecture</li>
+<li>Physical Architecture</li>
+</ul>
+<h2 id="Build-your-first-architecture"><a href="#Build-your-first-architecture" class="headerlink" title="Build your first architecture"></a>Build your first architecture</h2><p>Step 1. Define your requirements<br>Step 2. Define you desire end state<br>Step 3. Mapping “as is” to “to be”<br>Step 4. Create your final architecture</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fastso.github.io/blog/2019/05/13/云结构核心概念-Cloud-Architecture-Core-Concepts/" data-id="cjvmi8e8r0000hsasv36pw4c1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Cloud/">Cloud</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2019/04/26/靠巧合编程-Programming-by-Coincidence/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">靠巧合编程 (Programming by Coincidence)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Algorithm/">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Cloud/">Cloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/blog/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/blog/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/blog/tags/The-Pragmatic-Programmer/" style="font-size: 20px;">The Pragmatic Programmer</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2019/05/13/云结构核心概念-Cloud-Architecture-Core-Concepts/">云结构核心概念 (Cloud Architecture Core Concepts)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/04/26/靠巧合编程-Programming-by-Coincidence/">靠巧合编程 (Programming by Coincidence)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/04/22/黑板-Blackboards/">黑板 (Blackboards)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/04/19/它只是视图-It-s-just-a-view/">它只是视图 (It&#39;s just a view)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/04/18/时间耦合-Temporal-Coupling/">时间耦合 (Temporal Coupling)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Hui Li<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
