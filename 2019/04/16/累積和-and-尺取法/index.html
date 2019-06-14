@@ -5,26 +5,26 @@
   
 
   
-  <title>累積和 and 尺取法 | fastso&#39;s blog</title>
+  <title>累積和 and 尺取法 | \@programmer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="从AtCoder的题开始AtCoder ABC124 的 D 问题因为 TLE 没能正解。 ABC124 D 看了youtube的解说，明白了可以用累积和或者是尺取法来减少计算量。以下是全探索，累积和，尺取法的解说。 全探索 (Brute-force) 累積和 (Cumulative sum) 尺取法 (Two pointers)">
 <meta name="keywords" content="Algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="累積和 and 尺取法">
-<meta property="og:url" content="http://fastso.github.io/blog/2019/04/16/累積和-and-尺取法/index.html">
-<meta property="og:site_name" content="fastso&#39;s blog">
+<meta property="og:url" content="https://atprogrammer.com/2019/04/16/累積和-and-尺取法/index.html">
+<meta property="og:site_name" content="\@programmer">
 <meta property="og:description" content="从AtCoder的题开始AtCoder ABC124 的 D 问题因为 TLE 没能正解。 ABC124 D 看了youtube的解说，明白了可以用累积和或者是尺取法来减少计算量。以下是全探索，累积和，尺取法的解说。 全探索 (Brute-force) 累積和 (Cumulative sum) 尺取法 (Two pointers)">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://fastso.github.io/blog/images/Brute-force.png">
-<meta property="og:image" content="http://fastso.github.io/blog/images/cumulative%20sum.png">
-<meta property="og:image" content="http://fastso.github.io/blog/images/two%20pointers.png">
+<meta property="og:image" content="https://atprogrammer.com/blog/images/Brute-force.png">
+<meta property="og:image" content="https://atprogrammer.com/blog/images/cumulative%20sum.png">
+<meta property="og:image" content="https://atprogrammer.com/blog/images/two%20pointers.png">
 <meta property="og:updated_time" content="2019-04-16T03:19:47.769Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="累積和 and 尺取法">
 <meta name="twitter:description" content="从AtCoder的题开始AtCoder ABC124 的 D 问题因为 TLE 没能正解。 ABC124 D 看了youtube的解说，明白了可以用累积和或者是尺取法来减少计算量。以下是全探索，累积和，尺取法的解说。 全探索 (Brute-force) 累積和 (Cumulative sum) 尺取法 (Two pointers)">
-<meta name="twitter:image" content="http://fastso.github.io/blog/images/Brute-force.png">
+<meta name="twitter:image" content="https://atprogrammer.com/blog/images/Brute-force.png">
   
-    <link rel="alternate" href="/blog/atom.xml" title="fastso&#39;s blog" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="\@programmer" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -32,7 +32,7 @@
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
-  <link rel="stylesheet" href="/blog/css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 </html>
 <body>
@@ -43,7 +43,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/blog/" id="logo">fastso&#39;s blog</a>
+        <a href="/" id="logo">\@programmer</a>
       </h1>
       
     </div>
@@ -51,19 +51,19 @@
       <nav id="main-nav">
         <a id="main-nav-toggle" class="nav-icon"></a>
         
-          <a class="main-nav-link" href="/blog/">Home</a>
+          <a class="main-nav-link" href="/">Home</a>
         
-          <a class="main-nav-link" href="/blog/archives">Archives</a>
+          <a class="main-nav-link" href="/archives">Archives</a>
         
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://fastso.github.io/blog"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://atprogrammer.com"></form>
       </div>
     </div>
   </div>
@@ -71,7 +71,7 @@
       <div class="outer">
         <section id="main"><article id="post-累積和-and-尺取法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2019/04/16/累積和-and-尺取法/" class="article-date">
+    <a href="/2019/04/16/累積和-and-尺取法/" class="article-date">
   <time datetime="2019-04-16T02:54:36.000Z" itemprop="datePublished">2019-04-16</time>
 </a>
     
@@ -101,10 +101,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://fastso.github.io/blog/2019/04/16/累積和-and-尺取法/" data-id="cjwpwbfd40009igasy970beoh" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/04/16/累積和-and-尺取法/" data-id="cjwpwbfd40009igasy970beoh" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Algorithm/">Algorithm</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li></ul>
 
     </footer>
   </div>
@@ -112,7 +112,7 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/2019/04/17/解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/04/17/解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -122,7 +122,7 @@
     </a>
   
   
-    <a href="/blog/2019/04/12/GitHub-Pages-Hexo-搭建个人博客/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/04/12/GitHub-Pages-Hexo-搭建个人博客/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">GitHub Pages + Hexo 搭建个人博客</div>
     </a>
@@ -143,7 +143,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Algorithm/">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Book/">Book</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Cloud/">Cloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Modern-Java-Recipes/">Modern Java Recipes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Book/">Book</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cloud/">Cloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Modern-Java-Recipes/">Modern Java Recipes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
     </div>
   </div>
 
@@ -153,7 +153,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/blog/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/blog/tags/Book/" style="font-size: 10px;">Book</a> <a href="/blog/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/blog/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/blog/tags/Modern-Java-Recipes/" style="font-size: 10px;">Modern Java Recipes</a> <a href="/blog/tags/The-Pragmatic-Programmer/" style="font-size: 20px;">The Pragmatic Programmer</a>
+      <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/Book/" style="font-size: 10px;">Book</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Modern-Java-Recipes/" style="font-size: 10px;">Modern Java Recipes</a> <a href="/tags/The-Pragmatic-Programmer/" style="font-size: 20px;">The Pragmatic Programmer</a>
     </div>
   </div>
 
@@ -162,7 +162,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">April 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
     </div>
   </div>
 
@@ -175,23 +175,23 @@
       <ul>
         
           <li>
-            <a href="/blog/2019/06/10/The-basics-syntax-of-lambda-expressions-and-method-references/">The basics syntax of lambda expressions and method references</a>
+            <a href="/2019/06/10/The-basics-syntax-of-lambda-expressions-and-method-references/">The basics syntax of lambda expressions and method references</a>
           </li>
         
           <li>
-            <a href="/blog/2019/05/23/数学文章作法-推敲篇-读书笔记/">[数学文章作法 推敲篇] 读书笔记</a>
+            <a href="/2019/05/23/数学文章作法-推敲篇-读书笔记/">[数学文章作法 推敲篇] 读书笔记</a>
           </li>
         
           <li>
-            <a href="/blog/2019/05/13/云结构核心概念-Cloud-Architecture-Core-Concepts/">云结构核心概念 (Cloud Architecture Core Concepts)</a>
+            <a href="/2019/05/13/云结构核心概念-Cloud-Architecture-Core-Concepts/">云结构核心概念 (Cloud Architecture Core Concepts)</a>
           </li>
         
           <li>
-            <a href="/blog/2019/04/26/靠巧合编程-Programming-by-Coincidence/">靠巧合编程 (Programming by Coincidence)</a>
+            <a href="/2019/04/26/靠巧合编程-Programming-by-Coincidence/">靠巧合编程 (Programming by Coincidence)</a>
           </li>
         
           <li>
-            <a href="/blog/2019/04/22/黑板-Blackboards/">黑板 (Blackboards)</a>
+            <a href="/2019/04/22/黑板-Blackboards/">黑板 (Blackboards)</a>
           </li>
         
       </ul>
@@ -214,9 +214,9 @@
     </div>
     <nav id="mobile-nav">
   
-    <a href="/blog/" class="mobile-nav-link">Home</a>
+    <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+    <a href="/archives" class="mobile-nav-link">Archives</a>
   
 </nav>
     
@@ -224,11 +224,11 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
-  <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/blog/js/script.js"></script>
+<script src="/js/script.js"></script>
 
 
 

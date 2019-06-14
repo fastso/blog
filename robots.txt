@@ -1,3 +1,3 @@
 User-agent: *
 Disallow: /images/
-Sitemap: https://fastso.github.io/blog/sitemap.xml
+Sitemap: https://atprogrammer.com/sitemap.xml
