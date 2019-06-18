@@ -75,6 +75,62 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-The-java-util-function-Package" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/18/The-java-util-function-Package/" class="article-date">
+  <time datetime="2019-06-18T06:38:24.000Z" itemprop="datePublished">2019-06-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/18/The-java-util-function-Package/">The java.util.function Package</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>The java.util.function package was added in Java 8.<br>The interfaces in java.util.function fall into four categories.</p>
+<ul>
+<li>consumers : take a generic argument and return nothing</li>
+<li>suppliers : take no arguments and return a value</li>
+<li>predicates : take an argument and return a boolean</li>
+<li>functions : take a single argument and return a value</li>
+</ul>
+<h2 id="Consumers"><a href="#Consumers" class="headerlink" title="Consumers"></a>Consumers</h2><p>Implement the void accept(T t) method using a lambda expression or a method reference.</p>
+<p>Printing the elements of a collection</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; strings = Arrays.asList(<span class="string">"this"</span>, <span class="string">"is"</span>, <span class="string">"a"</span>, <span class="string">"list"</span>, <span class="string">"of"</span>, <span class="string">"strings"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Anonymous inner class implementation</span></span><br><span class="line">strings.forEach(<span class="keyword">new</span> Consumer&lt;String&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">accept</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Lambda expression</span></span><br><span class="line">strings.forEach(s -&gt; System.out.println(s));</span><br><span class="line"></span><br><span class="line"><span class="comment">// Method reference</span></span><br><span class="line">strings.forEach(System.out::println);</span><br></pre></td></tr></table></figure>
+<h2 id="Suppliers"><a href="#Suppliers" class="headerlink" title="Suppliers"></a>Suppliers</h2><p>Implement the T get() method in java.util.function.Supplier using a lambda expression or a method reference.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Anonymous inner class implementation</span></span><br><span class="line">DoubleSupplier randomSupplier = <span class="keyword">new</span> DoubleSupplier() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getAsDouble</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Math.random();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Lambda expression</span></span><br><span class="line">randomSupplier = () -&gt; Math.random();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Method reference</span></span><br><span class="line">randomSupplier = Math::random;</span><br></pre></td></tr></table></figure>
+<h2 id="Predicates"><a href="#Predicates" class="headerlink" title="Predicates"></a>Predicates</h2><p>Implement the boolean test(T t) method in the Predicate interface using a lambda expression or a method reference.</p>
+<p>Finding strings of a given length</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getNamesOfLength</span><span class="params">(<span class="keyword">int</span> length, String... names)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> Arrays.stream(names)</span><br><span class="line">        .filter(s -&gt; s.length() == length)</span><br><span class="line">        .collect(Collectors.joining(<span class="string">", "</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h2><p>Provide a lambda expression that implements the R apply(T t) method.</p>
+<p>Mapping strings to their lengths</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; names = Arrays.asList(<span class="string">"Mal"</span>, <span class="string">"Wash"</span>, <span class="string">"Kaylee"</span>, <span class="string">"Inara"</span>,</span><br><span class="line">        <span class="string">"Zoë"</span>, <span class="string">"Jayne"</span>, <span class="string">"Simon"</span>, <span class="string">"River"</span>, <span class="string">"Shepherd Book"</span>);</span><br><span class="line"></span><br><span class="line">List&lt;Integer&gt; nameLengths = names.stream()</span><br><span class="line">        .map(<span class="keyword">new</span> Function&lt;String, Integer&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> Integer <span class="title">apply</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> s.length();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">        .collect(Collectors.toList());</span><br><span class="line"></span><br><span class="line">nameLengths = names.stream()</span><br><span class="line">        .map(s -&gt; s.length())</span><br><span class="line">        .collect(Collectors.toList());</span><br><span class="line"></span><br><span class="line">nameLengths = names.stream()</span><br><span class="line">        .map(String::length)</span><br><span class="line">        .collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://atprogrammer.com/2019/06/18/The-java-util-function-Package/" data-id="cjx1fuyvv0004fwaskyv74032" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Modern-Java-Recipes/">Modern Java Recipes</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-HexoをGitHub-Pagesデプロイ時、独自ドメインがデフォルトに変わってしまう" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/06/16/HexoをGitHub-Pagesデプロイ時、独自ドメインがデフォルトに変わってしまう/" class="article-date">
@@ -115,7 +171,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/16/HexoをGitHub-Pagesデプロイ時、独自ドメインがデフォルトに変わってしまう/" data-id="cjwz1zb0r0003j4aslsyqhrbz" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/16/HexoをGitHub-Pagesデプロイ時、独自ドメインがデフォルトに変わってしまう/" data-id="cjx1fuyvi0000fwastsrdqsbx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -176,7 +232,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/10/The-basics-syntax-of-lambda-expressions-and-method-references/" data-id="cjwz1zb0m0001j4asfpe4w9z1" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/10/The-basics-syntax-of-lambda-expressions-and-method-references/" data-id="cjx1fuyvp0001fwas4c96srff" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Modern-Java-Recipes/">Modern Java Recipes</a></li></ul>
@@ -299,7 +355,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/05/23/数学文章作法-推敲篇-读书笔记/" data-id="cjwz1zb1m000jj4as6x07duu2" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/05/23/数学文章作法-推敲篇-读书笔记/" data-id="cjx1fuyw3000bfwasuup1fr61" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Book/">Book</a></li></ul>
@@ -396,7 +452,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/05/13/云结构核心概念-Cloud-Architecture-Core-Concepts/" data-id="cjwz1zb130005j4as9y08vvxi" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/05/13/云结构核心概念-Cloud-Architecture-Core-Concepts/" data-id="cjx1fuyw00009fwas5nl0eucr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cloud/">Cloud</a></li></ul>
@@ -455,7 +511,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/26/靠巧合编程-Programming-by-Coincidence/" data-id="cjwz1zb1w000lj4as0b0ikpyk" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/04/26/靠巧合编程-Programming-by-Coincidence/" data-id="cjx1fuywg000hfwasaxmzsyx6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
@@ -528,7 +584,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/22/黑板-Blackboards/" data-id="cjwz1zb1z000oj4asprtdcjyj" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/04/22/黑板-Blackboards/" data-id="cjx1fuyx1000wfwasfcsub06a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
@@ -583,7 +639,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/19/它只是视图-It-s-just-a-view/" data-id="cjwz1zb1k000hj4asumv7xasj" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/04/19/它只是视图-It-s-just-a-view/" data-id="cjx1fuyw5000dfwasfla75gwq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -640,7 +696,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/18/时间耦合-Temporal-Coupling/" data-id="cjwz1zb1o000kj4asiqq2no7x" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/04/18/时间耦合-Temporal-Coupling/" data-id="cjx1fuyx0000vfwas1hvngy6s" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
@@ -696,52 +752,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/17/元程序设计-Metaprogramming/" data-id="cjwz1zb150008j4asby7wckyn" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/17/解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter/" class="article-date">
-  <time datetime="2019-04-17T07:57:35.000Z" itemprop="datePublished">2019-04-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/17/解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter/">解耦与得墨忒耳法则 (Decoupling and the law of demeter)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="使耦合减至最少-Minimize-Coupling"><a href="#使耦合减至最少-Minimize-Coupling" class="headerlink" title="使耦合减至最少 (Minimize Coupling)"></a>使耦合减至最少 (Minimize Coupling)</h2><h2 id="函数的得墨忒耳法则-The-Law-of-Demeter-for-Functions"><a href="#函数的得墨忒耳法则-The-Law-of-Demeter-for-Functions" class="headerlink" title="函数的得墨忒耳法则 (The Law of Demeter for Functions)"></a>函数的得墨忒耳法则 (The Law of Demeter for Functions)</h2><p>函数的得墨忒耳法则规定，某个对象的任何方法都应该只调用属于以下情形的方法：</p>
-<ul>
-<li>函数自身</li>
-<li>传入该方法的任何参数</li>
-<li>它创建的任何对象</li>
-<li>任何直接持有的组件</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demeter</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> A a;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">func</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">example</span><span class="params">(B b)</span> </span>&#123;</span><br><span class="line">        C c;</span><br><span class="line"></span><br><span class="line">        func(); <span class="comment">// itself</span></span><br><span class="line"></span><br><span class="line">        b.invert(); <span class="comment">// any parameters that were passed in to the method</span></span><br><span class="line"></span><br><span class="line">        a = <span class="keyword">new</span> A();</span><br><span class="line">        a.setActive(); <span class="comment">// any object it created</span></span><br><span class="line"></span><br><span class="line">        c.print(); <span class="comment">// any directly held component objects</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/17/解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter/" data-id="cjwz1zb21000qj4as524jrfbh" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/04/17/元程序设计-Metaprogramming/" data-id="cjx1fuyvz0008fwasm8qnodut" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
@@ -781,7 +792,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/Book/" style="font-size: 10px;">Book</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/Modern-Java-Recipes/" style="font-size: 10px;">Modern Java Recipes</a> <a href="/tags/The-Pragmatic-Programmer/" style="font-size: 20px;">The Pragmatic Programmer</a>
+      <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/Book/" style="font-size: 10px;">Book</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/Modern-Java-Recipes/" style="font-size: 15px;">Modern Java Recipes</a> <a href="/tags/The-Pragmatic-Programmer/" style="font-size: 20px;">The Pragmatic Programmer</a>
     </div>
   </div>
 
@@ -803,6 +814,10 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2019/06/18/The-java-util-function-Package/">The java.util.function Package</a>
+          </li>
+        
+          <li>
             <a href="/2019/06/16/HexoをGitHub-Pagesデプロイ時、独自ドメインがデフォルトに変わってしまう/">HexoをGitHub Pagesデプロイ時、独自ドメインがデフォルトに変わってしまう</a>
           </li>
         
@@ -816,10 +831,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2019/05/13/云结构核心概念-Cloud-Architecture-Core-Concepts/">云结构核心概念 (Cloud Architecture Core Concepts)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/26/靠巧合编程-Programming-by-Coincidence/">靠巧合编程 (Programming by Coincidence)</a>
           </li>
         
       </ul>
