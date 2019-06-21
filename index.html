@@ -75,6 +75,65 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-Array-and-String" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/21/Array-and-String/" class="article-date">
+  <time datetime="2019-06-21T06:15:59.000Z" itemprop="datePublished">2019-06-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/21/Array-and-String/">Array and String</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Introduction-to-Array"><a href="#Introduction-to-Array" class="headerlink" title="Introduction to Array"></a>Introduction to Array</h2><ul>
+<li><p>Array<br>An array is a basic data structure to store a collection of elements sequentially.</p>
+</li>
+<li><p>Dynamic Array<br>Most programming languages offer built-in dynamic array which is still a random access list data structure but with variable size.(<strong>ArrayList</strong> in Java)</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. initialize</span></span><br><span class="line">List&lt;Integer&gt; v0 = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">List&lt;Integer&gt; v1;                           <span class="comment">// v1 == null</span></span><br><span class="line"><span class="comment">// 2. cast an array to a ArrayList</span></span><br><span class="line">Integer[] a = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;;</span><br><span class="line">v1 = <span class="keyword">new</span> ArrayList&lt;&gt;(Arrays.asList(a));</span><br><span class="line"><span class="comment">// 3. make a copy</span></span><br><span class="line">List&lt;Integer&gt; v2 = v1;                      <span class="comment">// another reference tv1</span></span><br><span class="line">List&lt;Integer&gt; v3 = <span class="keyword">new</span> ArrayList&lt;&gt;(v1);     <span class="comment">// make an actual copof v1</span></span><br><span class="line"><span class="comment">// 3. get length</span></span><br><span class="line">v1.size();</span><br><span class="line"><span class="comment">// 4. access element</span></span><br><span class="line">v1.get(<span class="number">0</span>);</span><br><span class="line"><span class="comment">// 5. iterate the vector</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; v1.size(); ++i) &#123;</span><br><span class="line">    System.out.print(<span class="string">" "</span> + v1.get(i));</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> item : v1) &#123;</span><br><span class="line">    System.out.print(<span class="string">" "</span> + item);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 6. modify element</span></span><br><span class="line">v2.set(<span class="number">0</span>, <span class="number">5</span>);       <span class="comment">// modify v2 will actually modify v1</span></span><br><span class="line">System.out.println(v1.get(<span class="number">0</span>));</span><br><span class="line">v3.set(<span class="number">0</span>, -<span class="number">1</span>);</span><br><span class="line">System.out.println(v1.get(<span class="number">0</span>));</span><br><span class="line"><span class="comment">// 7. sort</span></span><br><span class="line">Collections.sort(v1);</span><br><span class="line"><span class="comment">// 8. add new element at the end of the ArrayList</span></span><br><span class="line">v1.add(-<span class="number">1</span>);</span><br><span class="line">v1.add(<span class="number">1</span>, <span class="number">6</span>);</span><br><span class="line"><span class="comment">// 9. delete the last element</span></span><br><span class="line">v1.remove(v1.size() - <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="Introduction-to-2D-Array"><a href="#Introduction-to-2D-Array" class="headerlink" title="Introduction to 2D Array"></a>Introduction to 2D Array</h2><ul>
+<li><p>2D Array<br>In Java, the two-dimensional array is actually a one-dimensional array which contains M elements, each of which is an array of N integers.</p>
+</li>
+<li><p>Dynamic 2D Array<br>It can be just a nested dynamic array.</p>
+</li>
+</ul>
+<h2 id="Introduction-to-String"><a href="#Introduction-to-String" class="headerlink" title="Introduction to String"></a>Introduction to String</h2><p>A string is actually an array of unicode characters.<br>In Java, String is immutable.</p>
+<h2 id="Two-Pointer-Technique"><a href="#Two-Pointer-Technique" class="headerlink" title="Two-Pointer Technique"></a>Two-Pointer Technique</h2><h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h3><h4 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h4><p>Reverse the elements in an array.</p>
+<h4 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span>[] v, <span class="keyword">int</span> N)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> j = N - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">        swap(v, i, j);  <span class="comment">// this is a self-defined function</span></span><br><span class="line">        i++;</span><br><span class="line">        j--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Iterate the array from two ends to the middle.<br>One pointer starts from the beginning while the other pointer starts from the end.</p>
+<h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h3><h4 id="Problem-1"><a href="#Problem-1" class="headerlink" title="Problem"></a>Problem</h4><p>Given an array and a value, remove all instances of that value in-place and return the new length.</p>
+<h4 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h4><p>(Consider the space limitation.)<br>One pointer is still used for the iteration while the second one always points at the position for next addition.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">removeElement</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> k = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[i] != val) &#123;</span><br><span class="line">            nums[k] = nums[i];</span><br><span class="line">            k++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> k;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>One slow-runner and one fast-runner at the same time.<br>Determine the movement strategy for both pointers.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://atprogrammer.com/2019/06/21/Array-and-String/" data-id="cjx5pd2e80000n4ascvxyyyeb" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-1088-Confusing-Number-II" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/06/20/1088-Confusing-Number-II/" class="article-date">
@@ -104,7 +163,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/20/1088-Confusing-Number-II/" data-id="cjx4ev2y300007casbfzu8gip" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/20/1088-Confusing-Number-II/" data-id="cjx5pd2eh0003n4asf2kzt2l1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li></ul>
@@ -187,7 +246,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/18/开始学习-Python-之前的几个疑问/" data-id="cjx4ev2yq000g7caso5doutmr" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/18/开始学习-Python-之前的几个疑问/" data-id="cjx5pd2fi000kn4as56a0vn84" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Learning-Python/">Learning Python</a></li></ul>
@@ -243,7 +302,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/18/The-java-util-function-Package/" data-id="cjx4ev2y800017cas09t1xu4a" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/18/The-java-util-function-Package/" data-id="cjx5pd2ed0001n4asp8fv5g7t" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Modern-Java-Recipes/">Modern Java Recipes</a></li></ul>
@@ -295,7 +354,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/16/HexoをGitHub-Pagesデプロイ時、独自ドメインがデフォルトに変わってしまう/" data-id="cjx4ev2ye00047cassdqw78nz" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/16/HexoをGitHub-Pagesデプロイ時、独自ドメインがデフォルトに変わってしまう/" data-id="cjx5pd2fc000dn4as848qw1oq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -356,7 +415,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/10/The-basics-syntax-of-lambda-expressions-and-method-references/" data-id="cjx4ev2yj00097casi1x20vu2" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/10/The-basics-syntax-of-lambda-expressions-and-method-references/" data-id="cjx5pd2fb000cn4assuk5dmu9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Modern-Java-Recipes/">Modern Java Recipes</a></li></ul>
@@ -479,7 +538,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/05/23/数学文章作法-推敲篇-读书笔记/" data-id="cjx4ev2yz000k7casmj26n7gp" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/05/23/数学文章作法-推敲篇-读书笔记/" data-id="cjx5pd2fn000mn4asesshhasq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Book/">Book</a></li></ul>
@@ -576,7 +635,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/05/13/云结构核心概念-Cloud-Architecture-Core-Concepts/" data-id="cjx4ev2yi00087cassahy2goi" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/05/13/云结构核心概念-Cloud-Architecture-Core-Concepts/" data-id="cjx5pd2ff000hn4asqk48psio" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cloud/">Cloud</a></li></ul>
@@ -635,7 +694,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/26/靠巧合编程-Programming-by-Coincidence/" data-id="cjx4ev2zp00127cas3hpv5mfo" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/04/26/靠巧合编程-Programming-by-Coincidence/" data-id="cjx5pd2fx000yn4asuy4s3xj2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
@@ -708,64 +767,11 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/22/黑板-Blackboards/" data-id="cjx4ev2zo00117casq6idrhk4" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/04/22/黑板-Blackboards/" data-id="cjx5pd2fu000vn4asowqyyjpk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-它只是视图-It-s-just-a-view" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/19/它只是视图-It-s-just-a-view/" class="article-date">
-  <time datetime="2019-04-19T05:27:58.000Z" itemprop="datePublished">2019-04-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/19/它只是视图-It-s-just-a-view/">它只是视图 (It&#39;s just a view)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>那人依然只听到<br>他想要听到的东西<br>而不顾其他</p>
-</blockquote>
-<blockquote>
-<p>Still, a man hears<br>What he wants to hear<br>And disregards the rest<br> –Simon and Garfunkel, “The Boxer”</p>
-</blockquote>
-<p>我们应该把程序性划分成模块，每个模块都有其自身的责任。<br>这会产生一些新的问题，模块之间怎样相互交谈？怎样管理他们的逻辑依赖？如何对不同模块的状态变化进行同步？<br>我们想要每个模块只听到它想听到的东西。</p>
-<h2 id="发布-订阅-Publish-Subscribe"><a href="#发布-订阅-Publish-Subscribe" class="headerlink" title="发布/订阅 (Publish/Subscribe)"></a>发布/订阅 (Publish/Subscribe)</h2><p>对象应该能进行登记，只接受他们需要的事件。</p>
-<h2 id="Model-View-Controller"><a href="#Model-View-Controller" class="headerlink" title="Model-View-Controller"></a>Model-View-Controller</h2><p>关键概念：既让模型与表示模型的GUI分离，也让模型与管理视图的控件分离。<br>这样做，可以支持同一数据模型的多个视图，可以在许多不同的数据模型上使用公共的查看器，甚至还可以使用多个控制器提供非传统的输入机制。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">使视图与模型分离</span><br><span class="line">Separate Views from Models</span><br></pre></td></tr></table></figure>
-<h2 id="超越GUI-Beyond-GUIs"><a href="#超越GUI-Beyond-GUIs" class="headerlink" title="超越GUI (Beyond GUIs)"></a>超越GUI (Beyond GUIs)</h2><p>MVC不只是在GUI开发中，它是一种通用的编程技术。<br>视图是对模型的一种解释，它无需是图形化的。控制器更是一种协调机制，不一定要与任何种类的输入设备有关。</p>
-<ul>
-<li>模型：目标对象的抽象数据模型。模型对任何视图和控制器都没有直接的了解。</li>
-<li>视图：解释模型的方式。它订阅模型中的变化和来自控制器的逻辑事件。</li>
-<li>控制器：控制视图。并向模型提供新数据的途径。它既向模型，也向视图发布事件。</li>
-</ul>
-<h2 id="仍然有耦合-Still-Coupled"><a href="#仍然有耦合-Still-Coupled" class="headerlink" title="仍然有耦合 (Still Coupled)"></a>仍然有耦合 (Still Coupled)</h2><p>尽管耦合减少了，但订阅者和发布者间仍然需要有一些相互了解。<br>比如Java中必须对公共接口定义和调用约定达成一致。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/19/它只是视图-It-s-just-a-view/" data-id="cjx4ev2yv000i7cas9frytqv6" class="article-share-link">Share</a>
-      
-      
     </footer>
   </div>
   
@@ -801,7 +807,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/Book/" style="font-size: 10px;">Book</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/Learning-Python/" style="font-size: 10px;">Learning Python</a> <a href="/tags/LeetCode/" style="font-size: 10px;">LeetCode</a> <a href="/tags/Modern-Java-Recipes/" style="font-size: 15px;">Modern Java Recipes</a> <a href="/tags/The-Pragmatic-Programmer/" style="font-size: 20px;">The Pragmatic Programmer</a>
+      <a href="/tags/Algorithm/" style="font-size: 15px;">Algorithm</a> <a href="/tags/Book/" style="font-size: 10px;">Book</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/Learning-Python/" style="font-size: 10px;">Learning Python</a> <a href="/tags/LeetCode/" style="font-size: 10px;">LeetCode</a> <a href="/tags/Modern-Java-Recipes/" style="font-size: 15px;">Modern Java Recipes</a> <a href="/tags/The-Pragmatic-Programmer/" style="font-size: 20px;">The Pragmatic Programmer</a>
     </div>
   </div>
 
@@ -823,6 +829,10 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2019/06/21/Array-and-String/">Array and String</a>
+          </li>
+        
+          <li>
             <a href="/2019/06/20/1088-Confusing-Number-II/">1088. Confusing Number II</a>
           </li>
         
@@ -836,10 +846,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2019/06/16/HexoをGitHub-Pagesデプロイ時、独自ドメインがデフォルトに変わってしまう/">HexoをGitHub Pagesデプロイ時、独自ドメインがデフォルトに変わってしまう</a>
-          </li>
-        
-          <li>
-            <a href="/2019/06/10/The-basics-syntax-of-lambda-expressions-and-method-references/">The basics syntax of lambda expressions and method references</a>
           </li>
         
       </ul>

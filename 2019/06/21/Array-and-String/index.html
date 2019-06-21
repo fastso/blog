@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-142110603-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <title>Array and String | @programmer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Introduction to Array ArrayAn array is a basic data structure to store a collection of elements sequentially.  Dynamic ArrayMost programming languages offer built-in dynamic array which is still a ran">
+<meta name="keywords" content="Algorithm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Array and String">
+<meta property="og:url" content="https://atprogrammer.com/2019/06/21/Array-and-String/index.html">
+<meta property="og:site_name" content="@programmer">
+<meta property="og:description" content="Introduction to Array ArrayAn array is a basic data structure to store a collection of elements sequentially.  Dynamic ArrayMost programming languages offer built-in dynamic array which is still a ran">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-06-21T06:17:31.834Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Array and String">
+<meta name="twitter:description" content="Introduction to Array ArrayAn array is a basic data structure to store a collection of elements sequentially.  Dynamic ArrayMost programming languages offer built-in dynamic array which is still a ran">
+  
+    <link rel="alternate" href="/atom.xml" title="@programmer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">@programmer</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://atprogrammer.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Array-and-String" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/21/Array-and-String/" class="article-date">
+  <time datetime="2019-06-21T06:15:59.000Z" itemprop="datePublished">2019-06-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Array and String
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Introduction-to-Array"><a href="#Introduction-to-Array" class="headerlink" title="Introduction to Array"></a>Introduction to Array</h2><ul>
+<li><p>Array<br>An array is a basic data structure to store a collection of elements sequentially.</p>
+</li>
+<li><p>Dynamic Array<br>Most programming languages offer built-in dynamic array which is still a random access list data structure but with variable size.(<strong>ArrayList</strong> in Java)</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. initialize</span></span><br><span class="line">List&lt;Integer&gt; v0 = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">List&lt;Integer&gt; v1;                           <span class="comment">// v1 == null</span></span><br><span class="line"><span class="comment">// 2. cast an array to a ArrayList</span></span><br><span class="line">Integer[] a = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;;</span><br><span class="line">v1 = <span class="keyword">new</span> ArrayList&lt;&gt;(Arrays.asList(a));</span><br><span class="line"><span class="comment">// 3. make a copy</span></span><br><span class="line">List&lt;Integer&gt; v2 = v1;                      <span class="comment">// another reference tv1</span></span><br><span class="line">List&lt;Integer&gt; v3 = <span class="keyword">new</span> ArrayList&lt;&gt;(v1);     <span class="comment">// make an actual copof v1</span></span><br><span class="line"><span class="comment">// 3. get length</span></span><br><span class="line">v1.size();</span><br><span class="line"><span class="comment">// 4. access element</span></span><br><span class="line">v1.get(<span class="number">0</span>);</span><br><span class="line"><span class="comment">// 5. iterate the vector</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; v1.size(); ++i) &#123;</span><br><span class="line">    System.out.print(<span class="string">" "</span> + v1.get(i));</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> item : v1) &#123;</span><br><span class="line">    System.out.print(<span class="string">" "</span> + item);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 6. modify element</span></span><br><span class="line">v2.set(<span class="number">0</span>, <span class="number">5</span>);       <span class="comment">// modify v2 will actually modify v1</span></span><br><span class="line">System.out.println(v1.get(<span class="number">0</span>));</span><br><span class="line">v3.set(<span class="number">0</span>, -<span class="number">1</span>);</span><br><span class="line">System.out.println(v1.get(<span class="number">0</span>));</span><br><span class="line"><span class="comment">// 7. sort</span></span><br><span class="line">Collections.sort(v1);</span><br><span class="line"><span class="comment">// 8. add new element at the end of the ArrayList</span></span><br><span class="line">v1.add(-<span class="number">1</span>);</span><br><span class="line">v1.add(<span class="number">1</span>, <span class="number">6</span>);</span><br><span class="line"><span class="comment">// 9. delete the last element</span></span><br><span class="line">v1.remove(v1.size() - <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="Introduction-to-2D-Array"><a href="#Introduction-to-2D-Array" class="headerlink" title="Introduction to 2D Array"></a>Introduction to 2D Array</h2><ul>
+<li><p>2D Array<br>In Java, the two-dimensional array is actually a one-dimensional array which contains M elements, each of which is an array of N integers.</p>
+</li>
+<li><p>Dynamic 2D Array<br>It can be just a nested dynamic array.</p>
+</li>
+</ul>
+<h2 id="Introduction-to-String"><a href="#Introduction-to-String" class="headerlink" title="Introduction to String"></a>Introduction to String</h2><p>A string is actually an array of unicode characters.<br>In Java, String is immutable.</p>
+<h2 id="Two-Pointer-Technique"><a href="#Two-Pointer-Technique" class="headerlink" title="Two-Pointer Technique"></a>Two-Pointer Technique</h2><h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h3><h4 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h4><p>Reverse the elements in an array.</p>
+<h4 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span>[] v, <span class="keyword">int</span> N)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> j = N - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">        swap(v, i, j);  <span class="comment">// this is a self-defined function</span></span><br><span class="line">        i++;</span><br><span class="line">        j--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Iterate the array from two ends to the middle.<br>One pointer starts from the beginning while the other pointer starts from the end.</p>
+<h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h3><h4 id="Problem-1"><a href="#Problem-1" class="headerlink" title="Problem"></a>Problem</h4><p>Given an array and a value, remove all instances of that value in-place and return the new length.</p>
+<h4 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h4><p>(Consider the space limitation.)<br>One pointer is still used for the iteration while the second one always points at the position for next addition.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">removeElement</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> k = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[i] != val) &#123;</span><br><span class="line">            nums[k] = nums[i];</span><br><span class="line">            k++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> k;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>One slow-runner and one fast-runner at the same time.<br>Determine the movement strategy for both pointers.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://atprogrammer.com/2019/06/21/Array-and-String/" data-id="cjx5pd2e80000n4ascvxyyyeb" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/06/20/1088-Confusing-Number-II/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">1088. Confusing Number II</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Book/">Book</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cloud/">Cloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Learning-Python/">Learning Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/">LeetCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Modern-Java-Recipes/">Modern Java Recipes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Algorithm/" style="font-size: 15px;">Algorithm</a> <a href="/tags/Book/" style="font-size: 10px;">Book</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/Learning-Python/" style="font-size: 10px;">Learning Python</a> <a href="/tags/LeetCode/" style="font-size: 10px;">LeetCode</a> <a href="/tags/Modern-Java-Recipes/" style="font-size: 15px;">Modern Java Recipes</a> <a href="/tags/The-Pragmatic-Programmer/" style="font-size: 20px;">The Pragmatic Programmer</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/06/21/Array-and-String/">Array and String</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/20/1088-Confusing-Number-II/">1088. Confusing Number II</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/18/开始学习-Python-之前的几个疑问/">开始学习 Python 之前的几个疑问</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/18/The-java-util-function-Package/">The java.util.function Package</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/16/HexoをGitHub-Pagesデプロイ時、独自ドメインがデフォルトに変わってしまう/">HexoをGitHub Pagesデプロイ時、独自ドメインがデフォルトに変わってしまう</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Hui Li<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
