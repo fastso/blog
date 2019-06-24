@@ -18,15 +18,22 @@ ga('send', 'pageview');
 
 
   
-  <title>Archives: 2019 | @programmer</title>
+  <title>119. Pascal&#39;s Triangle II | @programmer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="@programmer">
-<meta property="og:url" content="https://atprogrammer.com/archives/2019/page/2/index.html">
+  <meta name="description" content="Problem119. Pascal’s Triangle II Solution1234567891011121314public class Solution &amp;#123;    public List&amp;lt;Integer&amp;gt; getRow(int rowIndex) &amp;#123;        List&amp;lt;Integer&amp;gt; list = new ArrayList&amp;lt;&amp;g">
+<meta name="keywords" content="LeetCode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="119. Pascal&#39;s Triangle II">
+<meta property="og:url" content="https://atprogrammer.com/2019/06/24/119-Pascal-s-Triangle-II/index.html">
 <meta property="og:site_name" content="@programmer">
+<meta property="og:description" content="Problem119. Pascal’s Triangle II Solution1234567891011121314public class Solution &amp;#123;    public List&amp;lt;Integer&amp;gt; getRow(int rowIndex) &amp;#123;        List&amp;lt;Integer&amp;gt; list = new ArrayList&amp;lt;&amp;g">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://atprogrammer.com/images/LeetCode119.png">
+<meta property="og:updated_time" content="2019-06-24T06:18:41.732Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="@programmer">
+<meta name="twitter:title" content="119. Pascal&#39;s Triangle II">
+<meta name="twitter:description" content="Problem119. Pascal’s Triangle II Solution1234567891011121314public class Solution &amp;#123;    public List&amp;lt;Integer&amp;gt; getRow(int rowIndex) &amp;#123;        List&amp;lt;Integer&amp;gt; list = new ArrayList&amp;lt;&amp;g">
+<meta name="twitter:image" content="https://atprogrammer.com/images/LeetCode119.png">
   
     <link rel="alternate" href="/atom.xml" title="@programmer" type="application/atom+xml">
   
@@ -73,216 +80,56 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/13/云结构核心概念-Cloud-Architecture-Core-Concepts/" class="archive-article-date">
-  <time datetime="2019-05-13T13:37:35.000Z" itemprop="datePublished">May 13</time>
+        <section id="main"><article id="post-119-Pascal-s-Triangle-II" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/24/119-Pascal-s-Triangle-II/" class="article-date">
+  <time datetime="2019-06-24T06:11:25.000Z" itemprop="datePublished">2019-06-24</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/13/云结构核心概念-Cloud-Architecture-Core-Concepts/">云结构核心概念 (Cloud Architecture Core Concepts)</a>
+    <h1 class="article-title" itemprop="name">
+      119. Pascal&#39;s Triangle II
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/04/26/靠巧合编程-Programming-by-Coincidence/" class="archive-article-date">
-  <time datetime="2019-04-26T07:16:32.000Z" itemprop="datePublished">Apr 26</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/26/靠巧合编程-Programming-by-Coincidence/">靠巧合编程 (Programming by Coincidence)</a>
-    </h1>
-  
+        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://leetcode.com/problems/pascals-triangle-ii/" target="_blank" rel="noopener">119. Pascal’s Triangle II</a></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">getRow</span><span class="params">(<span class="keyword">int</span> rowIndex)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (rowIndex &lt; <span class="number">0</span>) <span class="keyword">return</span> list;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; rowIndex + <span class="number">1</span>; i++) &#123;</span><br><span class="line">            list.add(<span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; list.size() - <span class="number">1</span>; j++) &#123;</span><br><span class="line">                list.set(j, list.get(j) + list.get(j + <span class="number">1</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h2><p><img src="/images/LeetCode119.png" alt="LeetCode" title="LeetCode"></p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/04/22/黑板-Blackboards/" class="archive-article-date">
-  <time datetime="2019-04-22T04:20:07.000Z" itemprop="datePublished">Apr 22</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/22/黑板-Blackboards/">黑板 (Blackboards)</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/04/19/它只是视图-It-s-just-a-view/" class="archive-article-date">
-  <time datetime="2019-04-19T05:27:58.000Z" itemprop="datePublished">Apr 19</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://atprogrammer.com/2019/06/24/119-Pascal-s-Triangle-II/" data-id="cjx9zq70g00033was0g577j0s" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/19/它只是视图-It-s-just-a-view/">它只是视图 (It&#39;s just a view)</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/04/18/时间耦合-Temporal-Coupling/" class="archive-article-date">
-  <time datetime="2019-04-18T04:09:00.000Z" itemprop="datePublished">Apr 18</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/18/时间耦合-Temporal-Coupling/">时间耦合 (Temporal Coupling)</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/06/24/Python-Statements-and-Syntax/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python Statements and Syntax</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/04/17/元程序设计-Metaprogramming/" class="archive-article-date">
-  <time datetime="2019-04-17T11:43:05.000Z" itemprop="datePublished">Apr 17</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/17/元程序设计-Metaprogramming/">元程序设计 (Metaprogramming)</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/04/17/解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter/" class="archive-article-date">
-  <time datetime="2019-04-17T07:57:35.000Z" itemprop="datePublished">Apr 17</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/17/解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter/">解耦与得墨忒耳法则 (Decoupling and the law of demeter)</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/04/16/累積和-and-尺取法/" class="archive-article-date">
-  <time datetime="2019-04-16T02:54:36.000Z" itemprop="datePublished">Apr 16</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/16/累積和-and-尺取法/">累積和 and 尺取法</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/04/12/GitHub-Pages-Hexo-搭建个人博客/" class="archive-article-date">
-  <time datetime="2019-04-12T09:22:03.000Z" itemprop="datePublished">Apr 12</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/12/GitHub-Pages-Hexo-搭建个人博客/">GitHub Pages + Hexo 搭建个人博客</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/04/12/hello-world/" class="archive-article-date">
-  <time datetime="2019-04-12T07:51:25.462Z" itemprop="datePublished">Apr 12</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/12/hello-world/">Hello World</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/archives/2019/">&laquo; Prev</a><a class="page-number" href="/archives/2019/">1</a><span class="page-number current">2</span>
-  </nav>
 
 </section>
         

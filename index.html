@@ -75,6 +75,47 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-119-Pascal-s-Triangle-II" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/24/119-Pascal-s-Triangle-II/" class="article-date">
+  <time datetime="2019-06-24T06:11:25.000Z" itemprop="datePublished">2019-06-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/24/119-Pascal-s-Triangle-II/">119. Pascal&#39;s Triangle II</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://leetcode.com/problems/pascals-triangle-ii/" target="_blank" rel="noopener">119. Pascal’s Triangle II</a></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">getRow</span><span class="params">(<span class="keyword">int</span> rowIndex)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (rowIndex &lt; <span class="number">0</span>) <span class="keyword">return</span> list;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; rowIndex + <span class="number">1</span>; i++) &#123;</span><br><span class="line">            list.add(<span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; list.size() - <span class="number">1</span>; j++) &#123;</span><br><span class="line">                list.set(j, list.get(j) + list.get(j + <span class="number">1</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h2><p><img src="/images/LeetCode119.png" alt="LeetCode" title="LeetCode"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://atprogrammer.com/2019/06/24/119-Pascal-s-Triangle-II/" data-id="cjx9zq70g00033was0g577j0s" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Python-Statements-and-Syntax" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/06/24/Python-Statements-and-Syntax/" class="article-date">
@@ -222,7 +263,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/24/Python-Statements-and-Syntax/" data-id="cjx9uktsv00001caskhpjf4tc" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/24/Python-Statements-and-Syntax/" data-id="cjx9zq71c000f3was8ty7kd9u" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Learning-Python/">Learning Python</a></li></ul>
@@ -343,7 +384,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/24/Python-Types-and-Operations/" data-id="cjx9uktup00181cash9zyr3in" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/24/Python-Types-and-Operations/" data-id="cjx9zq72d001a3was3db7z1xu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Learning-Python/">Learning Python</a></li></ul>
@@ -402,7 +443,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/21/Array-and-String/" data-id="cjx9uktt700041cashdt380jz" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/21/Array-and-String/" data-id="cjx9zq70i00043wasox928071" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li></ul>
@@ -443,7 +484,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/20/1088-Confusing-Number-II/" data-id="cjx9uktt100011cas3c9dcays" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/20/1088-Confusing-Number-II/" data-id="cjx9zq70400003wasnh4jmknh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li></ul>
@@ -529,7 +570,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/18/开始学习-Python-之前的几个疑问/" data-id="cjx9ukttq000h1cas0vtlrvh1" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/18/开始学习-Python-之前的几个疑问/" data-id="cjx9zq71x000x3wasnxal651w" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Learning-Python/">Learning Python</a></li></ul>
@@ -585,7 +626,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/18/The-java-util-function-Package/" data-id="cjx9ukttk000b1caso5mphr8t" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/18/The-java-util-function-Package/" data-id="cjx9zq71q000o3was3xt8z00t" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Modern-Java-Recipes/">Modern Java Recipes</a></li></ul>
@@ -637,7 +678,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/16/HexoをGitHub-Pagesデプロイ時、独自ドメインがデフォルトに変わってしまう/" data-id="cjx9ukttg00081casq41985vl" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/16/HexoをGitHub-Pagesデプロイ時、独自ドメインがデフォルトに変わってしまう/" data-id="cjx9zq70a00013was1rylgk3u" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -698,7 +739,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/10/The-basics-syntax-of-lambda-expressions-and-method-references/" data-id="cjx9ukttm000d1casghsze28k" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/10/The-basics-syntax-of-lambda-expressions-and-method-references/" data-id="cjx9zq71e000g3waspx0auhls" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Modern-Java-Recipes/">Modern Java Recipes</a></li></ul>
@@ -821,107 +862,10 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/05/23/数学文章作法-推敲篇-读书笔记/" data-id="cjx9ukttx000p1cashgadqwu7" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/05/23/数学文章作法-推敲篇-读书笔记/" data-id="cjx9zq71z000z3was0hypu9on" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Book/">Book</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-云结构核心概念-Cloud-Architecture-Core-Concepts" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/13/云结构核心概念-Cloud-Architecture-Core-Concepts/" class="article-date">
-  <time datetime="2019-05-13T13:37:35.000Z" itemprop="datePublished">2019-05-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/13/云结构核心概念-Cloud-Architecture-Core-Concepts/">云结构核心概念 (Cloud Architecture Core Concepts)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Cloud architecture basics:</p>
-<ul>
-<li>Requirements</li>
-<li>Technology</li>
-<li>Security</li>
-<li>Governance</li>
-<li>DevOps</li>
-</ul>
-<p>You need to understand:</p>
-<ul>
-<li>Legacy technologies</li>
-<li>Cloud technologies</li>
-<li>Security approaches and technologies</li>
-<li>DevOps</li>
-<li>Methodology</li>
-</ul>
-<h2 id="Understand-the-Business-Needs"><a href="#Understand-the-Business-Needs" class="headerlink" title="Understand the Business Needs"></a>Understand the Business Needs</h2><h2 id="It’s-all-about-the-Cloud-Parts"><a href="#It’s-all-about-the-Cloud-Parts" class="headerlink" title="It’s all about the Cloud Parts"></a>It’s all about the Cloud Parts</h2><h3 id="Cloud-Storage"><a href="#Cloud-Storage" class="headerlink" title="Cloud Storage"></a>Cloud Storage</h3><ul>
-<li><p>Object storage<br>It is optimized for storing large volumes of unstructured data.<br>Data is stored as immutable objects.<br>The contents can only be witten in entirety.</p>
-<ul>
-<li>AWS S3</li>
-<li>Microsoft Azure Blob storage</li>
-</ul>
-</li>
-<li><p>Block storage<br>It provides a virtualized storage area network with logical volume management provisioning via a simplified web services interface.</p>
-<ul>
-<li>AWS Elastic Block Storage</li>
-</ul>
-</li>
-<li><p>File storage</p>
-</li>
-</ul>
-<h3 id="Cloud-CPUs"><a href="#Cloud-CPUs" class="headerlink" title="Cloud CPUs"></a>Cloud CPUs</h3><h3 id="Cloud-Databases"><a href="#Cloud-Databases" class="headerlink" title="Cloud Databases"></a>Cloud Databases</h3><h3 id="Additional-Cloud-Services"><a href="#Additional-Cloud-Services" class="headerlink" title="Additional Cloud Services"></a>Additional Cloud Services</h3><h2 id="From-Requirements-to-Solution"><a href="#From-Requirements-to-Solution" class="headerlink" title="From Requirements to Solution"></a>From Requirements to Solution</h2><h3 id="Storage-level"><a href="#Storage-level" class="headerlink" title="Storage level"></a>Storage level</h3><ul>
-<li>Physical storage</li>
-<li>Logical storage</li>
-</ul>
-<h3 id="Data-level"><a href="#Data-level" class="headerlink" title="Data level"></a>Data level</h3><ul>
-<li>Transactional</li>
-<li>Big Data / Analytics</li>
-</ul>
-<h3 id="Processing-level"><a href="#Processing-level" class="headerlink" title="Processing level"></a>Processing level</h3><ul>
-<li>CPUs</li>
-<li>Host Platforms</li>
-</ul>
-<h3 id="Network-level"><a href="#Network-level" class="headerlink" title="Network level"></a>Network level</h3><ul>
-<li>DNS</li>
-<li>Intra cloud</li>
-<li>Inter cloud</li>
-</ul>
-<h3 id="Application-level"><a href="#Application-level" class="headerlink" title="Application level"></a>Application level</h3><ul>
-<li>Application Services</li>
-<li>Containers</li>
-<li>Languages</li>
-<li>User Interfaces</li>
-</ul>
-<h3 id="Making-sense-of-it-all"><a href="#Making-sense-of-it-all" class="headerlink" title="Making sense of it all"></a>Making sense of it all</h3><ul>
-<li>Logical Architecture</li>
-<li>Physical Architecture</li>
-</ul>
-<h2 id="Build-your-first-architecture"><a href="#Build-your-first-architecture" class="headerlink" title="Build your first architecture"></a>Build your first architecture</h2><p>Step 1. Define your requirements<br>Step 2. Define you desire end state<br>Step 3. Mapping “as is” to “to be”<br>Step 4. Create your final architecture</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/05/13/云结构核心概念-Cloud-Architecture-Core-Concepts/" data-id="cjx9ukttv000m1cassl8fbt5v" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cloud/">Cloud</a></li></ul>
 
     </footer>
   </div>
@@ -958,7 +902,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Algorithm/" style="font-size: 13.33px;">Algorithm</a> <a href="/tags/Book/" style="font-size: 10px;">Book</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/Learning-Python/" style="font-size: 16.67px;">Learning Python</a> <a href="/tags/LeetCode/" style="font-size: 10px;">LeetCode</a> <a href="/tags/Modern-Java-Recipes/" style="font-size: 13.33px;">Modern Java Recipes</a> <a href="/tags/The-Pragmatic-Programmer/" style="font-size: 20px;">The Pragmatic Programmer</a>
+      <a href="/tags/Algorithm/" style="font-size: 13.33px;">Algorithm</a> <a href="/tags/Book/" style="font-size: 10px;">Book</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/Learning-Python/" style="font-size: 16.67px;">Learning Python</a> <a href="/tags/LeetCode/" style="font-size: 13.33px;">LeetCode</a> <a href="/tags/Modern-Java-Recipes/" style="font-size: 13.33px;">Modern Java Recipes</a> <a href="/tags/The-Pragmatic-Programmer/" style="font-size: 20px;">The Pragmatic Programmer</a>
     </div>
   </div>
 
@@ -980,6 +924,10 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2019/06/24/119-Pascal-s-Triangle-II/">119. Pascal&#39;s Triangle II</a>
+          </li>
+        
+          <li>
             <a href="/2019/06/24/Python-Statements-and-Syntax/">Python Statements and Syntax</a>
           </li>
         
@@ -993,10 +941,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2019/06/20/1088-Confusing-Number-II/">1088. Confusing Number II</a>
-          </li>
-        
-          <li>
-            <a href="/2019/06/18/开始学习-Python-之前的几个疑问/">开始学习 Python 之前的几个疑问</a>
           </li>
         
       </ul>
