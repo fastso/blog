@@ -18,19 +18,20 @@ ga('send', 'pageview');
 
 
   
-  <title>它只是视图 (It&#39;s just a view) | @programmer</title>
+  <title>Python Statements and Syntax | @programmer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="那人依然只听到他想要听到的东西而不顾其他   Still, a man hearsWhat he wants to hearAnd disregards the rest –Simon and Garfunkel, “The Boxer”  我们应该把程序性划分成模块，每个模块都有其自身的责任。这会产生一些新的问题，模块之间怎样相互交谈？怎样管理他们的逻辑依赖？如何对不同模块的状态变化进行同步？">
+  <meta name="description" content="Statement Role Example     Assignment Creating references a, b = ‘good’, ‘bad’   Calls and other expressions Running functions log.write(“spam, ham”)   print calls Printing objects print(‘The Kille">
+<meta name="keywords" content="Learning Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="它只是视图 (It&#39;s just a view)">
-<meta property="og:url" content="https://atprogrammer.com/2019/04/19/它只是视图-It-s-just-a-view/index.html">
+<meta property="og:title" content="Python Statements and Syntax">
+<meta property="og:url" content="https://atprogrammer.com/2019/06/24/Python-Statements-and-Syntax/index.html">
 <meta property="og:site_name" content="@programmer">
-<meta property="og:description" content="那人依然只听到他想要听到的东西而不顾其他   Still, a man hearsWhat he wants to hearAnd disregards the rest –Simon and Garfunkel, “The Boxer”  我们应该把程序性划分成模块，每个模块都有其自身的责任。这会产生一些新的问题，模块之间怎样相互交谈？怎样管理他们的逻辑依赖？如何对不同模块的状态变化进行同步？">
+<meta property="og:description" content="Statement Role Example     Assignment Creating references a, b = ‘good’, ‘bad’   Calls and other expressions Running functions log.write(“spam, ham”)   print calls Printing objects print(‘The Kille">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-19T05:29:14.353Z">
+<meta property="og:updated_time" content="2019-06-24T03:54:09.165Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="它只是视图 (It&#39;s just a view)">
-<meta name="twitter:description" content="那人依然只听到他想要听到的东西而不顾其他   Still, a man hearsWhat he wants to hearAnd disregards the rest –Simon and Garfunkel, “The Boxer”  我们应该把程序性划分成模块，每个模块都有其自身的责任。这会产生一些新的问题，模块之间怎样相互交谈？怎样管理他们的逻辑依赖？如何对不同模块的状态变化进行同步？">
+<meta name="twitter:title" content="Python Statements and Syntax">
+<meta name="twitter:description" content="Statement Role Example     Assignment Creating references a, b = ‘good’, ‘bad’   Calls and other expressions Running functions log.write(“spam, ham”)   print calls Printing objects print(‘The Kille">
   
     <link rel="alternate" href="/atom.xml" title="@programmer" type="application/atom+xml">
   
@@ -77,10 +78,10 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-它只是视图-It-s-just-a-view" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Python-Statements-and-Syntax" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/04/19/它只是视图-It-s-just-a-view/" class="article-date">
-  <time datetime="2019-04-19T05:27:58.000Z" itemprop="datePublished">2019-04-19</time>
+    <a href="/2019/06/24/Python-Statements-and-Syntax/" class="article-date">
+  <time datetime="2019-06-24T03:53:34.000Z" itemprop="datePublished">2019-06-24</time>
 </a>
     
   </div>
@@ -91,7 +92,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      它只是视图 (It&#39;s just a view)
+      Python Statements and Syntax
     </h1>
   
 
@@ -99,49 +100,146 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>那人依然只听到<br>他想要听到的东西<br>而不顾其他</p>
-</blockquote>
-<blockquote>
-<p>Still, a man hears<br>What he wants to hear<br>And disregards the rest<br> –Simon and Garfunkel, “The Boxer”</p>
-</blockquote>
-<p>我们应该把程序性划分成模块，每个模块都有其自身的责任。<br>这会产生一些新的问题，模块之间怎样相互交谈？怎样管理他们的逻辑依赖？如何对不同模块的状态变化进行同步？<br>我们想要每个模块只听到它想听到的东西。</p>
-<h2 id="发布-订阅-Publish-Subscribe"><a href="#发布-订阅-Publish-Subscribe" class="headerlink" title="发布/订阅 (Publish/Subscribe)"></a>发布/订阅 (Publish/Subscribe)</h2><p>对象应该能进行登记，只接受他们需要的事件。</p>
-<h2 id="Model-View-Controller"><a href="#Model-View-Controller" class="headerlink" title="Model-View-Controller"></a>Model-View-Controller</h2><p>关键概念：既让模型与表示模型的GUI分离，也让模型与管理视图的控件分离。<br>这样做，可以支持同一数据模型的多个视图，可以在许多不同的数据模型上使用公共的查看器，甚至还可以使用多个控制器提供非传统的输入机制。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">使视图与模型分离</span><br><span class="line">Separate Views from Models</span><br></pre></td></tr></table></figure>
-<h2 id="超越GUI-Beyond-GUIs"><a href="#超越GUI-Beyond-GUIs" class="headerlink" title="超越GUI (Beyond GUIs)"></a>超越GUI (Beyond GUIs)</h2><p>MVC不只是在GUI开发中，它是一种通用的编程技术。<br>视图是对模型的一种解释，它无需是图形化的。控制器更是一种协调机制，不一定要与任何种类的输入设备有关。</p>
-<ul>
-<li>模型：目标对象的抽象数据模型。模型对任何视图和控制器都没有直接的了解。</li>
-<li>视图：解释模型的方式。它订阅模型中的变化和来自控制器的逻辑事件。</li>
-<li>控制器：控制视图。并向模型提供新数据的途径。它既向模型，也向视图发布事件。</li>
-</ul>
-<h2 id="仍然有耦合-Still-Coupled"><a href="#仍然有耦合-Still-Coupled" class="headerlink" title="仍然有耦合 (Still Coupled)"></a>仍然有耦合 (Still Coupled)</h2><p>尽管耦合减少了，但订阅者和发布者间仍然需要有一些相互了解。<br>比如Java中必须对公共接口定义和调用约定达成一致。</p>
+        <table>
+<thead>
+<tr>
+<th>Statement</th>
+<th>Role</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Assignment</td>
+<td>Creating references</td>
+<td>a, b = ‘good’, ‘bad’</td>
+</tr>
+<tr>
+<td>Calls and other expressions</td>
+<td>Running functions</td>
+<td>log.write(“spam, ham”)</td>
+</tr>
+<tr>
+<td>print calls</td>
+<td>Printing objects</td>
+<td>print(‘The Killer’, joke)</td>
+</tr>
+<tr>
+<td>if/elif/else</td>
+<td>Selecting actions</td>
+<td>if “python” in text:<br>    print(text)</td>
+</tr>
+<tr>
+<td>for/else</td>
+<td>Iteration</td>
+<td>for x in mylist:<br>    print(x)</td>
+</tr>
+<tr>
+<td>while/else</td>
+<td>General loops</td>
+<td>while X &gt; Y:<br>    print(‘hello’)</td>
+</tr>
+<tr>
+<td>pass</td>
+<td>Empty placeholder</td>
+<td>while True:<br>    pass</td>
+</tr>
+<tr>
+<td>break</td>
+<td>Loop exit</td>
+<td>while True:<br>    if exittest(): break</td>
+</tr>
+<tr>
+<td>continue</td>
+<td>Loop continue</td>
+<td>while True:<br>    if skiptest(): continue</td>
+</tr>
+<tr>
+<td>def</td>
+<td>Functions and methods</td>
+<td>def f(a, b, c=1, *d):<br>    print(a+b+c+d[0])</td>
+</tr>
+<tr>
+<td>return</td>
+<td>Functions results</td>
+<td>def f(a, b, c=1, *d):<br>    return a+b+c+d[0]</td>
+</tr>
+<tr>
+<td>yield</td>
+<td>Generator functions</td>
+<td>def gen(n):<br>    for i in n: yield i*2</td>
+</tr>
+<tr>
+<td>global</td>
+<td>Namespaces</td>
+<td>x = ‘old’<br>def function():<br>    global x, y; x = ‘new’</td>
+</tr>
+<tr>
+<td>nonlocal</td>
+<td>Namespaces (3.X)</td>
+<td>def outer():<br>    x = ‘old’<br>    def function():<br>        nonlocal x; x = ‘new’</td>
+</tr>
+<tr>
+<td>import</td>
+<td>Module access</td>
+<td>import sys</td>
+</tr>
+<tr>
+<td>from</td>
+<td>Attribute access</td>
+<td>from sys import stdin</td>
+</tr>
+<tr>
+<td>class</td>
+<td>Building objects</td>
+<td>class Subclass(Superclass):<br>    staticData = []<br>    def method(self): pass</td>
+</tr>
+<tr>
+<td>try/except/ finally</td>
+<td>Catching exceptions</td>
+<td>try:<br>    action()<br>except:<br>    print(‘action error’)</td>
+</tr>
+<tr>
+<td>raise</td>
+<td>Triggering exceptions</td>
+<td>raise EndSearch(location)</td>
+</tr>
+<tr>
+<td>assert</td>
+<td>Debugging checks</td>
+<td>assert X &gt; Y, ‘X too small’</td>
+</tr>
+<tr>
+<td>with/as</td>
+<td>Context managers (3.X, 2.6+)</td>
+<td>with open(‘data’) as myfile:<br>    process(myfile)</td>
+</tr>
+<tr>
+<td>del</td>
+<td>Deleting references</td>
+<td>del data[k]<br>del data[i:j]<br>del obj.attr<br>del variable</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/19/它只是视图-It-s-just-a-view/" data-id="cjx9uktts000k1cas7fpb3nav" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/24/Python-Statements-and-Syntax/" data-id="cjx9uktsv00001caskhpjf4tc" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Learning-Python/">Learning Python</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2019/04/22/黑板-Blackboards/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          黑板 (Blackboards)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/04/18/时间耦合-Temporal-Coupling/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/06/24/Python-Types-and-Operations/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">时间耦合 (Temporal Coupling)</div>
+      <div class="article-nav-title">Python Types and Operations</div>
     </a>
   
 </nav>

@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://atprogrammer.com/2019/06/24/Python-Statements-and-Syntax/</loc>
+    
+    <lastmod>2019-06-24T03:54:09.165Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://atprogrammer.com/2019/06/24/Python-Types-and-Operations/</loc>
+    
+    <lastmod>2019-06-24T03:52:36.063Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://atprogrammer.com/2019/06/18/%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0-Python-%E4%B9%8B%E5%89%8D%E7%9A%84%E5%87%A0%E4%B8%AA%E7%96%91%E9%97%AE/</loc>
+    
+    <lastmod>2019-06-21T08:01:24.770Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://atprogrammer.com/2019/06/21/Array-and-String/</loc>
     
     <lastmod>2019-06-21T06:17:31.834Z</lastmod>
@@ -12,13 +33,6 @@
     <loc>https://atprogrammer.com/2019/06/20/1088-Confusing-Number-II/</loc>
     
     <lastmod>2019-06-20T08:34:36.497Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://atprogrammer.com/2019/06/18/%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0-Python-%E4%B9%8B%E5%89%8D%E7%9A%84%E5%87%A0%E4%B8%AA%E7%96%91%E9%97%AE/</loc>
-    
-    <lastmod>2019-06-18T11:07:45.345Z</lastmod>
     
   </url>
   
