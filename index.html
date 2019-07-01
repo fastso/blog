@@ -102,7 +102,9 @@ ga('send', 'pageview');
 <p>解説では3の倍数の最短経路を探すのであれば、<br>頂点を3倍にして、経路を下記図のようにすればいいということです。</p>
 <p><img src="/images/ABC132_E_Solution1.png" alt="Atcoder" title="Atcoder"></p>
 <p>こうするとstart[0]からtarget[0]までの最短経路/3が結果となる。<br>うん。。理屈は理解できていないが、そうなる一例を図で確認。。</p>
+<p>1から3までの3の倍数の最短経路は、1-2,2-3,3-4,4-1,1-2,2-3の6になります。</p>
 <p><img src="/images/ABC132_E_Solution2.png" alt="Atcoder" title="Atcoder"></p>
+<p><img src="/images/ABC132_E_Solution3.png" alt="Atcoder" title="Atcoder"></p>
 <p>youtubeの解説を見ながらと実装をしました。<br>今の私にとってかなりの難問でしたが、他人の実装を見て理解するところになんとか来ました。<br>もっと効率的に学ばなければ</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> INF = <span class="number">1001001001</span>; <span class="comment">// 桁数が分かりやすく</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> dist[][] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">100005</span>][<span class="number">3</span>]; <span class="comment">// 100000の頂点vに100005、倍数lに3</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String... args)</span> </span>&#123;</span><br><span class="line">        Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> n = sc.nextInt();</span><br><span class="line">        <span class="keyword">int</span> m = sc.nextInt();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 隣接頂点リスト</span></span><br><span class="line">        List&lt;Integer&gt; to[] = <span class="keyword">new</span> ArrayList[n];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) &#123;</span><br><span class="line">            to[i] = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> u = sc.nextInt();</span><br><span class="line">            <span class="keyword">int</span> v = sc.nextInt();</span><br><span class="line">            u--;</span><br><span class="line">            v--;</span><br><span class="line">            to[u].add(v);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> s = sc.nextInt();</span><br><span class="line">        <span class="keyword">int</span> t = sc.nextInt();</span><br><span class="line">        s--;</span><br><span class="line">        t--;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) &#123;</span><br><span class="line">                dist[i][j] = INF;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// BSF（幅優先探索）開始</span></span><br><span class="line">        Queue&lt;Pair&lt;Integer, Integer&gt;&gt; q = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        q.add(<span class="keyword">new</span> Pair&lt;&gt;(s, <span class="number">0</span>));</span><br><span class="line">        dist[s][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (!q.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">int</span> v = q.peek().first;</span><br><span class="line">            <span class="keyword">int</span> l = q.peek().second;</span><br><span class="line">            q.poll();</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> u : to[v]) &#123;</span><br><span class="line">                <span class="keyword">int</span> nl = (l + <span class="number">1</span>) % <span class="number">3</span>;</span><br><span class="line">                <span class="keyword">if</span> (dist[u][nl] != INF) <span class="keyword">continue</span>;</span><br><span class="line">                dist[u][nl] = dist[v][l] + <span class="number">1</span>;</span><br><span class="line">                q.add(<span class="keyword">new</span> Pair&lt;&gt;(u, nl));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ans = dist[t][<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">if</span> (ans == INF) ans = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> ans /= <span class="number">3</span>;</span><br><span class="line">        System.out.println(ans);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// JavaにPairがないので自作</span></span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Pair</span>&lt;<span class="title">F</span>, <span class="title">S</span>&gt; </span>&#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">final</span> F first;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">final</span> S second;</span><br><span class="line"></span><br><span class="line">        Pair(F first, S second) &#123;</span><br><span class="line">            <span class="keyword">this</span>.first = first;</span><br><span class="line">            <span class="keyword">this</span>.second = second;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h2><p><img src="/images/ABC132_E_Performance.png" alt="Atcoder" title="Atcoder"></p>
@@ -110,7 +112,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/07/01/ABC132-E-Hopscotch-Addict/" data-id="cjxkhmzob00037oasjvpr0s9q" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/07/01/ABC132-E-Hopscotch-Addict/" data-id="cjxkj2lnm0005e8asv327nxbj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AtCoder/">AtCoder</a></li></ul>
@@ -151,7 +153,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/24/119-Pascal-s-Triangle-II/" data-id="cjxkhmzo000007oaswbpwfgox" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/24/119-Pascal-s-Triangle-II/" data-id="cjxkj2lnl0004e8as9y7us7n2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li></ul>
@@ -310,7 +312,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/24/Python-Statements-and-Syntax/" data-id="cjxkhmzom00087oasfdhuvip1" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/24/Python-Statements-and-Syntax/" data-id="cjxkj2lnr000ae8asbsl9sp95" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Learning-Python/">Learning Python</a></li></ul>
@@ -431,7 +433,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/24/Python-Types-and-Operations/" data-id="cjxkhmzq5001d7oas1213o69f" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/24/Python-Types-and-Operations/" data-id="cjxkj2lou001he8as8wdec9ih" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Learning-Python/">Learning Python</a></li></ul>
@@ -490,7 +492,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/21/Array-and-String/" data-id="cjxkhmzof00057oasg24n4c7u" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/21/Array-and-String/" data-id="cjxkj2lng0001e8asf0dxmw4w" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li></ul>
@@ -531,7 +533,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/20/1088-Confusing-Number-II/" data-id="cjxkhmzo700017oasa2yjg5n2" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/20/1088-Confusing-Number-II/" data-id="cjxkj2ln90000e8aseccxxe5s" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li></ul>
@@ -617,7 +619,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/18/开始学习-Python-之前的几个疑问/" data-id="cjxkhmzp2000p7oasp0rcsww9" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/18/开始学习-Python-之前的几个疑问/" data-id="cjxkj2lo7000qe8ass3tybdwn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Learning-Python/">Learning Python</a></li></ul>
@@ -673,7 +675,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/18/The-java-util-function-Package/" data-id="cjxkhmzoq000d7oaszb132z0p" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/18/The-java-util-function-Package/" data-id="cjxkj2lnu000ee8astyhxf6l6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Modern-Java-Recipes/">Modern Java Recipes</a></li></ul>
@@ -725,7 +727,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/16/HexoをGitHub-Pagesデプロイ時、独自ドメインがデフォルトに変わってしまう/" data-id="cjxkhmzoc00047oase02dvb06" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/16/HexoをGitHub-Pagesデプロイ時、独自ドメインがデフォルトに変わってしまう/" data-id="cjxkj2lnp0008e8asrvmjdc16" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -786,7 +788,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/10/The-basics-syntax-of-lambda-expressions-and-method-references/" data-id="cjxkhmzov000h7oash74iuutz" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/10/The-basics-syntax-of-lambda-expressions-and-method-references/" data-id="cjxkj2lnt000ce8asqaebttcb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Modern-Java-Recipes/">Modern Java Recipes</a></li></ul>
