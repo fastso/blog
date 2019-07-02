@@ -75,6 +75,73 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-Intro-to-Machine-Learning" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/02/Intro-to-Machine-Learning/" class="article-date">
+  <time datetime="2019-07-02T09:01:05.000Z" itemprop="datePublished">2019-07-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/02/Intro-to-Machine-Learning/">Intro to Machine Learning</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-How-Models-Work"><a href="#1-How-Models-Work" class="headerlink" title="1. How Models Work"></a>1. How Models Work</h2><p>Decision Tree</p>
+<p>fitting or training the model<br>predict</p>
+<p>leaf</p>
+<h2 id="2-Basic-Data-Exploration"><a href="#2-Basic-Data-Exploration" class="headerlink" title="2. Basic Data Exploration"></a>2. Basic Data Exploration</h2><h3 id="Using-Pandas-to-Get-Familiar-With-Your-Data"><a href="#Using-Pandas-to-Get-Familiar-With-Your-Data" class="headerlink" title="Using Pandas to Get Familiar With Your Data"></a>Using Pandas to Get Familiar With Your Data</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># save filepath to variable for easier access</span></span><br><span class="line">melbourne_file_path = <span class="string">'../input/melbourne-housing-snapshot/melb_data.csv'</span></span><br><span class="line"><span class="comment"># read the data and store data in DataFrame titled melbourne_data</span></span><br><span class="line">melbourne_data = pd.read_csv(melbourne_file_path) </span><br><span class="line"><span class="comment"># print a summary of the data in Melbourne data</span></span><br><span class="line">melbourne_data.describe()</span><br></pre></td></tr></table></figure>
+<h3 id="Interpreting-Data-Description"><a href="#Interpreting-Data-Description" class="headerlink" title="Interpreting Data Description"></a>Interpreting Data Description</h3><p>The results show 8 numbers for each column.<br>|Name|Description|<br>|—|—|<br>|count|rows number (non-missing values)|<br>|mean|average|<br>|std|standard deviation (measures how numerically spread out the values are)|<br>|min|lowest value|<br>|25%|25th percentile|<br>|50%|50th percentile|<br>|75%|75th percentile|<br>|max|highest value|</p>
+<h2 id="3-Your-First-Machine-Learning-Model"><a href="#3-Your-First-Machine-Learning-Model" class="headerlink" title="3. Your First Machine Learning Model"></a>3. Your First Machine Learning Model</h2><h3 id="Selecting-Data-for-Modeling"><a href="#Selecting-Data-for-Modeling" class="headerlink" title="Selecting Data for Modeling"></a>Selecting Data for Modeling</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">melbourne_file_path = <span class="string">'../input/melbourne-housing-snapshot/melb_data.csv'</span></span><br><span class="line">melbourne_data = pd.read_csv(melbourne_file_path) </span><br><span class="line">melbourne_data.columns</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dropna drops missing values (think of na as "not available")</span></span><br><span class="line">melbourne_data = melbourne_data.dropna(axis=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">y = melbourne_data.Price</span><br></pre></td></tr></table></figure>
+<h3 id="Choosing-“Features”"><a href="#Choosing-“Features”" class="headerlink" title="Choosing “Features”"></a>Choosing “Features”</h3><p>features = columns that are inputted into model</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">melbourne_features = [<span class="string">'Rooms'</span>, <span class="string">'Bathroom'</span>, <span class="string">'Landsize'</span>, <span class="string">'Lattitude'</span>, <span class="string">'Longtitude'</span>]</span><br><span class="line"></span><br><span class="line">X = melbourne_data[melbourne_features]</span><br><span class="line">X.describe()</span><br><span class="line">X.head()</span><br></pre></td></tr></table></figure>
+<h3 id="Building-Your-Model"><a href="#Building-Your-Model" class="headerlink" title="Building Your Model"></a>Building Your Model</h3><p>The steps to building and using a model:</p>
+<ul>
+<li>Define: What type of model will it be? A decision tree? Some other type of model? Some other parameters of the model type are specified too.</li>
+<li>Fit: Capture patterns from provided data. This is the heart of modeling.</li>
+<li>Predict: Just what it sounds like.</li>
+<li>Evaluate: Determine how accurate the model’s predictions are.</li>
+</ul>
+<h2 id="4-Model-Validation"><a href="#4-Model-Validation" class="headerlink" title="4. Model Validation"></a>4. Model Validation</h2><p>Measuring model quality is the key to iteratively improving models.</p>
+<h3 id="What-is-Model-Validation"><a href="#What-is-Model-Validation" class="headerlink" title="What is Model Validation"></a>What is Model Validation</h3><p>MAE (Mean Absolute Error)</p>
+<h3 id="The-Problem-with-“In-Sample”-Scores"><a href="#The-Problem-with-“In-Sample”-Scores" class="headerlink" title="The Problem with “In-Sample” Scores"></a>The Problem with “In-Sample” Scores</h3><h2 id="5-Underfitting-and-Overfitting"><a href="#5-Underfitting-and-Overfitting" class="headerlink" title="5. Underfitting and Overfitting"></a>5. Underfitting and Overfitting</h2><h3 id="Experimenting-With-Different-Models"><a href="#Experimenting-With-Different-Models" class="headerlink" title="Experimenting With Different Models"></a>Experimenting With Different Models</h3><ul>
+<li><p>Overfitting<br>A model matches the training data almost perfectly, but does poorly in validation and other new data.<br>(capturing spurious patterns that won’t recur in the future, leading to less accurate predictions)</p>
+</li>
+<li><p>Underfitting<br>A model fails to capture important distinctions and patterns in the data, so it performs poorly even in training data.<br>(failing to capture relevant patterns, again leading to less accurate predictions.)</p>
+</li>
+</ul>
+<h2 id="6-Random-Forests"><a href="#6-Random-Forests" class="headerlink" title="6. Random Forests"></a>6. Random Forests</h2><p>The random forest uses many trees, and it makes a prediction by averaging the predictions of each component tree.</p>
+<h2 id="7-Machine-Learning-Competitions"><a href="#7-Machine-Learning-Competitions" class="headerlink" title="7. Machine Learning Competitions"></a>7. Machine Learning Competitions</h2><p>Machine learning competitions are a great way to improve data science skills and measure progress.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Code you have previously used to load data</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestRegressor</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> mean_absolute_error</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="keyword">from</span> sklearn.tree <span class="keyword">import</span> DecisionTreeRegressor</span><br><span class="line"><span class="keyword">from</span> learntools.core <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Path of the file to read. We changed the directory structure to simplify submitting to a competition</span></span><br><span class="line">iowa_file_path = <span class="string">'../input/train.csv'</span></span><br><span class="line"></span><br><span class="line">home_data = pd.read_csv(iowa_file_path)</span><br><span class="line"><span class="comment"># Create target object and call it y</span></span><br><span class="line">y = home_data.SalePrice</span><br><span class="line"><span class="comment"># Create X</span></span><br><span class="line">features = [<span class="string">'LotArea'</span>, <span class="string">'YearBuilt'</span>, <span class="string">'1stFlrSF'</span>, <span class="string">'2ndFlrSF'</span>, <span class="string">'FullBath'</span>, <span class="string">'BedroomAbvGr'</span>, <span class="string">'TotRmsAbvGrd'</span>]</span><br><span class="line">X = home_data[features]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Split into validation and training data</span></span><br><span class="line">train_X, val_X, train_y, val_y = train_test_split(X, y, random_state=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Specify Model</span></span><br><span class="line">iowa_model = DecisionTreeRegressor(random_state=<span class="number">1</span>)</span><br><span class="line"><span class="comment"># Fit Model</span></span><br><span class="line">iowa_model.fit(train_X, train_y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Make validation predictions and calculate mean absolute error</span></span><br><span class="line">val_predictions = iowa_model.predict(val_X)</span><br><span class="line">val_mae = mean_absolute_error(val_predictions, val_y)</span><br><span class="line">print(<span class="string">"Validation MAE when not specifying max_leaf_nodes: &#123;:,.0f&#125;"</span>.format(val_mae))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Using best value for max_leaf_nodes</span></span><br><span class="line">iowa_model = DecisionTreeRegressor(max_leaf_nodes=<span class="number">100</span>, random_state=<span class="number">1</span>)</span><br><span class="line">iowa_model.fit(train_X, train_y)</span><br><span class="line">val_predictions = iowa_model.predict(val_X)</span><br><span class="line">val_mae = mean_absolute_error(val_predictions, val_y)</span><br><span class="line">print(<span class="string">"Validation MAE for best value of max_leaf_nodes: &#123;:,.0f&#125;"</span>.format(val_mae))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Define the model. Set random_state to 1</span></span><br><span class="line">rf_model = RandomForestRegressor(random_state=<span class="number">1</span>)</span><br><span class="line">rf_model.fit(train_X, train_y)</span><br><span class="line">rf_val_predictions = rf_model.predict(val_X)</span><br><span class="line">rf_val_mae = mean_absolute_error(rf_val_predictions, val_y)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"Validation MAE for Random Forest Model: &#123;:,.0f&#125;"</span>.format(rf_val_mae))</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://atprogrammer.com/2019/07/02/Intro-to-Machine-Learning/" data-id="cjxll3v04000d5casey58wf2h" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kaggle/">Kaggle</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-ABC132-E-Hopscotch-Addict" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/07/01/ABC132-E-Hopscotch-Addict/" class="article-date">
@@ -112,7 +179,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/07/01/ABC132-E-Hopscotch-Addict/" data-id="cjxkj2lnm0005e8asv327nxbj" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/07/01/ABC132-E-Hopscotch-Addict/" data-id="cjxll3uzt00035casp0jer7fk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AtCoder/">AtCoder</a></li></ul>
@@ -153,7 +220,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/24/119-Pascal-s-Triangle-II/" data-id="cjxkj2lnl0004e8as9y7us7n2" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/24/119-Pascal-s-Triangle-II/" data-id="cjxll3uzp00015cas7b4udcij" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li></ul>
@@ -312,7 +379,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/24/Python-Statements-and-Syntax/" data-id="cjxkj2lnr000ae8asbsl9sp95" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/24/Python-Statements-and-Syntax/" data-id="cjxll3uzz00085castyykz3ix" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Learning-Python/">Learning Python</a></li></ul>
@@ -433,7 +500,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/24/Python-Types-and-Operations/" data-id="cjxkj2lou001he8as8wdec9ih" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/24/Python-Types-and-Operations/" data-id="cjxll3v1c001l5casx9igc709" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Learning-Python/">Learning Python</a></li></ul>
@@ -492,7 +559,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/21/Array-and-String/" data-id="cjxkj2lng0001e8asf0dxmw4w" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/21/Array-and-String/" data-id="cjxll3uzu00045casp2kyyyw1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li></ul>
@@ -533,7 +600,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/20/1088-Confusing-Number-II/" data-id="cjxkj2ln90000e8aseccxxe5s" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/20/1088-Confusing-Number-II/" data-id="cjxll3uzf00005cas44xam8ui" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li></ul>
@@ -619,7 +686,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/18/开始学习-Python-之前的几个疑问/" data-id="cjxkj2lo7000qe8ass3tybdwn" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/18/开始学习-Python-之前的几个疑问/" data-id="cjxll3v0g000p5casmidm5ksp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Learning-Python/">Learning Python</a></li></ul>
@@ -675,7 +742,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/18/The-java-util-function-Package/" data-id="cjxkj2lnu000ee8astyhxf6l6" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/18/The-java-util-function-Package/" data-id="cjxll3v07000f5casfpsl7314" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Modern-Java-Recipes/">Modern Java Recipes</a></li></ul>
@@ -727,71 +794,10 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/16/HexoをGitHub-Pagesデプロイ時、独自ドメインがデフォルトに変わってしまう/" data-id="cjxkj2lnp0008e8asrvmjdc16" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/16/HexoをGitHub-Pagesデプロイ時、独自ドメインがデフォルトに変わってしまう/" data-id="cjxll3v0100095casern7pd3g" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-The-basics-syntax-of-lambda-expressions-and-method-references" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/06/10/The-basics-syntax-of-lambda-expressions-and-method-references/" class="article-date">
-  <time datetime="2019-06-10T04:44:55.000Z" itemprop="datePublished">2019-06-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/10/The-basics-syntax-of-lambda-expressions-and-method-references/">The basics syntax of lambda expressions and method references</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Lambda-Expressions"><a href="#Lambda-Expressions" class="headerlink" title="Lambda Expressions"></a>Lambda Expressions</h2><p>Use lambda expression syntax and assign the result to a reference of functional interface type.</p>
-<p>An anonymous inner class implementation of FilenameFilter</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">File directory = <span class="keyword">new</span> File(<span class="string">"./src/main/java"</span>);</span><br><span class="line"></span><br><span class="line">String[] names = directory.list(<span class="keyword">new</span> FilenameFilter() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">accept</span><span class="params">(File dir, String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name.endsWith(<span class="string">".java"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">System.out.println(Arrays.asList(names));</span><br></pre></td></tr></table></figure>
-<p>Lambda expression with explicit data types</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">File directory = <span class="keyword">new</span> File(<span class="string">"./src/main/java"</span>);</span><br><span class="line"></span><br><span class="line">String[] names = directory.list((File dir, String name) -&gt; name.endsWith(<span class="string">".java"</span>));</span><br></pre></td></tr></table></figure>
-<h2 id="Method-References"><a href="#Method-References" class="headerlink" title="Method References"></a>Method References</h2><p>Use the double-colon notation to separate an instance reference or class name from the method.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// lambda expression</span></span><br><span class="line">Stream.of(<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>).forEach(x -&gt; System.out.println(x));</span><br><span class="line"></span><br><span class="line"><span class="comment">// method reference</span></span><br><span class="line">Stream.of(<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>).forEach(System.out::println);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Assigning the method reference to a functional interface</span></span><br><span class="line">Consumer&lt;Integer&gt; printer = System.out::println;</span><br><span class="line">Stream.of(<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>).forEach(printer);</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Stream.generate(Math::random)          <span class="comment">// static method</span></span><br><span class="line">        .limit(<span class="number">10</span>)</span><br><span class="line">        .forEach(System.out::println); <span class="comment">// instance method</span></span><br></pre></td></tr></table></figure>
-<h2 id="Constructor-References"><a href="#Constructor-References" class="headerlink" title="Constructor References"></a>Constructor References</h2><p>Use the new keyword as part of a method reference.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; names =</span><br><span class="line">    Arrays.asList(<span class="string">"Grace Hopper"</span>, <span class="string">"Barbara Liskov"</span>, <span class="string">"Ada Lovelace"</span>,</span><br><span class="line">        <span class="string">"Karen Spärck Jones"</span>);</span><br><span class="line"></span><br><span class="line">List&lt;Person&gt; people = names.stream()</span><br><span class="line">    .map(name -&gt; <span class="keyword">new</span> Person(name)) <span class="comment">// lambda expression</span></span><br><span class="line">    .collect(Collectors.toList());</span><br><span class="line"></span><br><span class="line">List&lt;Person&gt; people = names.stream()</span><br><span class="line">    .map(Person::<span class="keyword">new</span>)              <span class="comment">// constructor reference</span></span><br><span class="line">    .collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
-<h2 id="Functional-Interfaces"><a href="#Functional-Interfaces" class="headerlink" title="Functional Interfaces"></a>Functional Interfaces</h2><p>Create an interface with a single, abstract method, and add the @FunctionalInterface annotation.</p>
-<p>functional interface with static and default methods</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MyInterface</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">myMethod</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">default</span> String <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Hello, World!"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">myStaticMethod</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"I'm a static method in an interface"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Default-Methods-in-Interfaces"><a href="#Default-Methods-in-Interfaces" class="headerlink" title="Default Methods in Interfaces"></a>Default Methods in Interfaces</h2><p>Provide an implementation of a method inside an interface.</p>
-<p>An Employee interface with a default method<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Employee</span> </span>&#123;</span><br><span class="line">    <span class="function">String <span class="title">getFirst</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function">String <span class="title">getLast</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">convertCaffeineToCodeForMoney</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">default</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> String.format(<span class="string">"%s %s"</span>, getFirst(), getLast());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="Static-Methods-in-Interfaces"><a href="#Static-Methods-in-Interfaces" class="headerlink" title="Static Methods in Interfaces"></a>Static Methods in Interfaces</h2><p>Provide a class-level utility method to an interface, along with an implementation.<br>Static methods in interfaces remove the need to create separate utility classes,<br>though that option is still available if a design calls for it.</p>
-<p>key points</p>
-<ul>
-<li>Static methods must have an implementation</li>
-<li>Cannot override a static method</li>
-<li>Call static methods from the interface name</li>
-<li>Do not need to implement an interface to use its static methods</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/10/The-basics-syntax-of-lambda-expressions-and-method-references/" data-id="cjxkj2lnt000ce8asqaebttcb" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Modern-Java-Recipes/">Modern Java Recipes</a></li></ul>
 
     </footer>
   </div>
@@ -818,7 +824,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AtCoder/">AtCoder</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Book/">Book</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cloud/">Cloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Learning-Python/">Learning Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/">LeetCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Modern-Java-Recipes/">Modern Java Recipes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AtCoder/">AtCoder</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Book/">Book</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cloud/">Cloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle/">Kaggle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Learning-Python/">Learning Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/">LeetCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Modern-Java-Recipes/">Modern Java Recipes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
     </div>
   </div>
 
@@ -828,7 +834,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Algorithm/" style="font-size: 13.33px;">Algorithm</a> <a href="/tags/AtCoder/" style="font-size: 10px;">AtCoder</a> <a href="/tags/Book/" style="font-size: 10px;">Book</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/Learning-Python/" style="font-size: 16.67px;">Learning Python</a> <a href="/tags/LeetCode/" style="font-size: 13.33px;">LeetCode</a> <a href="/tags/Modern-Java-Recipes/" style="font-size: 13.33px;">Modern Java Recipes</a> <a href="/tags/The-Pragmatic-Programmer/" style="font-size: 20px;">The Pragmatic Programmer</a>
+      <a href="/tags/Algorithm/" style="font-size: 13.33px;">Algorithm</a> <a href="/tags/AtCoder/" style="font-size: 10px;">AtCoder</a> <a href="/tags/Book/" style="font-size: 10px;">Book</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/Kaggle/" style="font-size: 10px;">Kaggle</a> <a href="/tags/Learning-Python/" style="font-size: 16.67px;">Learning Python</a> <a href="/tags/LeetCode/" style="font-size: 13.33px;">LeetCode</a> <a href="/tags/Modern-Java-Recipes/" style="font-size: 13.33px;">Modern Java Recipes</a> <a href="/tags/The-Pragmatic-Programmer/" style="font-size: 20px;">The Pragmatic Programmer</a>
     </div>
   </div>
 
@@ -850,6 +856,10 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2019/07/02/Intro-to-Machine-Learning/">Intro to Machine Learning</a>
+          </li>
+        
+          <li>
             <a href="/2019/07/01/ABC132-E-Hopscotch-Addict/">ABC132 E - Hopscotch Addict</a>
           </li>
         
@@ -863,10 +873,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2019/06/24/Python-Types-and-Operations/">Python Types and Operations</a>
-          </li>
-        
-          <li>
-            <a href="/2019/06/21/Array-and-String/">Array and String</a>
           </li>
         
       </ul>

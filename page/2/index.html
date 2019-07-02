@@ -75,6 +75,67 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-The-basics-syntax-of-lambda-expressions-and-method-references" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/10/The-basics-syntax-of-lambda-expressions-and-method-references/" class="article-date">
+  <time datetime="2019-06-10T04:44:55.000Z" itemprop="datePublished">2019-06-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/10/The-basics-syntax-of-lambda-expressions-and-method-references/">The basics syntax of lambda expressions and method references</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Lambda-Expressions"><a href="#Lambda-Expressions" class="headerlink" title="Lambda Expressions"></a>Lambda Expressions</h2><p>Use lambda expression syntax and assign the result to a reference of functional interface type.</p>
+<p>An anonymous inner class implementation of FilenameFilter</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">File directory = <span class="keyword">new</span> File(<span class="string">"./src/main/java"</span>);</span><br><span class="line"></span><br><span class="line">String[] names = directory.list(<span class="keyword">new</span> FilenameFilter() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">accept</span><span class="params">(File dir, String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name.endsWith(<span class="string">".java"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">System.out.println(Arrays.asList(names));</span><br></pre></td></tr></table></figure>
+<p>Lambda expression with explicit data types</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">File directory = <span class="keyword">new</span> File(<span class="string">"./src/main/java"</span>);</span><br><span class="line"></span><br><span class="line">String[] names = directory.list((File dir, String name) -&gt; name.endsWith(<span class="string">".java"</span>));</span><br></pre></td></tr></table></figure>
+<h2 id="Method-References"><a href="#Method-References" class="headerlink" title="Method References"></a>Method References</h2><p>Use the double-colon notation to separate an instance reference or class name from the method.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// lambda expression</span></span><br><span class="line">Stream.of(<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>).forEach(x -&gt; System.out.println(x));</span><br><span class="line"></span><br><span class="line"><span class="comment">// method reference</span></span><br><span class="line">Stream.of(<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>).forEach(System.out::println);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Assigning the method reference to a functional interface</span></span><br><span class="line">Consumer&lt;Integer&gt; printer = System.out::println;</span><br><span class="line">Stream.of(<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>).forEach(printer);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Stream.generate(Math::random)          <span class="comment">// static method</span></span><br><span class="line">        .limit(<span class="number">10</span>)</span><br><span class="line">        .forEach(System.out::println); <span class="comment">// instance method</span></span><br></pre></td></tr></table></figure>
+<h2 id="Constructor-References"><a href="#Constructor-References" class="headerlink" title="Constructor References"></a>Constructor References</h2><p>Use the new keyword as part of a method reference.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; names =</span><br><span class="line">    Arrays.asList(<span class="string">"Grace Hopper"</span>, <span class="string">"Barbara Liskov"</span>, <span class="string">"Ada Lovelace"</span>,</span><br><span class="line">        <span class="string">"Karen Spärck Jones"</span>);</span><br><span class="line"></span><br><span class="line">List&lt;Person&gt; people = names.stream()</span><br><span class="line">    .map(name -&gt; <span class="keyword">new</span> Person(name)) <span class="comment">// lambda expression</span></span><br><span class="line">    .collect(Collectors.toList());</span><br><span class="line"></span><br><span class="line">List&lt;Person&gt; people = names.stream()</span><br><span class="line">    .map(Person::<span class="keyword">new</span>)              <span class="comment">// constructor reference</span></span><br><span class="line">    .collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
+<h2 id="Functional-Interfaces"><a href="#Functional-Interfaces" class="headerlink" title="Functional Interfaces"></a>Functional Interfaces</h2><p>Create an interface with a single, abstract method, and add the @FunctionalInterface annotation.</p>
+<p>functional interface with static and default methods</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MyInterface</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">myMethod</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">default</span> String <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Hello, World!"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">myStaticMethod</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"I'm a static method in an interface"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Default-Methods-in-Interfaces"><a href="#Default-Methods-in-Interfaces" class="headerlink" title="Default Methods in Interfaces"></a>Default Methods in Interfaces</h2><p>Provide an implementation of a method inside an interface.</p>
+<p>An Employee interface with a default method<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Employee</span> </span>&#123;</span><br><span class="line">    <span class="function">String <span class="title">getFirst</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function">String <span class="title">getLast</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">convertCaffeineToCodeForMoney</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">default</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> String.format(<span class="string">"%s %s"</span>, getFirst(), getLast());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Static-Methods-in-Interfaces"><a href="#Static-Methods-in-Interfaces" class="headerlink" title="Static Methods in Interfaces"></a>Static Methods in Interfaces</h2><p>Provide a class-level utility method to an interface, along with an implementation.<br>Static methods in interfaces remove the need to create separate utility classes,<br>though that option is still available if a design calls for it.</p>
+<p>key points</p>
+<ul>
+<li>Static methods must have an implementation</li>
+<li>Cannot override a static method</li>
+<li>Call static methods from the interface name</li>
+<li>Do not need to implement an interface to use its static methods</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://atprogrammer.com/2019/06/10/The-basics-syntax-of-lambda-expressions-and-method-references/" data-id="cjxll3v03000c5casis2ox1db" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Modern-Java-Recipes/">Modern Java Recipes</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-数学文章作法-推敲篇-读书笔记" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/23/数学文章作法-推敲篇-读书笔记/" class="article-date">
@@ -186,7 +247,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/05/23/数学文章作法-推敲篇-读书笔记/" data-id="cjxkj2lo4000me8ast0vwd91y" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/05/23/数学文章作法-推敲篇-读书笔记/" data-id="cjxll3v0l000t5casvkfvr44f" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Book/">Book</a></li></ul>
@@ -283,7 +344,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/05/13/云结构核心概念-Cloud-Architecture-Core-Concepts/" data-id="cjxkj2lo1000ke8aszdg36ogq" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/05/13/云结构核心概念-Cloud-Architecture-Core-Concepts/" data-id="cjxll3v09000h5casx2yco5mz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cloud/">Cloud</a></li></ul>
@@ -342,7 +403,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/26/靠巧合编程-Programming-by-Coincidence/" data-id="cjxkj2loe000ze8as71b9c45d" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/04/26/靠巧合编程-Programming-by-Coincidence/" data-id="cjxll3v0n000v5casvh0vge3p" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
@@ -415,7 +476,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/22/黑板-Blackboards/" data-id="cjxkj2loc000we8aslqavglxf" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/04/22/黑板-Blackboards/" data-id="cjxll3v0t00125cas12wokrzf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
@@ -470,7 +531,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/19/它只是视图-It-s-just-a-view/" data-id="cjxkj2lo5000oe8as2q996y96" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/04/19/它只是视图-It-s-just-a-view/" data-id="cjxll3v0d000l5casodmj2fe8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -527,7 +588,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/18/时间耦合-Temporal-Coupling/" data-id="cjxkj2lo8000re8asgr3urxdr" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/04/18/时间耦合-Temporal-Coupling/" data-id="cjxll3v0i000q5cas769iibke" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
@@ -583,7 +644,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/17/元程序设计-Metaprogramming/" data-id="cjxkj2lnx000ge8aswea6q39h" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/04/17/元程序设计-Metaprogramming/" data-id="cjxll3v0f000n5casm48b755x" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
@@ -628,7 +689,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/17/解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter/" data-id="cjxkj2log0011e8as2cwe10ag" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/04/17/解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter/" data-id="cjxll3v0r000z5cash23k4fkd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
@@ -672,77 +733,10 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/16/累積和-and-尺取法/" data-id="cjxkj2loa000ue8as4lixcwzh" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/04/16/累積和-and-尺取法/" data-id="cjxll3v0p000y5cas1d2mxlux" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-GitHub-Pages-Hexo-搭建个人博客" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/12/GitHub-Pages-Hexo-搭建个人博客/" class="article-date">
-  <time datetime="2019-04-12T09:22:03.000Z" itemprop="datePublished">2019-04-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/12/GitHub-Pages-Hexo-搭建个人博客/">GitHub Pages + Hexo 搭建个人博客</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>使用Hexo需要用到以下环境：</p>
-<ul>
-<li>安装Node.js</li>
-<li>Github Pages repository</li>
-</ul>
-<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>在 Node.js 安装好的前提下，执行 npm install 命令安装 Hexo 。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo</span><br></pre></td></tr></table></figure>
-<p>生成博客的项目。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init [项目名]</span><br></pre></td></tr></table></figure>
-<p>此次生成我使用 blog 作为项目名。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
-<p>移动到 blog 文件夹，安装相关的模块。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
-<p>启动本地服务器。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">[info] Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
-<p>这样就可以通过浏览器阅览 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 博客了。</p>
-<h2 id="部署到GitHub"><a href="#部署到GitHub" class="headerlink" title="部署到GitHub"></a>部署到GitHub</h2><p>部署到GitHub需要修改 _config.yml 文件。<br>git的设置如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">・・・(省略)・・・</span><br><span class="line"># Deployment</span><br><span class="line">## Docs: http://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/fastso/blog.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p>还需要设置url，注意url不对会影响网页css正常显示。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;</span><br><span class="line">url: http://fastso.github.io/blog</span><br><span class="line">root: /blog/</span><br></pre></td></tr></table></figure>
-<p>以上修改完毕后，执行一下命令来生成和部署到 GitHub。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy -g</span><br></pre></td></tr></table></figure>
-<p>这样就可以成功的访问自己的blog了。</p>
-<p>注意：GitHub 的 Setting -&gt; GitHub Pages -&gt; Source 要设置为master，<br>否则会无法显示(404 error)。</p>
-<h2 id="发文"><a href="#发文" class="headerlink" title="发文"></a>发文</h2><p>以下命令可以生成新的文章。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"新文章"</span></span><br></pre></td></tr></table></figure>
-<p>然后使用任意的编辑器修改文章就大功告成了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi <span class="built_in">source</span>/_posts/新文章.md</span><br></pre></td></tr></table></figure>
-<p>end</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/12/GitHub-Pages-Hexo-搭建个人博客/" data-id="cjxkj2lnj0003e8asg2dazdmu" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
 
     </footer>
   </div>
@@ -769,7 +763,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AtCoder/">AtCoder</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Book/">Book</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cloud/">Cloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Learning-Python/">Learning Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/">LeetCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Modern-Java-Recipes/">Modern Java Recipes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AtCoder/">AtCoder</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Book/">Book</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cloud/">Cloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle/">Kaggle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Learning-Python/">Learning Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/">LeetCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Modern-Java-Recipes/">Modern Java Recipes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
     </div>
   </div>
 
@@ -779,7 +773,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Algorithm/" style="font-size: 13.33px;">Algorithm</a> <a href="/tags/AtCoder/" style="font-size: 10px;">AtCoder</a> <a href="/tags/Book/" style="font-size: 10px;">Book</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/Learning-Python/" style="font-size: 16.67px;">Learning Python</a> <a href="/tags/LeetCode/" style="font-size: 13.33px;">LeetCode</a> <a href="/tags/Modern-Java-Recipes/" style="font-size: 13.33px;">Modern Java Recipes</a> <a href="/tags/The-Pragmatic-Programmer/" style="font-size: 20px;">The Pragmatic Programmer</a>
+      <a href="/tags/Algorithm/" style="font-size: 13.33px;">Algorithm</a> <a href="/tags/AtCoder/" style="font-size: 10px;">AtCoder</a> <a href="/tags/Book/" style="font-size: 10px;">Book</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/Kaggle/" style="font-size: 10px;">Kaggle</a> <a href="/tags/Learning-Python/" style="font-size: 16.67px;">Learning Python</a> <a href="/tags/LeetCode/" style="font-size: 13.33px;">LeetCode</a> <a href="/tags/Modern-Java-Recipes/" style="font-size: 13.33px;">Modern Java Recipes</a> <a href="/tags/The-Pragmatic-Programmer/" style="font-size: 20px;">The Pragmatic Programmer</a>
     </div>
   </div>
 
@@ -801,6 +795,10 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2019/07/02/Intro-to-Machine-Learning/">Intro to Machine Learning</a>
+          </li>
+        
+          <li>
             <a href="/2019/07/01/ABC132-E-Hopscotch-Addict/">ABC132 E - Hopscotch Addict</a>
           </li>
         
@@ -814,10 +812,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2019/06/24/Python-Types-and-Operations/">Python Types and Operations</a>
-          </li>
-        
-          <li>
-            <a href="/2019/06/21/Array-and-String/">Array and String</a>
           </li>
         
       </ul>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-142110603-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <title>Intro to Machine Learning | @programmer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1. How Models WorkDecision Tree fitting or training the modelpredict leaf 2. Basic Data ExplorationUsing Pandas to Get Familiar With Your Data1import pandas as pd 123456# save filepath to variable for">
+<meta name="keywords" content="Kaggle">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Intro to Machine Learning">
+<meta property="og:url" content="https://atprogrammer.com/2019/07/02/Intro-to-Machine-Learning/index.html">
+<meta property="og:site_name" content="@programmer">
+<meta property="og:description" content="1. How Models WorkDecision Tree fitting or training the modelpredict leaf 2. Basic Data ExplorationUsing Pandas to Get Familiar With Your Data1import pandas as pd 123456# save filepath to variable for">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-02T09:02:36.162Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Intro to Machine Learning">
+<meta name="twitter:description" content="1. How Models WorkDecision Tree fitting or training the modelpredict leaf 2. Basic Data ExplorationUsing Pandas to Get Familiar With Your Data1import pandas as pd 123456# save filepath to variable for">
+  
+    <link rel="alternate" href="/atom.xml" title="@programmer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">@programmer</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://atprogrammer.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Intro-to-Machine-Learning" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/02/Intro-to-Machine-Learning/" class="article-date">
+  <time datetime="2019-07-02T09:01:05.000Z" itemprop="datePublished">2019-07-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Intro to Machine Learning
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-How-Models-Work"><a href="#1-How-Models-Work" class="headerlink" title="1. How Models Work"></a>1. How Models Work</h2><p>Decision Tree</p>
+<p>fitting or training the model<br>predict</p>
+<p>leaf</p>
+<h2 id="2-Basic-Data-Exploration"><a href="#2-Basic-Data-Exploration" class="headerlink" title="2. Basic Data Exploration"></a>2. Basic Data Exploration</h2><h3 id="Using-Pandas-to-Get-Familiar-With-Your-Data"><a href="#Using-Pandas-to-Get-Familiar-With-Your-Data" class="headerlink" title="Using Pandas to Get Familiar With Your Data"></a>Using Pandas to Get Familiar With Your Data</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># save filepath to variable for easier access</span></span><br><span class="line">melbourne_file_path = <span class="string">'../input/melbourne-housing-snapshot/melb_data.csv'</span></span><br><span class="line"><span class="comment"># read the data and store data in DataFrame titled melbourne_data</span></span><br><span class="line">melbourne_data = pd.read_csv(melbourne_file_path) </span><br><span class="line"><span class="comment"># print a summary of the data in Melbourne data</span></span><br><span class="line">melbourne_data.describe()</span><br></pre></td></tr></table></figure>
+<h3 id="Interpreting-Data-Description"><a href="#Interpreting-Data-Description" class="headerlink" title="Interpreting Data Description"></a>Interpreting Data Description</h3><p>The results show 8 numbers for each column.<br>|Name|Description|<br>|—|—|<br>|count|rows number (non-missing values)|<br>|mean|average|<br>|std|standard deviation (measures how numerically spread out the values are)|<br>|min|lowest value|<br>|25%|25th percentile|<br>|50%|50th percentile|<br>|75%|75th percentile|<br>|max|highest value|</p>
+<h2 id="3-Your-First-Machine-Learning-Model"><a href="#3-Your-First-Machine-Learning-Model" class="headerlink" title="3. Your First Machine Learning Model"></a>3. Your First Machine Learning Model</h2><h3 id="Selecting-Data-for-Modeling"><a href="#Selecting-Data-for-Modeling" class="headerlink" title="Selecting Data for Modeling"></a>Selecting Data for Modeling</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">melbourne_file_path = <span class="string">'../input/melbourne-housing-snapshot/melb_data.csv'</span></span><br><span class="line">melbourne_data = pd.read_csv(melbourne_file_path) </span><br><span class="line">melbourne_data.columns</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dropna drops missing values (think of na as "not available")</span></span><br><span class="line">melbourne_data = melbourne_data.dropna(axis=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">y = melbourne_data.Price</span><br></pre></td></tr></table></figure>
+<h3 id="Choosing-“Features”"><a href="#Choosing-“Features”" class="headerlink" title="Choosing “Features”"></a>Choosing “Features”</h3><p>features = columns that are inputted into model</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">melbourne_features = [<span class="string">'Rooms'</span>, <span class="string">'Bathroom'</span>, <span class="string">'Landsize'</span>, <span class="string">'Lattitude'</span>, <span class="string">'Longtitude'</span>]</span><br><span class="line"></span><br><span class="line">X = melbourne_data[melbourne_features]</span><br><span class="line">X.describe()</span><br><span class="line">X.head()</span><br></pre></td></tr></table></figure>
+<h3 id="Building-Your-Model"><a href="#Building-Your-Model" class="headerlink" title="Building Your Model"></a>Building Your Model</h3><p>The steps to building and using a model:</p>
+<ul>
+<li>Define: What type of model will it be? A decision tree? Some other type of model? Some other parameters of the model type are specified too.</li>
+<li>Fit: Capture patterns from provided data. This is the heart of modeling.</li>
+<li>Predict: Just what it sounds like.</li>
+<li>Evaluate: Determine how accurate the model’s predictions are.</li>
+</ul>
+<h2 id="4-Model-Validation"><a href="#4-Model-Validation" class="headerlink" title="4. Model Validation"></a>4. Model Validation</h2><p>Measuring model quality is the key to iteratively improving models.</p>
+<h3 id="What-is-Model-Validation"><a href="#What-is-Model-Validation" class="headerlink" title="What is Model Validation"></a>What is Model Validation</h3><p>MAE (Mean Absolute Error)</p>
+<h3 id="The-Problem-with-“In-Sample”-Scores"><a href="#The-Problem-with-“In-Sample”-Scores" class="headerlink" title="The Problem with “In-Sample” Scores"></a>The Problem with “In-Sample” Scores</h3><h2 id="5-Underfitting-and-Overfitting"><a href="#5-Underfitting-and-Overfitting" class="headerlink" title="5. Underfitting and Overfitting"></a>5. Underfitting and Overfitting</h2><h3 id="Experimenting-With-Different-Models"><a href="#Experimenting-With-Different-Models" class="headerlink" title="Experimenting With Different Models"></a>Experimenting With Different Models</h3><ul>
+<li><p>Overfitting<br>A model matches the training data almost perfectly, but does poorly in validation and other new data.<br>(capturing spurious patterns that won’t recur in the future, leading to less accurate predictions)</p>
+</li>
+<li><p>Underfitting<br>A model fails to capture important distinctions and patterns in the data, so it performs poorly even in training data.<br>(failing to capture relevant patterns, again leading to less accurate predictions.)</p>
+</li>
+</ul>
+<h2 id="6-Random-Forests"><a href="#6-Random-Forests" class="headerlink" title="6. Random Forests"></a>6. Random Forests</h2><p>The random forest uses many trees, and it makes a prediction by averaging the predictions of each component tree.</p>
+<h2 id="7-Machine-Learning-Competitions"><a href="#7-Machine-Learning-Competitions" class="headerlink" title="7. Machine Learning Competitions"></a>7. Machine Learning Competitions</h2><p>Machine learning competitions are a great way to improve data science skills and measure progress.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Code you have previously used to load data</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestRegressor</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> mean_absolute_error</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="keyword">from</span> sklearn.tree <span class="keyword">import</span> DecisionTreeRegressor</span><br><span class="line"><span class="keyword">from</span> learntools.core <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Path of the file to read. We changed the directory structure to simplify submitting to a competition</span></span><br><span class="line">iowa_file_path = <span class="string">'../input/train.csv'</span></span><br><span class="line"></span><br><span class="line">home_data = pd.read_csv(iowa_file_path)</span><br><span class="line"><span class="comment"># Create target object and call it y</span></span><br><span class="line">y = home_data.SalePrice</span><br><span class="line"><span class="comment"># Create X</span></span><br><span class="line">features = [<span class="string">'LotArea'</span>, <span class="string">'YearBuilt'</span>, <span class="string">'1stFlrSF'</span>, <span class="string">'2ndFlrSF'</span>, <span class="string">'FullBath'</span>, <span class="string">'BedroomAbvGr'</span>, <span class="string">'TotRmsAbvGrd'</span>]</span><br><span class="line">X = home_data[features]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Split into validation and training data</span></span><br><span class="line">train_X, val_X, train_y, val_y = train_test_split(X, y, random_state=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Specify Model</span></span><br><span class="line">iowa_model = DecisionTreeRegressor(random_state=<span class="number">1</span>)</span><br><span class="line"><span class="comment"># Fit Model</span></span><br><span class="line">iowa_model.fit(train_X, train_y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Make validation predictions and calculate mean absolute error</span></span><br><span class="line">val_predictions = iowa_model.predict(val_X)</span><br><span class="line">val_mae = mean_absolute_error(val_predictions, val_y)</span><br><span class="line">print(<span class="string">"Validation MAE when not specifying max_leaf_nodes: &#123;:,.0f&#125;"</span>.format(val_mae))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Using best value for max_leaf_nodes</span></span><br><span class="line">iowa_model = DecisionTreeRegressor(max_leaf_nodes=<span class="number">100</span>, random_state=<span class="number">1</span>)</span><br><span class="line">iowa_model.fit(train_X, train_y)</span><br><span class="line">val_predictions = iowa_model.predict(val_X)</span><br><span class="line">val_mae = mean_absolute_error(val_predictions, val_y)</span><br><span class="line">print(<span class="string">"Validation MAE for best value of max_leaf_nodes: &#123;:,.0f&#125;"</span>.format(val_mae))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Define the model. Set random_state to 1</span></span><br><span class="line">rf_model = RandomForestRegressor(random_state=<span class="number">1</span>)</span><br><span class="line">rf_model.fit(train_X, train_y)</span><br><span class="line">rf_val_predictions = rf_model.predict(val_X)</span><br><span class="line">rf_val_mae = mean_absolute_error(rf_val_predictions, val_y)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"Validation MAE for Random Forest Model: &#123;:,.0f&#125;"</span>.format(rf_val_mae))</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://atprogrammer.com/2019/07/02/Intro-to-Machine-Learning/" data-id="cjxll3v04000d5casey58wf2h" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kaggle/">Kaggle</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/01/ABC132-E-Hopscotch-Addict/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ABC132 E - Hopscotch Addict</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AtCoder/">AtCoder</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Book/">Book</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cloud/">Cloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle/">Kaggle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Learning-Python/">Learning Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/">LeetCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Modern-Java-Recipes/">Modern Java Recipes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Algorithm/" style="font-size: 13.33px;">Algorithm</a> <a href="/tags/AtCoder/" style="font-size: 10px;">AtCoder</a> <a href="/tags/Book/" style="font-size: 10px;">Book</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/Kaggle/" style="font-size: 10px;">Kaggle</a> <a href="/tags/Learning-Python/" style="font-size: 16.67px;">Learning Python</a> <a href="/tags/LeetCode/" style="font-size: 13.33px;">LeetCode</a> <a href="/tags/Modern-Java-Recipes/" style="font-size: 13.33px;">Modern Java Recipes</a> <a href="/tags/The-Pragmatic-Programmer/" style="font-size: 20px;">The Pragmatic Programmer</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/07/02/Intro-to-Machine-Learning/">Intro to Machine Learning</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/01/ABC132-E-Hopscotch-Addict/">ABC132 E - Hopscotch Addict</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/24/119-Pascal-s-Triangle-II/">119. Pascal&#39;s Triangle II</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/24/Python-Statements-and-Syntax/">Python Statements and Syntax</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/24/Python-Types-and-Operations/">Python Types and Operations</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Hui Li<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
