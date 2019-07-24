@@ -18,20 +18,15 @@ ga('send', 'pageview');
 
 
   
-  <title>解耦与得墨忒耳法则 (Decoupling and the law of demeter) | @programmer</title>
+  <title>Tag: Philosophy | @programmer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="使耦合减至最少 (Minimize Coupling)函数的得墨忒耳法则 (The Law of Demeter for Functions)函数的得墨忒耳法则规定，某个对象的任何方法都应该只调用属于以下情形的方法：  函数自身 传入该方法的任何参数 它创建的任何对象 任何直接持有的组件  12345678910111213141516171819class Demeter &amp;#123;    p">
-<meta name="keywords" content="The Pragmatic Programmer">
-<meta property="og:type" content="article">
-<meta property="og:title" content="解耦与得墨忒耳法则 (Decoupling and the law of demeter)">
-<meta property="og:url" content="https://atprogrammer.com/2019/04/17/解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="@programmer">
+<meta property="og:url" content="https://atprogrammer.com/tags/Philosophy/index.html">
 <meta property="og:site_name" content="@programmer">
-<meta property="og:description" content="使耦合减至最少 (Minimize Coupling)函数的得墨忒耳法则 (The Law of Demeter for Functions)函数的得墨忒耳法则规定，某个对象的任何方法都应该只调用属于以下情形的方法：  函数自身 传入该方法的任何参数 它创建的任何对象 任何直接持有的组件  12345678910111213141516171819class Demeter &amp;#123;    p">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-17T07:59:36.813Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="解耦与得墨忒耳法则 (Decoupling and the law of demeter)">
-<meta name="twitter:description" content="使耦合减至最少 (Minimize Coupling)函数的得墨忒耳法则 (The Law of Demeter for Functions)函数的得墨忒耳法则规定，某个对象的任何方法都应该只调用属于以下情形的方法：  函数自身 传入该方法的任何参数 它创建的任何对象 任何直接持有的组件  12345678910111213141516171819class Demeter &amp;#123;    p">
+<meta name="twitter:title" content="@programmer">
   
     <link rel="alternate" href="/atom.xml" title="@programmer" type="application/atom+xml">
   
@@ -78,69 +73,40 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/17/解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter/" class="article-date">
-  <time datetime="2019-04-17T07:57:35.000Z" itemprop="datePublished">2019-04-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      解耦与得墨忒耳法则 (Decoupling and the law of demeter)
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2019/07/24/成为伟大程序员-人-的101条建议/" class="archive-article-date">
+  <time datetime="2019-07-24T10:15:08.000Z" itemprop="datePublished">Jul 24</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/07/24/成为伟大程序员-人-的101条建议/">成为伟大程序员(人)的101条建议</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="使耦合减至最少-Minimize-Coupling"><a href="#使耦合减至最少-Minimize-Coupling" class="headerlink" title="使耦合减至最少 (Minimize Coupling)"></a>使耦合减至最少 (Minimize Coupling)</h2><h2 id="函数的得墨忒耳法则-The-Law-of-Demeter-for-Functions"><a href="#函数的得墨忒耳法则-The-Law-of-Demeter-for-Functions" class="headerlink" title="函数的得墨忒耳法则 (The Law of Demeter for Functions)"></a>函数的得墨忒耳法则 (The Law of Demeter for Functions)</h2><p>函数的得墨忒耳法则规定，某个对象的任何方法都应该只调用属于以下情形的方法：</p>
-<ul>
-<li>函数自身</li>
-<li>传入该方法的任何参数</li>
-<li>它创建的任何对象</li>
-<li>任何直接持有的组件</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demeter</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> A a;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">func</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">example</span><span class="params">(B b)</span> </span>&#123;</span><br><span class="line">        C c;</span><br><span class="line"></span><br><span class="line">        func(); <span class="comment">// itself</span></span><br><span class="line"></span><br><span class="line">        b.invert(); <span class="comment">// any parameters that were passed in to the method</span></span><br><span class="line"></span><br><span class="line">        a = <span class="keyword">new</span> A();</span><br><span class="line">        a.setActive(); <span class="comment">// any object it created</span></span><br><span class="line"></span><br><span class="line">        c.print(); <span class="comment">// any directly held component objects</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/17/解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter/" data-id="cjyh3gl5n001h7sasuximzlco" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2019/04/17/元程序设计-Metaprogramming/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          元程序设计 (Metaprogramming)
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/04/16/累積和-and-尺取法/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">累積和 and 尺取法</div>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
+
 
 </section>
         
