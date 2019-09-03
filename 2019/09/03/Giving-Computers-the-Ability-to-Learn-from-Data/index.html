@@ -18,22 +18,20 @@ ga('send', 'pageview');
 
 
   
-  <title>119. Pascal&#39;s Triangle II | @programmer</title>
+  <title>Giving Computers the Ability to Learn from Data | @programmer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Problem119. Pascal’s Triangle II Solution1234567891011121314public class Solution &amp;#123;    public List&amp;lt;Integer&amp;gt; getRow(int rowIndex) &amp;#123;        List&amp;lt;Integer&amp;gt; list = new ArrayList&amp;lt;&amp;g">
-<meta name="keywords" content="LeetCode">
+  <meta name="description" content="1Building intelligent machines to transform data into knowledge The three different types of machine learning supervised learning Labeled data Direct feedback Predict outcome/future   unsupervised lea">
+<meta name="keywords" content="Python Machine Learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="119. Pascal&#39;s Triangle II">
-<meta property="og:url" content="https://atprogrammer.com/2019/06/24/119-Pascal-s-Triangle-II/index.html">
+<meta property="og:title" content="Giving Computers the Ability to Learn from Data">
+<meta property="og:url" content="https://atprogrammer.com/2019/09/03/Giving-Computers-the-Ability-to-Learn-from-Data/index.html">
 <meta property="og:site_name" content="@programmer">
-<meta property="og:description" content="Problem119. Pascal’s Triangle II Solution1234567891011121314public class Solution &amp;#123;    public List&amp;lt;Integer&amp;gt; getRow(int rowIndex) &amp;#123;        List&amp;lt;Integer&amp;gt; list = new ArrayList&amp;lt;&amp;g">
+<meta property="og:description" content="1Building intelligent machines to transform data into knowledge The three different types of machine learning supervised learning Labeled data Direct feedback Predict outcome/future   unsupervised lea">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://atprogrammer.com/images/LeetCode119.png">
-<meta property="og:updated_time" content="2019-06-24T06:18:41.732Z">
+<meta property="og:updated_time" content="2019-09-03T07:43:41.750Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="119. Pascal&#39;s Triangle II">
-<meta name="twitter:description" content="Problem119. Pascal’s Triangle II Solution1234567891011121314public class Solution &amp;#123;    public List&amp;lt;Integer&amp;gt; getRow(int rowIndex) &amp;#123;        List&amp;lt;Integer&amp;gt; list = new ArrayList&amp;lt;&amp;g">
-<meta name="twitter:image" content="https://atprogrammer.com/images/LeetCode119.png">
+<meta name="twitter:title" content="Giving Computers the Ability to Learn from Data">
+<meta name="twitter:description" content="1Building intelligent machines to transform data into knowledge The three different types of machine learning supervised learning Labeled data Direct feedback Predict outcome/future   unsupervised lea">
   
     <link rel="alternate" href="/atom.xml" title="@programmer" type="application/atom+xml">
   
@@ -80,10 +78,10 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-119-Pascal-s-Triangle-II" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Giving-Computers-the-Ability-to-Learn-from-Data" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/06/24/119-Pascal-s-Triangle-II/" class="article-date">
-  <time datetime="2019-06-24T06:11:25.000Z" itemprop="datePublished">2019-06-24</time>
+    <a href="/2019/09/03/Giving-Computers-the-Ability-to-Learn-from-Data/" class="article-date">
+  <time datetime="2019-09-03T07:32:52.000Z" itemprop="datePublished">2019-09-03</time>
 </a>
     
   </div>
@@ -94,7 +92,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      119. Pascal&#39;s Triangle II
+      Giving Computers the Ability to Learn from Data
     </h1>
   
 
@@ -102,17 +100,48 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://leetcode.com/problems/pascals-triangle-ii/" target="_blank" rel="noopener">119. Pascal’s Triangle II</a></p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">getRow</span><span class="params">(<span class="keyword">int</span> rowIndex)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (rowIndex &lt; <span class="number">0</span>) <span class="keyword">return</span> list;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; rowIndex + <span class="number">1</span>; i++) &#123;</span><br><span class="line">            list.add(<span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; list.size() - <span class="number">1</span>; j++) &#123;</span><br><span class="line">                list.set(j, list.get(j) + list.get(j + <span class="number">1</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h2><p><img src="/images/LeetCode119.png" alt="LeetCode" title="LeetCode"></p>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Building intelligent machines to transform data into knowledge</span><br></pre></td></tr></table></figure>
+<h2 id="The-three-different-types-of-machine-learning"><a href="#The-three-different-types-of-machine-learning" class="headerlink" title="The three different types of machine learning"></a>The three different types of machine learning</h2><ul>
+<li>supervised learning<ul>
+<li>Labeled data</li>
+<li>Direct feedback</li>
+<li>Predict outcome/future</li>
+</ul>
+</li>
+<li>unsupervised learning<ul>
+<li>No labels</li>
+<li>No feedback</li>
+<li>Find hidden structure in data</li>
+</ul>
+</li>
+<li>reinforcement learning<ul>
+<li>Decision process</li>
+<li>Reward system</li>
+<li>Learn series of actions</li>
+</ul>
+</li>
+</ul>
+<h3 id="Making-predictions-about-the-future-with-supervised-learning"><a href="#Making-predictions-about-the-future-with-supervised-learning" class="headerlink" title="Making predictions about the future with supervised learning"></a>Making predictions about the future with supervised learning</h3><ul>
+<li>Classification for predicting class labels</li>
+<li>Regression for predicting continuous outcomes</li>
+</ul>
+<h3 id="Solving-interactive-problems-with-reinforcement-learning"><a href="#Solving-interactive-problems-with-reinforcement-learning" class="headerlink" title="Solving interactive problems with reinforcement learning"></a>Solving interactive problems with reinforcement learning</h3><h3 id="Discovering-hidden-structures-with-unsupervised-learning"><a href="#Discovering-hidden-structures-with-unsupervised-learning" class="headerlink" title="Discovering hidden structures with unsupervised learning"></a>Discovering hidden structures with unsupervised learning</h3><ul>
+<li>Finding subgroups with clustering</li>
+<li>Dimensionality reduction for data compression</li>
+</ul>
+<h2 id="A-roadmap-for-building-machine-learning-systems"><a href="#A-roadmap-for-building-machine-learning-systems" class="headerlink" title="A roadmap for building machine learning systems"></a>A roadmap for building machine learning systems</h2><ul>
+<li>Preprocessing – getting data into shape</li>
+<li>Training and selecting a predictive model</li>
+<li>Evaluating models and predicting unseen data instances</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/24/119-Pascal-s-Triangle-II/" data-id="ck03j0zua0009y8ast5hqbwbm" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/09/03/Giving-Computers-the-Ability-to-Learn-from-Data/" data-id="ck03j0ztw0001y8asdqp3y23a" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Machine-Learning/">Python Machine Learning</a></li></ul>
 
     </footer>
   </div>
@@ -120,19 +149,10 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/2019/07/01/ABC132-E-Hopscotch-Addict/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          ABC132 E - Hopscotch Addict
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/06/24/Python-Statements-and-Syntax/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/07/24/成为伟大程序员-人-的101条建议/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Python Statements and Syntax</div>
+      <div class="article-nav-title">成为伟大程序员(人)的101条建议</div>
     </a>
   
 </nav>
