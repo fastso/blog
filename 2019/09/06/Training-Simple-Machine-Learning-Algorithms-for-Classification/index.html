@@ -18,24 +18,20 @@ ga('send', 'pageview');
 
 
   
-  <title>累積和 and 尺取法 | @programmer</title>
+  <title>Training Simple Machine Learning Algorithms for Classification | @programmer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="从AtCoder的题开始AtCoder ABC124 的 D 问题因为 TLE 没能正解。 ABC124 D 看了youtube的解说，明白了可以用累积和或者是尺取法来减少计算量。以下是全探索，累积和，尺取法的解说。 全探索 (Brute-force) 累積和 (Cumulative sum) 尺取法 (Two pointers)">
-<meta name="keywords" content="Algorithm">
+  <meta name="description" content="パーセプトロン ADALINE (Adaptive Linear Neuron)  Artificial neurons – a brief glimpse into the early history of machine learningThe formal definition of an artificial neuron 決定関数 (decision function) 総入力 (ne">
+<meta name="keywords" content="Python Machine Learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="累積和 and 尺取法">
-<meta property="og:url" content="https://atprogrammer.com/2019/04/16/累積和-and-尺取法/index.html">
+<meta property="og:title" content="Training Simple Machine Learning Algorithms for Classification">
+<meta property="og:url" content="https://atprogrammer.com/2019/09/06/Training-Simple-Machine-Learning-Algorithms-for-Classification/index.html">
 <meta property="og:site_name" content="@programmer">
-<meta property="og:description" content="从AtCoder的题开始AtCoder ABC124 的 D 问题因为 TLE 没能正解。 ABC124 D 看了youtube的解说，明白了可以用累积和或者是尺取法来减少计算量。以下是全探索，累积和，尺取法的解说。 全探索 (Brute-force) 累積和 (Cumulative sum) 尺取法 (Two pointers)">
+<meta property="og:description" content="パーセプトロン ADALINE (Adaptive Linear Neuron)  Artificial neurons – a brief glimpse into the early history of machine learningThe formal definition of an artificial neuron 決定関数 (decision function) 総入力 (ne">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://atprogrammer.com/images/Brute-force.png">
-<meta property="og:image" content="https://atprogrammer.com/images/cumulative%20sum.png">
-<meta property="og:image" content="https://atprogrammer.com/images/two%20pointers.png">
-<meta property="og:updated_time" content="2019-06-14T14:34:24.350Z">
+<meta property="og:updated_time" content="2019-09-06T07:48:06.942Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="累積和 and 尺取法">
-<meta name="twitter:description" content="从AtCoder的题开始AtCoder ABC124 的 D 问题因为 TLE 没能正解。 ABC124 D 看了youtube的解说，明白了可以用累积和或者是尺取法来减少计算量。以下是全探索，累积和，尺取法的解说。 全探索 (Brute-force) 累積和 (Cumulative sum) 尺取法 (Two pointers)">
-<meta name="twitter:image" content="https://atprogrammer.com/images/Brute-force.png">
+<meta name="twitter:title" content="Training Simple Machine Learning Algorithms for Classification">
+<meta name="twitter:description" content="パーセプトロン ADALINE (Adaptive Linear Neuron)  Artificial neurons – a brief glimpse into the early history of machine learningThe formal definition of an artificial neuron 決定関数 (decision function) 総入力 (ne">
   
     <link rel="alternate" href="/atom.xml" title="@programmer" type="application/atom+xml">
   
@@ -82,10 +78,10 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-累積和-and-尺取法" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Training-Simple-Machine-Learning-Algorithms-for-Classification" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/04/16/累積和-and-尺取法/" class="article-date">
-  <time datetime="2019-04-16T02:54:36.000Z" itemprop="datePublished">2019-04-16</time>
+    <a href="/2019/09/06/Training-Simple-Machine-Learning-Algorithms-for-Classification/" class="article-date">
+  <time datetime="2019-09-06T07:46:14.000Z" itemprop="datePublished">2019-09-06</time>
 </a>
     
   </div>
@@ -96,7 +92,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      累積和 and 尺取法
+      Training Simple Machine Learning Algorithms for Classification
     </h1>
   
 
@@ -104,20 +100,32 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="从AtCoder的题开始"><a href="#从AtCoder的题开始" class="headerlink" title="从AtCoder的题开始"></a>从AtCoder的题开始</h2><p>AtCoder ABC124 的 D 问题因为 TLE 没能正解。</p>
-<p><a href="https://atcoder.jp/contests/abc124/tasks/abc124_d" target="_blank" rel="noopener">ABC124 D</a></p>
-<p>看了youtube的解说，明白了可以用累积和或者是尺取法来减少计算量。<br>以下是全探索，累积和，尺取法的解说。</p>
-<h2 id="全探索-Brute-force"><a href="#全探索-Brute-force" class="headerlink" title="全探索 (Brute-force)"></a>全探索 (Brute-force)</h2><p><img src="/images/Brute-force.png" alt="Brute-force" title="Brute-force"></p>
-<h2 id="累積和-Cumulative-sum"><a href="#累積和-Cumulative-sum" class="headerlink" title="累積和 (Cumulative sum)"></a>累積和 (Cumulative sum)</h2><p><img src="/images/cumulative sum.png" alt="Cumulative sum" title="Cumulative sum"></p>
-<h2 id="尺取法-Two-pointers"><a href="#尺取法-Two-pointers" class="headerlink" title="尺取法 (Two pointers)"></a>尺取法 (Two pointers)</h2><p><img src="/images/two pointers.png" alt="Two pointers" title="Two pointers"></p>
-
+        <ul>
+<li>パーセプトロン</li>
+<li>ADALINE (Adaptive Linear Neuron)</li>
+</ul>
+<h2 id="Artificial-neurons-–-a-brief-glimpse-into-the-early-history-of-machine-learning"><a href="#Artificial-neurons-–-a-brief-glimpse-into-the-early-history-of-machine-learning" class="headerlink" title="Artificial neurons – a brief glimpse into the early history of machine learning"></a>Artificial neurons – a brief glimpse into the early history of machine learning</h2><h3 id="The-formal-definition-of-an-artificial-neuron"><a href="#The-formal-definition-of-an-artificial-neuron" class="headerlink" title="The formal definition of an artificial neuron"></a>The formal definition of an artificial neuron</h3><ul>
+<li>決定関数 (decision function)</li>
+<li>総入力 (net input)</li>
+<li>単位ステップ関数 (unit step function)</li>
+<li>バイアスユニット (bias unit)</li>
+</ul>
+<h3 id="The-perceptron-learning-rule"><a href="#The-perceptron-learning-rule" class="headerlink" title="The perceptron learning rule"></a>The perceptron learning rule</h3><ol>
+<li>重みを０または小さい乱数で初期化する。</li>
+<li>トレーニングサンプルごとに次の手順を実行する。<ol>
+<li>出力値を計算する。</li>
+<li>重みを更新する。</li>
+</ol>
+</li>
+</ol>
+<h2 id="Implementing-a-perceptron-learning-algorithm-in-Python"><a href="#Implementing-a-perceptron-learning-algorithm-in-Python" class="headerlink" title="Implementing a perceptron learning algorithm in Python"></a><a href="https://github.com/fastso/learning-python/blob/master/python_machine_learning/chapter02.ipynb" target="_blank" rel="noopener">Implementing a perceptron learning algorithm in Python</a></h2><h2 id="Adaptive-linear-neurons-and-the-convergence-of-learning"><a href="#Adaptive-linear-neurons-and-the-convergence-of-learning" class="headerlink" title="Adaptive linear neurons and the convergence of learning"></a><a href="https://github.com/fastso/learning-python/blob/master/python_machine_learning/chapter02.ipynb" target="_blank" rel="noopener">Adaptive linear neurons and the convergence of learning</a></h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/16/累積和-and-尺取法/" data-id="ck07tj3vm001hmoas3pihb3vg" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/09/06/Training-Simple-Machine-Learning-Algorithms-for-Classification/" data-id="ck07tj3u60009moas3tpjv8e9" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Machine-Learning/">Python Machine Learning</a></li></ul>
 
     </footer>
   </div>
@@ -125,19 +133,10 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/2019/04/17/解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          解耦与得墨忒耳法则 (Decoupling and the law of demeter)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/04/12/GitHub-Pages-Hexo-搭建个人博客/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/09/03/Giving-Computers-the-Ability-to-Learn-from-Data/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">GitHub Pages + Hexo 搭建个人博客</div>
+      <div class="article-nav-title">Giving Computers the Ability to Learn from Data</div>
     </a>
   
 </nav>
