@@ -75,6 +75,165 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-Python-Statements-and-Syntax" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/24/Python-Statements-and-Syntax/" class="article-date">
+  <time datetime="2019-06-24T03:53:34.000Z" itemprop="datePublished">2019-06-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/24/Python-Statements-and-Syntax/">Python Statements and Syntax</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <table>
+<thead>
+<tr>
+<th>Statement</th>
+<th>Role</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Assignment</td>
+<td>Creating references</td>
+<td>a, b = ‘good’, ‘bad’</td>
+</tr>
+<tr>
+<td>Calls and other expressions</td>
+<td>Running functions</td>
+<td>log.write(“spam, ham”)</td>
+</tr>
+<tr>
+<td>print calls</td>
+<td>Printing objects</td>
+<td>print(‘The Killer’, joke)</td>
+</tr>
+<tr>
+<td>if/elif/else</td>
+<td>Selecting actions</td>
+<td>if “python” in text:<br>    print(text)</td>
+</tr>
+<tr>
+<td>for/else</td>
+<td>Iteration</td>
+<td>for x in mylist:<br>    print(x)</td>
+</tr>
+<tr>
+<td>while/else</td>
+<td>General loops</td>
+<td>while X &gt; Y:<br>    print(‘hello’)</td>
+</tr>
+<tr>
+<td>pass</td>
+<td>Empty placeholder</td>
+<td>while True:<br>    pass</td>
+</tr>
+<tr>
+<td>break</td>
+<td>Loop exit</td>
+<td>while True:<br>    if exittest(): break</td>
+</tr>
+<tr>
+<td>continue</td>
+<td>Loop continue</td>
+<td>while True:<br>    if skiptest(): continue</td>
+</tr>
+<tr>
+<td>def</td>
+<td>Functions and methods</td>
+<td>def f(a, b, c=1, *d):<br>    print(a+b+c+d[0])</td>
+</tr>
+<tr>
+<td>return</td>
+<td>Functions results</td>
+<td>def f(a, b, c=1, *d):<br>    return a+b+c+d[0]</td>
+</tr>
+<tr>
+<td>yield</td>
+<td>Generator functions</td>
+<td>def gen(n):<br>    for i in n: yield i*2</td>
+</tr>
+<tr>
+<td>global</td>
+<td>Namespaces</td>
+<td>x = ‘old’<br>def function():<br>    global x, y; x = ‘new’</td>
+</tr>
+<tr>
+<td>nonlocal</td>
+<td>Namespaces (3.X)</td>
+<td>def outer():<br>    x = ‘old’<br>    def function():<br>        nonlocal x; x = ‘new’</td>
+</tr>
+<tr>
+<td>import</td>
+<td>Module access</td>
+<td>import sys</td>
+</tr>
+<tr>
+<td>from</td>
+<td>Attribute access</td>
+<td>from sys import stdin</td>
+</tr>
+<tr>
+<td>class</td>
+<td>Building objects</td>
+<td>class Subclass(Superclass):<br>    staticData = []<br>    def method(self): pass</td>
+</tr>
+<tr>
+<td>try/except/ finally</td>
+<td>Catching exceptions</td>
+<td>try:<br>    action()<br>except:<br>    print(‘action error’)</td>
+</tr>
+<tr>
+<td>raise</td>
+<td>Triggering exceptions</td>
+<td>raise EndSearch(location)</td>
+</tr>
+<tr>
+<td>assert</td>
+<td>Debugging checks</td>
+<td>assert X &gt; Y, ‘X too small’</td>
+</tr>
+<tr>
+<td>with/as</td>
+<td>Context managers (3.X, 2.6+)</td>
+<td>with open(‘data’) as myfile:<br>    process(myfile)</td>
+</tr>
+<tr>
+<td>del</td>
+<td>Deleting references</td>
+<td>del data[k]<br>del data[i:j]<br>del obj.attr<br>del variable</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://atprogrammer.com/2019/06/24/Python-Statements-and-Syntax/" data-id="ck0f0y7qs000qlwas5njn79w6" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Learning-Python/">Learning Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Python-Types-and-Operations" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/06/24/Python-Types-and-Operations/" class="article-date">
@@ -184,7 +343,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/24/Python-Types-and-Operations/" data-id="ck0dimg0j001y18askxza2al7" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/24/Python-Types-and-Operations/" data-id="ck0f0y7s20021lwasf0x6y5cc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Learning-Python/">Learning Python</a></li></ul>
@@ -243,7 +402,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/21/Array-and-String/" data-id="ck0dimfye000418asmijylka6" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/21/Array-and-String/" data-id="ck0f0y7q00003lwasdnx47q1j" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li></ul>
@@ -284,7 +443,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/20/1088-Confusing-Number-II/" data-id="ck0dimfy0000018as7vv6egwu" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/20/1088-Confusing-Number-II/" data-id="ck0f0y7q10004lwasup9jt17q" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li></ul>
@@ -370,7 +529,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/18/开始学习-Python-之前的几个疑问/" data-id="ck0dimfz6000q18as41m3zjls" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/18/开始学习-Python-之前的几个疑问/" data-id="ck0f0y7r00010lwasz2yjhf25" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Learning-Python/">Learning Python</a></li></ul>
@@ -426,7 +585,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/18/The-java-util-function-Package/" data-id="ck0dimfz0000j18ase5xr28q3" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/18/The-java-util-function-Package/" data-id="ck0f0y7qt000slwasdueppxk5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Modern-Java-Recipes/">Modern Java Recipes</a></li></ul>
@@ -478,7 +637,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/16/HexoをGitHub-Pagesデプロイ時、独自ドメインがデフォルトに変わってしまう/" data-id="ck0dimfyk000818as3rlwq5lu" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/16/HexoをGitHub-Pagesデプロイ時、独自ドメインがデフォルトに変わってしまう/" data-id="ck0f0y7q7000alwasuijb3x0p" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -539,7 +698,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/10/The-basics-syntax-of-lambda-expressions-and-method-references/" data-id="ck0dimfza000u18asmoj0ud2h" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/10/The-basics-syntax-of-lambda-expressions-and-method-references/" data-id="ck0f0y7qo000nlwasm2h7nres" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Modern-Java-Recipes/">Modern Java Recipes</a></li></ul>
@@ -662,7 +821,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/05/23/数学文章作法-推敲篇-读书笔记/" data-id="ck0dimfzf000z18as2iyxihx5" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/05/23/数学文章作法-推敲篇-读书笔记/" data-id="ck0f0y7r20012lwasq3g0vyvg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Book/">Book</a></li></ul>
@@ -759,69 +918,10 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/05/13/云结构核心概念-Cloud-Architecture-Core-Concepts/" data-id="ck0dimfz4000o18asqif2ol5m" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/05/13/云结构核心概念-Cloud-Architecture-Core-Concepts/" data-id="ck0f0y7qy000ylwasief4u9xp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cloud/">Cloud</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-靠巧合编程-Programming-by-Coincidence" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/26/靠巧合编程-Programming-by-Coincidence/" class="article-date">
-  <time datetime="2019-04-26T07:16:32.000Z" itemprop="datePublished">2019-04-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/26/靠巧合编程-Programming-by-Coincidence/">靠巧合编程 (Programming by Coincidence)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>老式的黑白战争片：一个士兵站在一片空旷地，那里有地雷吗？他试探性的用枪挑了挑，发现没事于是大步走着被炸成了碎片。</p>
-<p>士兵起初的探测没有发现地雷，但这只不过是侥幸，他由此得出了错误的结论。</p>
-<h2 id="怎样靠巧合编程-How-to-Program-by-Coincidence"><a href="#怎样靠巧合编程-How-to-Program-by-Coincidence" class="headerlink" title="怎样靠巧合编程 (How to Program by Coincidence)"></a>怎样靠巧合编程 (How to Program by Coincidence)</h2><p>Fred不知道代码为什么会失败，因为他一开始就不知道它为什么会工作。</p>
-<p>即使是修改的代码可以工作，那也很可能仅仅是一个巧合。</p>
-<ul>
-<li><p>语境的偶然 (Accidents of Context)<br>假设你正在编写一个 utility 模块， 只是因为你现在实在为GUI环境编写代码，该模块就必须依存GUI吗？你还依存什么没有保障的东西？</p>
-</li>
-<li><p>隐含的假定 (Implicit Assumptions)<br>巧合可以在所有层面上让人误入歧途。在所有层面上人们带着许多的假定工作，但是这些假定很少被写入文档，甚至在不同开发者之间是相互冲突的。<br>并非以明确的事实为基础的假定是所有项目的祸害。<br>不要假定它，证明它。don’t assume it, prove it.</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">不要靠巧合编程</span><br><span class="line">Don&apos;t Program by Coincidence</span><br></pre></td></tr></table></figure>
-<h2 id="怎样深思熟虑的编程"><a href="#怎样深思熟虑的编程" class="headerlink" title="怎样深思熟虑的编程"></a>怎样深思熟虑的编程</h2><ul>
-<li>总是意识到你在做什么。</li>
-<li>不要盲目的编程。试图构建不完全理解的应用，或是使用不熟悉的技术，就是希望自己被巧合误导。</li>
-<li>按照计划行事。</li>
-<li>依靠可靠的事物。</li>
-<li>为你的假定建立文档。</li>
-<li>不要只是测试你的代码，还要测试你的假定。</li>
-<li>为你的工作划分优先级，把时间花在重要的方面。</li>
-<li>不要做历史的奴隶。不要让已有的代码支配将来的代码。</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/26/靠巧合编程-Programming-by-Coincidence/" data-id="ck0dimfzm001818as6adc0bsj" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
 
     </footer>
   </div>
@@ -858,7 +958,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Algorithm/" style="font-size: 13.33px;">Algorithm</a> <a href="/tags/AtCoder/" style="font-size: 10px;">AtCoder</a> <a href="/tags/Book/" style="font-size: 16.67px;">Book</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/Kaggle/" style="font-size: 13.33px;">Kaggle</a> <a href="/tags/Learning-Python/" style="font-size: 16.67px;">Learning Python</a> <a href="/tags/LeetCode/" style="font-size: 13.33px;">LeetCode</a> <a href="/tags/Modern-Java-Recipes/" style="font-size: 13.33px;">Modern Java Recipes</a> <a href="/tags/Philosophy/" style="font-size: 10px;">Philosophy</a> <a href="/tags/Python-Machine-Learning/" style="font-size: 13.33px;">Python Machine Learning</a> <a href="/tags/The-Pragmatic-Programmer/" style="font-size: 20px;">The Pragmatic Programmer</a>
+      <a href="/tags/Algorithm/" style="font-size: 12.5px;">Algorithm</a> <a href="/tags/AtCoder/" style="font-size: 10px;">AtCoder</a> <a href="/tags/Book/" style="font-size: 17.5px;">Book</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Kaggle/" style="font-size: 12.5px;">Kaggle</a> <a href="/tags/Learning-Python/" style="font-size: 15px;">Learning Python</a> <a href="/tags/LeetCode/" style="font-size: 12.5px;">LeetCode</a> <a href="/tags/Modern-Java-Recipes/" style="font-size: 12.5px;">Modern Java Recipes</a> <a href="/tags/Philosophy/" style="font-size: 10px;">Philosophy</a> <a href="/tags/Python-Machine-Learning/" style="font-size: 12.5px;">Python Machine Learning</a> <a href="/tags/The-Pragmatic-Programmer/" style="font-size: 20px;">The Pragmatic Programmer</a>
     </div>
   </div>
 
@@ -880,6 +980,10 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2019/09/11/IT業務知識-財務会計-Part-2/">IT業務知識-財務会計 Part.2</a>
+          </li>
+        
+          <li>
             <a href="/2019/09/10/IT業務知識-財務会計-Part-1/">IT業務知識-財務会計 Part.1</a>
           </li>
         
@@ -893,10 +997,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2019/09/03/Giving-Computers-the-Ability-to-Learn-from-Data/">Giving Computers the Ability to Learn from Data</a>
-          </li>
-        
-          <li>
-            <a href="/2019/07/24/成为伟大程序员-人-的101条建议/">成为伟大程序员(人)的101条建议</a>
           </li>
         
       </ul>
