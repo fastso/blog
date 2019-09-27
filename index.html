@@ -75,6 +75,133 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-Feature-Preprocessing-and-Generation-with-respect-to-models" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/27/Feature-Preprocessing-and-Generation-with-respect-to-models/" class="article-date">
+  <time datetime="2019-09-27T08:02:45.000Z" itemprop="datePublished">2019-09-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/27/Feature-Preprocessing-and-Generation-with-respect-to-models/">Feature Preprocessing and Generation with respect to models</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Feature-preprocessing-and-generation-with-respect-to-models"><a href="#Feature-preprocessing-and-generation-with-respect-to-models" class="headerlink" title="Feature preprocessing and generation with respect to models"></a>Feature preprocessing and generation with respect to models</h2><ul>
+<li>Feature Preprocessing</li>
+<li>New Feature Generation</li>
+</ul>
+<p>Both feature preprocessing and feature generation depend on the model you are going to use.</p>
+<ul>
+<li>numeric features (数字)</li>
+<li>categorical features (分類)</li>
+<li>datatime features (日時)</li>
+<li>coordinate features (座標)</li>
+</ul>
+<h3 id="Numric-features"><a href="#Numric-features" class="headerlink" title="Numric features"></a>Numric features</h3><h4 id="Preprocessing"><a href="#Preprocessing" class="headerlink" title="Preprocessing"></a>Preprocessing</h4><ul>
+<li><p>Scaling and Rank for numeric features:</p>
+<ul>
+<li>Tree-based models doesn’t depend on them.</li>
+<li>Non-tree-based models hugely depend on them.</li>
+</ul>
+</li>
+<li><p>MinMaxScaler - to [0,1]</p>
+<ul>
+<li>X = (X  X.min())/(X.max()  X.min())</li>
+<li>sklearn.preprocessing.MinMaxScaler</li>
+</ul>
+</li>
+<li>StandardScaler - to mean==0, std==1<ul>
+<li>X = (X  X.mean())/X.std()</li>
+<li>sklearn.preprocessing.StandardScaler</li>
+</ul>
+</li>
+<li>Rank - sets spaces between sorted values to be equal</li>
+<li>np.log(1+x) and np.sqrt(1+x)</li>
+</ul>
+<h4 id="Feature-generation"><a href="#Feature-generation" class="headerlink" title="Feature generation"></a>Feature generation</h4><ul>
+<li>Prior knowledge</li>
+<li>EDA (Exploratory Data Analysis)</li>
+</ul>
+<h3 id="Categorical-features"><a href="#Categorical-features" class="headerlink" title="Categorical features"></a>Categorical features</h3><ul>
+<li>Values in ordinal features are sorted in some meaningful order.</li>
+<li>Label encoding maps categories to numbers.</li>
+<li>Frequency encoding maps categories to their frequencies.</li>
+<li>Label and Frequency encodings are often used for treebased models.</li>
+<li>One-hot encoding is often used for non-tree-based models.</li>
+<li>Interactions of categorical features can help linear models and KNN.</li>
+</ul>
+<h3 id="Datatime-and-Coordinate-features"><a href="#Datatime-and-Coordinate-features" class="headerlink" title="Datatime and Coordinate features"></a>Datatime and Coordinate features</h3><ul>
+<li>Datetime<ul>
+<li>Periodicity</li>
+<li>Time since row-independent/dependent event</li>
+<li>Difference between dates</li>
+</ul>
+</li>
+<li>Coordinates<ul>
+<li>Interesting places from train/test data or additional data</li>
+<li>Centers of clusters</li>
+<li>Aggregated statistics</li>
+</ul>
+</li>
+</ul>
+<h3 id="Handling-missing-values"><a href="#Handling-missing-values" class="headerlink" title="Handling missing values"></a>Handling missing values</h3><ul>
+<li>The choice of method to fill NaN depends on the situation</li>
+<li>Usual way to deal with missing values is to replace them with -999, mean or median</li>
+<li>Missing values already can be replaced with something by organizers</li>
+<li>Binary feature “isnull” can be beneficial</li>
+<li>In general, avoid filling nans before feature generation</li>
+<li>Xgboost can handle NaN</li>
+</ul>
+<h2 id="Feature-extraction-from-text-and-images"><a href="#Feature-extraction-from-text-and-images" class="headerlink" title="Feature extraction from text and images"></a>Feature extraction from text and images</h2><h3 id="Texts"><a href="#Texts" class="headerlink" title="Texts"></a>Texts</h3><ul>
+<li>Preprocessing<ul>
+<li>Lowercase, stemming, lemmarization, stopwords</li>
+</ul>
+</li>
+<li>Bag of words<ul>
+<li>Huge vectors</li>
+<li>Ngrams can help to use local context</li>
+<li>TFiDF can be of use as postprocessing</li>
+</ul>
+</li>
+<li>Word2vec<ul>
+<li>Relatively small vectors</li>
+<li>Pretrained models</li>
+</ul>
+</li>
+</ul>
+<h3 id="Images"><a href="#Images" class="headerlink" title="Images"></a>Images</h3><ul>
+<li>Features can be extracted from different layers</li>
+<li>Careful choosing of pretrained network can help</li>
+<li>Finetuning allows to refine pretrained models</li>
+<li>Data augmentation can improve the model</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://atprogrammer.com/2019/09/27/Feature-Preprocessing-and-Generation-with-respect-to-models/" data-id="ck11udq450000owasz1no58xr" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kaggle/">Kaggle</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-IT業務知識-財務会計-Part-2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/09/11/IT業務知識-財務会計-Part-2/" class="article-date">
@@ -203,7 +330,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/09/11/IT業務知識-財務会計-Part-2/" data-id="ck0f0y7q60008lwasbo0h5y1v" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/09/11/IT業務知識-財務会計-Part-2/" data-id="ck11udq4m0005owas17d89z48" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Book/">Book</a></li></ul>
@@ -342,7 +469,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/09/10/IT業務知識-財務会計-Part-1/" data-id="ck0f0y7qi000ilwasikowkr2h" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/09/10/IT業務知識-財務会計-Part-1/" data-id="ck11udq4x000gowas1tnbbx78" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Book/">Book</a></li></ul>
@@ -431,7 +558,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/09/09/IT業務知識-会社経営/" data-id="ck0f0y7qn000mlwasx1uwushv" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/09/09/IT業務知識-会社経営/" data-id="ck11udq50000iowasbslp3suw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Book/">Book</a></li></ul>
@@ -487,7 +614,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/09/06/Training-Simple-Machine-Learning-Algorithms-for-Classification/" data-id="ck0f0y7qk000klwasr48e70mk" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/09/06/Training-Simple-Machine-Learning-Algorithms-for-Classification/" data-id="ck11udq5c000uowasywfg424f" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Machine-Learning/">Python Machine Learning</a></li></ul>
@@ -559,7 +686,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/09/03/Giving-Computers-the-Ability-to-Learn-from-Data/" data-id="ck0f0y7q9000clwasdy957xjp" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/09/03/Giving-Computers-the-Ability-to-Learn-from-Data/" data-id="ck11udq4s000cowastw1z5vso" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Machine-Learning/">Python Machine Learning</a></li></ul>
@@ -802,7 +929,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/07/24/成为伟大程序员-人-的101条建议/" data-id="ck0f0y7s30022lwasf5so2cny" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/07/24/成为伟大程序员-人-的101条建议/" data-id="ck11udq720023owassivf91bd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Philosophy/">Philosophy</a></li></ul>
@@ -856,7 +983,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/07/16/Choosing-plot-types/" data-id="ck0f0y7qg000glwas5b6uafl5" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/07/16/Choosing-plot-types/" data-id="ck11udq4l0004owasm2yzas3b" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kaggle/">Kaggle</a></li></ul>
@@ -965,7 +1092,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/07/02/Intro-to-Machine-Learning/" data-id="ck0f0y7qb000elwasq8pbysew" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/07/02/Intro-to-Machine-Learning/" data-id="ck11udq53000lowas6vrgka4v" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kaggle/">Kaggle</a></li></ul>
@@ -1014,51 +1141,10 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/07/01/ABC132-E-Hopscotch-Addict/" data-id="ck0f0y7pv0001lwasbkml6uit" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/07/01/ABC132-E-Hopscotch-Addict/" data-id="ck11udq4e0001owas6m63o841" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AtCoder/">AtCoder</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-119-Pascal-s-Triangle-II" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/06/24/119-Pascal-s-Triangle-II/" class="article-date">
-  <time datetime="2019-06-24T06:11:25.000Z" itemprop="datePublished">2019-06-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/24/119-Pascal-s-Triangle-II/">119. Pascal&#39;s Triangle II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p><a href="https://leetcode.com/problems/pascals-triangle-ii/" target="_blank" rel="noopener">119. Pascal’s Triangle II</a></p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">getRow</span><span class="params">(<span class="keyword">int</span> rowIndex)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (rowIndex &lt; <span class="number">0</span>) <span class="keyword">return</span> list;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; rowIndex + <span class="number">1</span>; i++) &#123;</span><br><span class="line">            list.add(<span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; list.size() - <span class="number">1</span>; j++) &#123;</span><br><span class="line">                list.set(j, list.get(j) + list.get(j + <span class="number">1</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h2><p><img src="/images/LeetCode119.png" alt="LeetCode" title="LeetCode"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/24/119-Pascal-s-Triangle-II/" data-id="ck0f0y7po0000lwaspexwpy5e" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li></ul>
 
     </footer>
   </div>
@@ -1095,7 +1181,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Algorithm/" style="font-size: 12.5px;">Algorithm</a> <a href="/tags/AtCoder/" style="font-size: 10px;">AtCoder</a> <a href="/tags/Book/" style="font-size: 17.5px;">Book</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Kaggle/" style="font-size: 12.5px;">Kaggle</a> <a href="/tags/Learning-Python/" style="font-size: 15px;">Learning Python</a> <a href="/tags/LeetCode/" style="font-size: 12.5px;">LeetCode</a> <a href="/tags/Modern-Java-Recipes/" style="font-size: 12.5px;">Modern Java Recipes</a> <a href="/tags/Philosophy/" style="font-size: 10px;">Philosophy</a> <a href="/tags/Python-Machine-Learning/" style="font-size: 12.5px;">Python Machine Learning</a> <a href="/tags/The-Pragmatic-Programmer/" style="font-size: 20px;">The Pragmatic Programmer</a>
+      <a href="/tags/Algorithm/" style="font-size: 12.5px;">Algorithm</a> <a href="/tags/AtCoder/" style="font-size: 10px;">AtCoder</a> <a href="/tags/Book/" style="font-size: 17.5px;">Book</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Kaggle/" style="font-size: 15px;">Kaggle</a> <a href="/tags/Learning-Python/" style="font-size: 15px;">Learning Python</a> <a href="/tags/LeetCode/" style="font-size: 12.5px;">LeetCode</a> <a href="/tags/Modern-Java-Recipes/" style="font-size: 12.5px;">Modern Java Recipes</a> <a href="/tags/Philosophy/" style="font-size: 10px;">Philosophy</a> <a href="/tags/Python-Machine-Learning/" style="font-size: 12.5px;">Python Machine Learning</a> <a href="/tags/The-Pragmatic-Programmer/" style="font-size: 20px;">The Pragmatic Programmer</a>
     </div>
   </div>
 
@@ -1117,6 +1203,10 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2019/09/27/Feature-Preprocessing-and-Generation-with-respect-to-models/">Feature Preprocessing and Generation with respect to models</a>
+          </li>
+        
+          <li>
             <a href="/2019/09/11/IT業務知識-財務会計-Part-2/">IT業務知識-財務会計 Part.2</a>
           </li>
         
@@ -1130,10 +1220,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2019/09/06/Training-Simple-Machine-Learning-Algorithms-for-Classification/">Training Simple Machine Learning Algorithms for Classification</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/03/Giving-Computers-the-Ability-to-Learn-from-Data/">Giving Computers the Ability to Learn from Data</a>
           </li>
         
       </ul>
