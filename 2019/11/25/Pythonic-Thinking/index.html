@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-142110603-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <title>Pythonic Thinking | @programmer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Item 1: Know Which Version of Python You’re Using major versions: Python 2 and Python 3 popular runtimes: CPython, Jython, IronPython, PyPy, etc.  Item 2: Follow the PEP 8 Style GuidePEP 8 Style Guide">
+<meta name="keywords" content="Effective Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pythonic Thinking">
+<meta property="og:url" content="https://atprogrammer.com/2019/11/25/Pythonic-Thinking/index.html">
+<meta property="og:site_name" content="@programmer">
+<meta property="og:description" content="Item 1: Know Which Version of Python You’re Using major versions: Python 2 and Python 3 popular runtimes: CPython, Jython, IronPython, PyPy, etc.  Item 2: Follow the PEP 8 Style GuidePEP 8 Style Guide">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-11-25T09:21:36.235Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Pythonic Thinking">
+<meta name="twitter:description" content="Item 1: Know Which Version of Python You’re Using major versions: Python 2 and Python 3 popular runtimes: CPython, Jython, IronPython, PyPy, etc.  Item 2: Follow the PEP 8 Style GuidePEP 8 Style Guide">
+  
+    <link rel="alternate" href="/atom.xml" title="@programmer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">@programmer</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://atprogrammer.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Pythonic-Thinking" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/25/Pythonic-Thinking/" class="article-date">
+  <time datetime="2019-11-25T09:19:28.000Z" itemprop="datePublished">2019-11-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Pythonic Thinking
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Item-1-Know-Which-Version-of-Python-You’re-Using"><a href="#Item-1-Know-Which-Version-of-Python-You’re-Using" class="headerlink" title="Item 1: Know Which Version of Python You’re Using"></a>Item 1: Know Which Version of Python You’re Using</h2><ul>
+<li>major versions: Python 2 and Python 3</li>
+<li>popular runtimes: CPython, Jython, IronPython, PyPy, etc.</li>
+</ul>
+<h2 id="Item-2-Follow-the-PEP-8-Style-Guide"><a href="#Item-2-Follow-the-PEP-8-Style-Guide" class="headerlink" title="Item 2: Follow the PEP 8 Style Guide"></a>Item 2: Follow the PEP 8 Style Guide</h2><p><a href="http://www.python.org/dev/peps/pep-0008/" target="_blank" rel="noopener">PEP 8 Style Guide</a></p>
+<h2 id="Item-3-Know-the-Differences-Between-bytes-str-and-unicode"><a href="#Item-3-Know-the-Differences-Between-bytes-str-and-unicode" class="headerlink" title="Item 3: Know the Differences Between bytes, str, and unicode"></a>Item 3: Know the Differences Between bytes, str, and unicode</h2><ul>
+<li>bytes contains sequences of 8-bit values</li>
+<li>str contains sequences of Unicode characters</li>
+<li><p>bytes and str instances can’t be used together with operators (like &gt; or +).</p>
+</li>
+<li><p>If you want to read or write binary data to/from a file, always open the file using a binary mode (like ‘rb’ or ‘wb’).</p>
+</li>
+</ul>
+<h2 id="Item-4-Write-Helper-Functions-Instead-of-Complex-Expressions"><a href="#Item-4-Write-Helper-Functions-Instead-of-Complex-Expressions" class="headerlink" title="Item 4: Write Helper Functions Instead of Complex Expressions"></a>Item 4: Write Helper Functions Instead of Complex Expressions</h2><ul>
+<li>Move complex expressions into helper functions, especially if you need to use the same logic repeatedly.</li>
+</ul>
+<h2 id="Item-5-Know-How-to-Slice-Sequences"><a href="#Item-5-Know-How-to-Slice-Sequences" class="headerlink" title="Item 5: Know How to Slice Sequences"></a>Item 5: Know How to Slice Sequences</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a[:]      <span class="comment"># ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']</span></span><br><span class="line">a[:<span class="number">5</span>]     <span class="comment"># ['a', 'b', 'c', 'd', 'e']</span></span><br><span class="line">a[:<span class="number">-1</span>]    <span class="comment"># ['a', 'b', 'c', 'd', 'e', 'f', 'g']</span></span><br><span class="line">a[<span class="number">4</span>:]     <span class="comment">#                     ['e', 'f', 'g', 'h']</span></span><br><span class="line">a[<span class="number">-3</span>:]    <span class="comment">#                          ['f', 'g', 'h']</span></span><br><span class="line">a[<span class="number">2</span>:<span class="number">5</span>]    <span class="comment">#           ['c', 'd', 'e']</span></span><br><span class="line">a[<span class="number">2</span>:<span class="number">-1</span>]   <span class="comment">#           ['c', 'd', 'e', 'f', 'g']</span></span><br><span class="line">a[<span class="number">-3</span>:<span class="number">-1</span>]  <span class="comment">#                          ['f', 'g']</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Assigning to a list slice will replace that range in the original sequence with what’s referenced even if their lengths are different.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'Before '</span>, a)</span><br><span class="line">a[<span class="number">2</span>:<span class="number">7</span>] = [<span class="number">99</span>, <span class="number">22</span>, <span class="number">14</span>]</span><br><span class="line">print(<span class="string">'After  '</span>, a)</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">Before  [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>]</span><br><span class="line">After   [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="number">99</span>, <span class="number">22</span>, <span class="number">14</span>, <span class="string">'h'</span>]</span><br></pre></td></tr></table></figure>
+<h2 id="Item-6-Avoid-Using-start-end-and-stride-in-a-Single-Slice"><a href="#Item-6-Avoid-Using-start-end-and-stride-in-a-Single-Slice" class="headerlink" title="Item 6: Avoid Using start, end, and stride in a Single Slice"></a>Item 6: Avoid Using start, end, and stride in a Single Slice</h2><ul>
+<li>Prefer using positive stride values in slices without start or end indexes. Avoid negative stride values if possible.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="string">'red'</span>, <span class="string">'orange'</span>, <span class="string">'yellow'</span>, <span class="string">'green'</span>, <span class="string">'blue'</span>, <span class="string">'purple'</span>]</span><br><span class="line">odds = a[::<span class="number">2</span>]</span><br><span class="line">evens = a[<span class="number">1</span>::<span class="number">2</span>]</span><br><span class="line">print(odds)</span><br><span class="line">print(evens)</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">[<span class="string">'red'</span>, <span class="string">'yellow'</span>, <span class="string">'blue'</span>]</span><br><span class="line">[<span class="string">'orange'</span>, <span class="string">'green'</span>, <span class="string">'purple'</span>]</span><br></pre></td></tr></table></figure>
+<h2 id="Item-7-Use-List-Comprehensions-Instead-of-map-and-filter"><a href="#Item-7-Use-List-Comprehensions-Instead-of-map-and-filter" class="headerlink" title="Item 7: Use List Comprehensions Instead of map and filter"></a>Item 7: Use List Comprehensions Instead of map and filter</h2><ul>
+<li>List comprehensions are clearer than the map and filter built-in functions because they don’t require extra lambda expressions.</li>
+<li>List comprehensions allow you to easily skip items from the input list, a behavior map doesn’t support without help from filter.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]</span><br><span class="line">squares = [x**<span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> a]</span><br><span class="line">print(squares)</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>, <span class="number">49</span>, <span class="number">64</span>, <span class="number">81</span>, <span class="number">100</span>]</span><br><span class="line"></span><br><span class="line">even_squares = [x**<span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> a <span class="keyword">if</span> x % <span class="number">2</span> == <span class="number">0</span>]</span><br><span class="line">print(even_squares)</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">[<span class="number">4</span>, <span class="number">16</span>, <span class="number">36</span>, <span class="number">64</span>, <span class="number">100</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">chile_ranks = &#123;<span class="string">'ghost'</span>: <span class="number">1</span>, <span class="string">'habanero'</span>: <span class="number">2</span>, <span class="string">'cayenne'</span>: <span class="number">3</span>&#125;</span><br><span class="line">rank_dict = &#123;rank: name <span class="keyword">for</span> name, rank <span class="keyword">in</span> chile_ranks.items()&#125;</span><br><span class="line">chile_len_set = &#123;len(name) <span class="keyword">for</span> name <span class="keyword">in</span> rank_dict.values()&#125;</span><br><span class="line">print(rank_dict)</span><br><span class="line">print(chile_len_set)</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">&#123;<span class="number">1</span>: <span class="string">'ghost'</span>, <span class="number">2</span>: <span class="string">'habanero'</span>, <span class="number">3</span>: <span class="string">'cayenne'</span>&#125;</span><br><span class="line">&#123;<span class="number">8</span>, <span class="number">5</span>, <span class="number">7</span>&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Item-8-Avoid-More-Than-Two-Expressions-in-List-Comprehensions"><a href="#Item-8-Avoid-More-Than-Two-Expressions-in-List-Comprehensions" class="headerlink" title="Item 8: Avoid More Than Two Expressions in List Comprehensions"></a>Item 8: Avoid More Than Two Expressions in List Comprehensions</h2><ul>
+<li>List comprehensions support multiple levels of loops and multiple conditions per loop level.</li>
+<li>List comprehensions with more than two expressions are very difficult to read and should be avoided.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">my_lists = [</span><br><span class="line">    [[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]],</span><br><span class="line">    <span class="comment"># ...</span></span><br><span class="line">]</span><br><span class="line"><span class="comment"># Avoid use</span></span><br><span class="line">flat = [x <span class="keyword">for</span> sublist1 <span class="keyword">in</span> my_lists</span><br><span class="line">        <span class="keyword">for</span> sublist2 <span class="keyword">in</span> sublist1</span><br><span class="line">        <span class="keyword">for</span> x <span class="keyword">in</span> sublist2]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Instead</span></span><br><span class="line">flat = []</span><br><span class="line"><span class="keyword">for</span> sublist1 <span class="keyword">in</span> my_lists:</span><br><span class="line">    <span class="keyword">for</span> sublist2 <span class="keyword">in</span> sublist1:</span><br><span class="line">        flat.extend(sublist2)</span><br></pre></td></tr></table></figure>
+<h2 id="Item-9-Consider-Generator-Expressions-for-Large-Comprehensions"><a href="#Item-9-Consider-Generator-Expressions-for-Large-Comprehensions" class="headerlink" title="Item 9: Consider Generator Expressions for Large Comprehensions"></a>Item 9: Consider Generator Expressions for Large Comprehensions</h2><ul>
+<li>List comprehensions can cause problems for large inputs by using too much memory.</li>
+<li>Generator expressions avoid memory issues by producing outputs one at a time as an iterator.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Avoid use</span></span><br><span class="line">value = [len(x) <span class="keyword">for</span> x <span class="keyword">in</span> open(<span class="string">'/tmp/my_file.txt'</span>)]</span><br><span class="line">print(value)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Instead</span></span><br><span class="line">it = (len(x) <span class="keyword">for</span> x <span class="keyword">in</span> open(<span class="string">'/tmp/my_file.txt'</span>))</span><br><span class="line">print(it)</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">&lt;generator object &lt;genexpr&gt; at <span class="number">0x101b81480</span>&gt;</span><br><span class="line"></span><br><span class="line">print(next(it))</span><br><span class="line">print(next(it))</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="number">100</span></span><br><span class="line"><span class="number">57</span></span><br></pre></td></tr></table></figure>
+<h2 id="Item-10-Prefer-enumerate-Over-range"><a href="#Item-10-Prefer-enumerate-Over-range" class="headerlink" title="Item 10: Prefer enumerate Over range"></a>Item 10: Prefer enumerate Over range</h2><p>Prefer to use enumerate to iterate both index and value of the list.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">flavor_list = [<span class="string">'vanilla'</span>, <span class="string">'chocolate'</span>, <span class="string">'pecan'</span>, <span class="string">'strawberry'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Avoid use</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(flavor_list)):</span><br><span class="line">    flavor = flavor_list[i]</span><br><span class="line">    print(<span class="string">'%d: %s'</span> % (i + <span class="number">1</span>, flavor))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Instead</span></span><br><span class="line"><span class="comment"># index default start by 0</span></span><br><span class="line"><span class="keyword">for</span> i, flavor <span class="keyword">in</span> enumerate(flavor_list):</span><br><span class="line">    print(<span class="string">'%d: %s'</span> % (i + <span class="number">1</span>, flavor))</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="number">1</span>: vanilla</span><br><span class="line"><span class="number">2</span>: chocolate</span><br><span class="line"><span class="number">3</span>: pecan</span><br><span class="line"><span class="number">4</span>: strawberry</span><br><span class="line"></span><br><span class="line"><span class="comment"># index start by 1</span></span><br><span class="line"><span class="keyword">for</span> i, flavor <span class="keyword">in</span> enumerate(flavor_list, start=<span class="number">1</span>):</span><br><span class="line">    print(<span class="string">'%d: %s'</span> % (i, flavor))</span><br></pre></td></tr></table></figure>
+<h2 id="Item-11-Use-zip-to-Process-Iterators-in-Parallel"><a href="#Item-11-Use-zip-to-Process-Iterators-in-Parallel" class="headerlink" title="Item 11: Use zip to Process Iterators in Parallel"></a>Item 11: Use zip to Process Iterators in Parallel</h2><ul>
+<li>The zip built-in function can be used to iterate over multiple iterators in parallel.</li>
+<li>In Python 3, zip is a lazy generator that produces tuples. In Python 2, zip returns the full result as a list of tuples.</li>
+<li>zip truncates its output silently if you supply it with iterators of different lengths.</li>
+<li>The zip_longest function from the itertools built-in module lets you iterate over multiple iterators in parallel regardless of their lengths.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> name, count <span class="keyword">in</span> zip(names, letters):</span><br><span class="line">    <span class="keyword">if</span> count &gt; max_letters:</span><br><span class="line">        longest_name = name</span><br><span class="line">        max_letters = count</span><br></pre></td></tr></table></figure>
+<h2 id="Item-12-Avoid-else-Blocks-After-for-and-while-Loops"><a href="#Item-12-Avoid-else-Blocks-After-for-and-while-Loops" class="headerlink" title="Item 12: Avoid else Blocks After for and while Loops"></a>Item 12: Avoid else Blocks After for and while Loops</h2><ul>
+<li>Python has special syntax that allows else blocks to immediately follow for and while loop interior blocks.</li>
+<li>The else block after a loop only runs if the loop body did not encounter a break statement.</li>
+<li>Avoid using else blocks after loops because their behavior isn’t intuitive and can be confusing.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Do not use !!!</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">    print(<span class="string">'Loop %d'</span> % i)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'Else block!'</span>)</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line">Loop <span class="number">0</span></span><br><span class="line">Loop <span class="number">1</span></span><br><span class="line">Loop <span class="number">2</span></span><br><span class="line">Else block!</span><br></pre></td></tr></table></figure>
+<h2 id="Item-13-Take-Advantage-of-Each-Block-in-try-except-else-finally"><a href="#Item-13-Take-Advantage-of-Each-Block-in-try-except-else-finally" class="headerlink" title="Item 13: Take Advantage of Each Block in try/except/else/finally"></a>Item 13: Take Advantage of Each Block in try/except/else/finally</h2><ul>
+<li>The try/finally compound statement lets you run cleanup code regardless of whether exceptions were raised in the try block.</li>
+<li>The else block helps you minimize the amount of code in try blocks and visually distinguish the success case from the try/except blocks.</li>
+<li>An else block can be used to perform additional actions after a successful try block but before common cleanup in a finally block.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">handle = open(<span class="string">'/tmp/random_data.txt'</span>)  <span class="comment"># May raise IOError</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    data = handle.read()  <span class="comment"># May raise UnicodeDecodeError</span></span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    handle.close()        <span class="comment"># Always runs after try:</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_json_key</span><span class="params">(data, key)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        result_dict = json.loads(data)  <span class="comment"># May raise ValueError</span></span><br><span class="line">    <span class="keyword">except</span> ValueError <span class="keyword">as</span> e:</span><br><span class="line">        <span class="keyword">raise</span> KeyError <span class="keyword">from</span> e</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> result_dict[key]         <span class="comment"># May raise KeyError</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://atprogrammer.com/2019/11/25/Pythonic-Thinking/" data-id="ck3e837qc000k18aspaz3pbsp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Effective-Python/">Effective Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/11/22/312-Burst-Balloons/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">312. Burst Balloons</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AtCoder/">AtCoder</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Book/">Book</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cloud/">Cloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Effective-Python/">Effective Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle/">Kaggle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Learning-Python/">Learning Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/">LeetCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Modern-Java-Recipes/">Modern Java Recipes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Philosophy/">Philosophy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Machine-Learning/">Python Machine Learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Algorithm/" style="font-size: 12.5px;">Algorithm</a> <a href="/tags/AtCoder/" style="font-size: 10px;">AtCoder</a> <a href="/tags/Book/" style="font-size: 17.5px;">Book</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/Effective-Python/" style="font-size: 10px;">Effective Python</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Kaggle/" style="font-size: 15px;">Kaggle</a> <a href="/tags/Learning-Python/" style="font-size: 15px;">Learning Python</a> <a href="/tags/LeetCode/" style="font-size: 15px;">LeetCode</a> <a href="/tags/Modern-Java-Recipes/" style="font-size: 12.5px;">Modern Java Recipes</a> <a href="/tags/Philosophy/" style="font-size: 10px;">Philosophy</a> <a href="/tags/Python-Machine-Learning/" style="font-size: 12.5px;">Python Machine Learning</a> <a href="/tags/The-Pragmatic-Programmer/" style="font-size: 20px;">The Pragmatic Programmer</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/11/25/Pythonic-Thinking/">Pythonic Thinking</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/22/312-Burst-Balloons/">312. Burst Balloons</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/27/Feature-Preprocessing-and-Generation-with-respect-to-models/">Feature Preprocessing and Generation with respect to models</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/11/IT業務知識-財務会計-Part-2/">IT業務知識-財務会計 Part.2</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/10/IT業務知識-財務会計-Part-1/">IT業務知識-財務会計 Part.1</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Hui Li<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
