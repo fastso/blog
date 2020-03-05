@@ -75,6 +75,58 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-HexoをGitHub-Pagesデプロイ時、独自ドメインがデフォルトに変わってしまう" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/16/HexoをGitHub-Pagesデプロイ時、独自ドメインがデフォルトに変わってしまう/" class="article-date">
+  <time datetime="2019-06-16T14:35:28.000Z" itemprop="datePublished">2019-06-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/16/HexoをGitHub-Pagesデプロイ時、独自ドメインがデフォルトに変わってしまう/">HexoをGitHub Pagesデプロイ時、独自ドメインがデフォルトに変わってしまう</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="GitHub-Pagesに独自ドメインを設定"><a href="#GitHub-Pagesに独自ドメインを設定" class="headerlink" title="GitHub Pagesに独自ドメインを設定"></a>GitHub Pagesに独自ドメインを設定</h2><p>GitHub Pagesに独自ドメインを設定する手順は、ほかのサイトで紹介されているのでここでは述べない。<br>以下のサイトをご参考まで。</p>
+<ul>
+<li><a href="https://qiita.com/foobaron/items/cd9cfc403defa706372b" target="_blank" rel="noopener">GitHub Pages + 独自ドメイン + HTTPS (SSL) のサポートをGitHubが提供開始</a></li>
+<li><a href="https://help.github.com/en/articles/setting-up-an-apex-domain" target="_blank" rel="noopener">Setting up an apex domain (GitHub公式)</a></li>
+</ul>
+<p>独自ドメイン設定後に、Hexoを使用してblogを開設したが、<br>デプロイするたびにGitHubの独自ドメイン設定が消えて、デフォルトドメインに変わってしまう現象があった。</p>
+<h2 id="独自ドメイン設定が消えないために"><a href="#独自ドメイン設定が消えないために" class="headerlink" title="独自ドメイン設定が消えないために"></a>独自ドメイン設定が消えないために</h2><p>独自ドメインを設定した後、GitHubリポジトリにCNAMEというファイルが作らる。<br>CNAMEファイルの中に独自ドメインが保管されているのを確認した。</p>
+<p>CNAMEファイルはローカルにあるHexoのpublicフォルダになく、だからデプロイ時に消えてしまうのが原因だとわかった。</p>
+<p>そのため以下の対策をした。</p>
+<ul>
+<li>GitHubリポジトリのCNAMEファイルをダウンロード</li>
+<li>CNAMEファイルをローカルのpublicフォルダに配置</li>
+</ul>
+<p>上記で問題解決できた。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://atprogrammer.com/2019/06/16/HexoをGitHub-Pagesデプロイ時、独自ドメインがデフォルトに変わってしまう/" data-id="ck7ecw16s000nuoasbz5gy31t" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-The-basics-syntax-of-lambda-expressions-and-method-references" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/06/10/The-basics-syntax-of-lambda-expressions-and-method-references/" class="article-date">
@@ -124,7 +176,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/06/10/The-basics-syntax-of-lambda-expressions-and-method-references/" data-id="ck3e837r7001a18asg3kkf93s" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/06/10/The-basics-syntax-of-lambda-expressions-and-method-references/" data-id="ck7ecw170000wuoasvom43h76" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Modern-Java-Recipes/">Modern Java Recipes</a></li></ul>
@@ -247,7 +299,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/05/23/数学文章作法-推敲篇-读书笔记/" data-id="ck3e837rj001o18asc6q7gz7x" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/05/23/数学文章作法-推敲篇-读书笔记/" data-id="ck7ecw17h001duoasryihrm95" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Book/">Book</a></li></ul>
@@ -344,7 +396,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/05/13/云结构核心概念-Cloud-Architecture-Core-Concepts/" data-id="ck3e837ri001n18asukka2pi2" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/05/13/云结构核心概念-Cloud-Architecture-Core-Concepts/" data-id="ck7ecw17a0016uoas6rcmqtm1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cloud/">Cloud</a></li></ul>
@@ -403,7 +455,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/26/靠巧合编程-Programming-by-Coincidence/" data-id="ck3e837rn001t18asibh5osoi" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/04/26/靠巧合编程-Programming-by-Coincidence/" data-id="ck7ecw17r001muoasesgtqi54" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
@@ -476,7 +528,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/22/黑板-Blackboards/" data-id="ck3e837ro001v18as811qqxaz" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/04/22/黑板-Blackboards/" data-id="ck7ecw17p001luoasynxyoquc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
@@ -531,7 +583,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/19/它只是视图-It-s-just-a-view/" data-id="ck3e837rg001l18asyza6mhtq" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/04/19/它只是视图-It-s-just-a-view/" data-id="ck7ecw17v001quoas4smtz875" class="article-share-link">Share</a>
       
       
     </footer>
@@ -588,7 +640,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/18/时间耦合-Temporal-Coupling/" data-id="ck3e837rl001r18as4zdxl385" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/04/18/时间耦合-Temporal-Coupling/" data-id="ck7ecw17n001iuoasivb0768v" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
@@ -644,7 +696,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/17/元程序设计-Metaprogramming/" data-id="ck3e837rd001g18asn544z4jo" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/04/17/元程序设计-Metaprogramming/" data-id="ck7ecw17l001guoaszd0t0s2y" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
@@ -689,54 +741,10 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/17/解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter/" data-id="ck3e837rr001z18asxfpfnhau" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/04/17/解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter/" data-id="ck7ecw17t001ouoasfjx6zx3z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-累積和-and-尺取法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/16/累積和-and-尺取法/" class="article-date">
-  <time datetime="2019-04-16T02:54:36.000Z" itemprop="datePublished">2019-04-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/16/累積和-and-尺取法/">累積和 and 尺取法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="从AtCoder的题开始"><a href="#从AtCoder的题开始" class="headerlink" title="从AtCoder的题开始"></a>从AtCoder的题开始</h2><p>AtCoder ABC124 的 D 问题因为 TLE 没能正解。</p>
-<p><a href="https://atcoder.jp/contests/abc124/tasks/abc124_d" target="_blank" rel="noopener">ABC124 D</a></p>
-<p>看了youtube的解说，明白了可以用累积和或者是尺取法来减少计算量。<br>以下是全探索，累积和，尺取法的解说。</p>
-<h2 id="全探索-Brute-force"><a href="#全探索-Brute-force" class="headerlink" title="全探索 (Brute-force)"></a>全探索 (Brute-force)</h2><p><img src="/images/Brute-force.png" alt="Brute-force" title="Brute-force"></p>
-<h2 id="累積和-Cumulative-sum"><a href="#累積和-Cumulative-sum" class="headerlink" title="累積和 (Cumulative sum)"></a>累積和 (Cumulative sum)</h2><p><img src="/images/cumulative sum.png" alt="Cumulative sum" title="Cumulative sum"></p>
-<h2 id="尺取法-Two-pointers"><a href="#尺取法-Two-pointers" class="headerlink" title="尺取法 (Two pointers)"></a>尺取法 (Two pointers)</h2><p><img src="/images/two pointers.png" alt="Two pointers" title="Two pointers"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/16/累積和-and-尺取法/" data-id="ck3e837rq001x18as28pa5cjh" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li></ul>
 
     </footer>
   </div>
@@ -782,7 +790,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
     </div>
   </div>
 
@@ -793,6 +801,10 @@ ga('send', 'pageview');
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2020/03/05/Dijkstra-s-algorithm-狄克斯特拉算法/">Dijkstra&#39;s algorithm (狄克斯特拉算法)</a>
+          </li>
         
           <li>
             <a href="/2019/11/25/Pythonic-Thinking/">Pythonic Thinking</a>
@@ -810,10 +822,6 @@ ga('send', 'pageview');
             <a href="/2019/09/11/IT業務知識-財務会計-Part-2/">IT業務知識-財務会計 Part.2</a>
           </li>
         
-          <li>
-            <a href="/2019/09/10/IT業務知識-財務会計-Part-1/">IT業務知識-財務会計 Part.1</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -826,7 +834,7 @@ ga('send', 'pageview');
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2019 Hui Li<br>
+      &copy; 2020 Hui Li<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
