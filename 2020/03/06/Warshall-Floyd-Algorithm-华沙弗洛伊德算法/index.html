@@ -18,20 +18,20 @@ ga('send', 'pageview');
 
 
   
-  <title>元程序设计 (Metaprogramming) | @programmer</title>
+  <title>Warshall-Floyd algorithm (华沙弗洛伊德算法) | @programmer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="没有多少天才可以克服对细节的关注。 –Levy第八法则   No amount of genius can overcome a preoccupation with detail.  –Levy’s Eighth Law  动态配置 (Dynamic Configuration)12要配置，不要集成Configure, Don&amp;apos;t Integrate 要用元数据描述应用的配置选项：调">
-<meta name="keywords" content="The Pragmatic Programmer">
+  <meta name="description" content="概要Warshall-Floyd算法是解决任意两点间的最短路径（所有顶点最短路径）算法，可以在任何图中使用，包括有向图、带负权边的图。 方法 Input 有向或者无向图 G = (V, E) E的各边的长度   Output 输出连接顶点i和顶点j的最短路径（i,j属于V）    使用dp解决此问题。首先进行初始化dp[i][j]为顶点i到顶点j的距离，如果不存在这条边则设为∞。从第一个顶点开始，">
+<meta name="keywords" content="Algorithm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="元程序设计 (Metaprogramming)">
-<meta property="og:url" content="https://atprogrammer.com/2019/04/17/元程序设计-Metaprogramming/index.html">
+<meta property="og:title" content="Warshall-Floyd algorithm (华沙弗洛伊德算法)">
+<meta property="og:url" content="https://atprogrammer.com/2020/03/06/Warshall-Floyd-Algorithm-华沙弗洛伊德算法/index.html">
 <meta property="og:site_name" content="@programmer">
-<meta property="og:description" content="没有多少天才可以克服对细节的关注。 –Levy第八法则   No amount of genius can overcome a preoccupation with detail.  –Levy’s Eighth Law  动态配置 (Dynamic Configuration)12要配置，不要集成Configure, Don&amp;apos;t Integrate 要用元数据描述应用的配置选项：调">
+<meta property="og:description" content="概要Warshall-Floyd算法是解决任意两点间的最短路径（所有顶点最短路径）算法，可以在任何图中使用，包括有向图、带负权边的图。 方法 Input 有向或者无向图 G = (V, E) E的各边的长度   Output 输出连接顶点i和顶点j的最短路径（i,j属于V）    使用dp解决此问题。首先进行初始化dp[i][j]为顶点i到顶点j的距离，如果不存在这条边则设为∞。从第一个顶点开始，">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-17T11:44:40.173Z">
+<meta property="og:updated_time" content="2020-03-06T07:25:21.226Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="元程序设计 (Metaprogramming)">
-<meta name="twitter:description" content="没有多少天才可以克服对细节的关注。 –Levy第八法则   No amount of genius can overcome a preoccupation with detail.  –Levy’s Eighth Law  动态配置 (Dynamic Configuration)12要配置，不要集成Configure, Don&amp;apos;t Integrate 要用元数据描述应用的配置选项：调">
+<meta name="twitter:title" content="Warshall-Floyd algorithm (华沙弗洛伊德算法)">
+<meta name="twitter:description" content="概要Warshall-Floyd算法是解决任意两点间的最短路径（所有顶点最短路径）算法，可以在任何图中使用，包括有向图、带负权边的图。 方法 Input 有向或者无向图 G = (V, E) E的各边的长度   Output 输出连接顶点i和顶点j的最短路径（i,j属于V）    使用dp解决此问题。首先进行初始化dp[i][j]为顶点i到顶点j的距离，如果不存在这条边则设为∞。从第一个顶点开始，">
   
     <link rel="alternate" href="/atom.xml" title="@programmer" type="application/atom+xml">
   
@@ -78,10 +78,10 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-元程序设计-Metaprogramming" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Warshall-Floyd-Algorithm-华沙弗洛伊德算法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/04/17/元程序设计-Metaprogramming/" class="article-date">
-  <time datetime="2019-04-17T11:43:05.000Z" itemprop="datePublished">2019-04-17</time>
+    <a href="/2020/03/06/Warshall-Floyd-Algorithm-华沙弗洛伊德算法/" class="article-date">
+  <time datetime="2020-03-06T03:19:21.000Z" itemprop="datePublished">2020-03-06</time>
 </a>
     
   </div>
@@ -92,7 +92,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      元程序设计 (Metaprogramming)
+      Warshall-Floyd algorithm (华沙弗洛伊德算法)
     </h1>
   
 
@@ -100,32 +100,36 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>没有多少天才可以克服对细节的关注。 –Levy第八法则</p>
-</blockquote>
-<blockquote>
-<p>No amount of genius can overcome a preoccupation with detail.  –Levy’s Eighth Law</p>
-</blockquote>
-<h2 id="动态配置-Dynamic-Configuration"><a href="#动态配置-Dynamic-Configuration" class="headerlink" title="动态配置 (Dynamic Configuration)"></a>动态配置 (Dynamic Configuration)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">要配置，不要集成</span><br><span class="line">Configure, Don&apos;t Integrate</span><br></pre></td></tr></table></figure>
-<p>要用元数据描述应用的配置选项：调谐参数，用户偏好，安装目录等等。<br>Use metadata to describe configuration options for an application: tuning parameters, user preferences, the installation directory, and so on.</p>
-<p>Metadata是什么？<br>严格的说，Metadata是关于数据的数据。<br>从宽泛的意义上来讲，Metadata是任何对应用进行描述的数据–应用该怎样运行，它应该使用什么资源等等。典型的情况下，Metadata在运行时，而不是编译时被访问和使用。</p>
-<h2 id="元数据驱动的应用-Metadata-Driven-Applications"><a href="#元数据驱动的应用-Metadata-Driven-Applications" class="headerlink" title="元数据驱动的应用 (Metadata-Driven Applications)"></a>元数据驱动的应用 (Metadata-Driven Applications)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">将抽象放进代码，细节放进元数据</span><br><span class="line">Put Abstractions in Code, Details in Metadata</span><br></pre></td></tr></table></figure>
-<p>元数据驱动的好处：</p>
-<ul>
-<li>迫使解耦，带来更灵活，可适应性更好的程序。</li>
-<li>迫使推迟细节处理，创建更强健，更抽象的设计。</li>
-<li>无需重新编译应用。</li>
-<li>可以通过接近问题领域 (problem domain) 的方式表示元数据。</li>
-<li>可以使用相同的应用引擎和不同的元数据，实现不同的项目。</li>
+        <h2 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h2><p>Warshall-Floyd算法是解决任意两点间的最短路径（所有顶点最短路径）算法，可以在任何图中使用，包括有向图、带负权边的图。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
+<li>Input<ul>
+<li>有向或者无向图 G = (V, E)</li>
+<li>E的各边的长度</li>
+</ul>
+</li>
+<li>Output<ul>
+<li>输出连接顶点i和顶点j的最短路径（i,j属于V）</li>
+</ul>
+</li>
+</ul>
+<p>使用dp解决此问题。<br>首先进行初始化dp[i][j]为顶点i到顶点j的距离，如果不存在这条边则设为∞。<br>从第一个顶点开始，依次将每个顶点作为媒介k，然后对于每一对顶点i和j，<br>查看其是否存在一条经过k的，距离比已知路径更短的路径，如果存在则更新它。</p>
+<p>复杂度为O(V**3)。</p>
+<h2 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化</span></span><br><span class="line"><span class="keyword">for</span> each i ∈ &#123;<span class="number">1</span>,...,n&#125;</span><br><span class="line">    <span class="keyword">for</span> each j ∈ &#123;<span class="number">1</span>,...,n&#125;</span><br><span class="line">        di,j ← 如果有连接顶点i和顶点j的边e，length(e)。如果没有，∞</span><br><span class="line"></span><br><span class="line"><span class="comment">// 计算</span></span><br><span class="line"><span class="keyword">for</span> each k ∈ &#123;<span class="number">1</span>,...,n&#125;</span><br><span class="line">    <span class="keyword">for</span> each i ∈ &#123;<span class="number">1</span>,...,n&#125;</span><br><span class="line">        <span class="keyword">for</span> each j ∈ &#123;<span class="number">1</span>,...,n&#125;</span><br><span class="line">            <span class="keyword">if</span> (di,j &gt; di,k + dk,j)</span><br><span class="line">                di,j ← di,k + dk,j</span><br></pre></td></tr></table></figure>
+<h2 id="Python代码"><a href="#Python代码" class="headerlink" title="Python代码"></a>Python代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">warshall_floyd</span><span class="params">(n: int, d: List[int][int])</span>:</span></span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> range(n):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">                d[i][j] = min(d[i][j], d[i][k] + d[k][j])</span><br></pre></td></tr></table></figure>
+<h2 id="相关问题"><a href="#相关问题" class="headerlink" title="相关问题"></a>相关问题</h2><ul>
+<li><a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C&amp;lang=en" target="_blank" rel="noopener">All Pairs Shortest Path</a></li>
+<li><a href="https://atcoder.jp/contests/abc079/tasks/abc079_d" target="_blank" rel="noopener">ABC079-D Wall</a></li>
+<li><a href="https://atcoder.jp/contests/abc012/tasks/abc012_4" target="_blank" rel="noopener">ABC012-D バスと避けられない運命(日语)</a></li>
+<li><a href="https://atcoder.jp/contests/arc035/tasks/arc035_c" target="_blank" rel="noopener">ARC035-C アットコーダー王国の交通事情(日语)</a></li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/04/17/元程序设计-Metaprogramming/" data-id="ck7fuw03l001mfsaszuntluty" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2020/03/06/Warshall-Floyd-Algorithm-华沙弗洛伊德算法/" data-id="ck7fuw039001cfsasxyx9crhg" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li></ul>
 
     </footer>
   </div>
@@ -133,19 +137,10 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/2019/04/18/时间耦合-Temporal-Coupling/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          时间耦合 (Temporal Coupling)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/04/17/解耦与得墨忒耳法则-Decoupling-and-the-law-of-demeter/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/03/05/Dijkstra-s-algorithm-狄克斯特拉算法/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">解耦与得墨忒耳法则 (Decoupling and the law of demeter)</div>
+      <div class="article-nav-title">Dijkstra&#39;s algorithm (狄克斯特拉算法)</div>
     </a>
   
 </nav>
