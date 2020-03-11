@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-142110603-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <title>Oracle Cloud Applications ロール | @programmer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ロールベースのアクセス制御 ( Role-Based Access Control(RBAC) )Oracle Cloud Applicationsは、ロールベースのアクセス制御(RBAC)を使用します。 ロールの種類Oracle Cloud Applicationsでは、5種類のロールが定義されています。    種類 Type 説明 例 ほかのロールを継承 ユーザに付与 事前定義 新規作成・編集">
+<meta name="keywords" content="Oracle Cloud">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oracle Cloud Applications ロール">
+<meta property="og:url" content="https://atprogrammer.com/2020/03/11/Oracle-Cloud-Applications-ロール/index.html">
+<meta property="og:site_name" content="@programmer">
+<meta property="og:description" content="ロールベースのアクセス制御 ( Role-Based Access Control(RBAC) )Oracle Cloud Applicationsは、ロールベースのアクセス制御(RBAC)を使用します。 ロールの種類Oracle Cloud Applicationsでは、5種類のロールが定義されています。    種類 Type 説明 例 ほかのロールを継承 ユーザに付与 事前定義 新規作成・編集">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-03-11T10:44:23.740Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Oracle Cloud Applications ロール">
+<meta name="twitter:description" content="ロールベースのアクセス制御 ( Role-Based Access Control(RBAC) )Oracle Cloud Applicationsは、ロールベースのアクセス制御(RBAC)を使用します。 ロールの種類Oracle Cloud Applicationsでは、5種類のロールが定義されています。    種類 Type 説明 例 ほかのロールを継承 ユーザに付与 事前定義 新規作成・編集">
+  
+    <link rel="alternate" href="/atom.xml" title="@programmer" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">@programmer</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://atprogrammer.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Oracle-Cloud-Applications-ロール" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/11/Oracle-Cloud-Applications-ロール/" class="article-date">
+  <time datetime="2020-03-11T10:41:49.000Z" itemprop="datePublished">2020-03-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Oracle Cloud Applications ロール
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="ロールベースのアクセス制御-Role-Based-Access-Control-RBAC"><a href="#ロールベースのアクセス制御-Role-Based-Access-Control-RBAC" class="headerlink" title="ロールベースのアクセス制御 ( Role-Based Access Control(RBAC) )"></a>ロールベースのアクセス制御 ( Role-Based Access Control(RBAC) )</h2><p>Oracle Cloud Applicationsは、ロールベースのアクセス制御(RBAC)を使用します。</p>
+<h3 id="ロールの種類"><a href="#ロールの種類" class="headerlink" title="ロールの種類"></a>ロールの種類</h3><p>Oracle Cloud Applicationsでは、5種類のロールが定義されています。</p>
+<table>
+<thead>
+<tr>
+<th>種類</th>
+<th>Type</th>
+<th>説明</th>
+<th>例</th>
+<th>ほかのロールを継承</th>
+<th>ユーザに付与</th>
+<th>事前定義</th>
+<th>新規作成・編集</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>データロール(HCM用)</td>
+<td>Data roles</td>
+<td>労働者のジョブと労働者がアクセスする必要があるデータとの結合</td>
+<td>HCM dataロール「Country Human Resource Specialist」は、ジョブ（人事スペシャリスト）とデータスコープ（国）の組合せ</td>
+<td>X</td>
+<td>X</td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>抽象ロール</td>
+<td>Abstract roles</td>
+<td>会社階層内の労働者の階級に対応</td>
+<td>従業員、ラインマネージャー、派遣社員</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>すべての労働者は少なくとも一つを所有</td>
+</tr>
+<tr>
+<td>ジョブ・ロール</td>
+<td>Job roles</td>
+<td>労働者が行う特定のジョブに対応</td>
+<td>人事アナリスト、給与管理者</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>集計権限</td>
+<td>Aggregate privileges</td>
+<td>個別のタスクまたは職務に対する1つの機能権限と関連するデータセキュリティポリシーとの組合せ。集計権限が提供する機能権限は、タスクフロー、アプリケーション画面、作業領域、レポート、バッチプログラムなどへのアクセスを許可できます。</td>
+<td></td>
+<td>X</td>
+<td>X</td>
+<td>✔</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr>
+<td>職務ロール</td>
+<td>Duty roles</td>
+<td>権限の論理グループ（コピーと編集ができます）集計権限との差異：1.複数の機能セキュリティ権限が含まれます。2.集計権限とほかの職務ロールを継承できます。3.新規作成および編集ができます。</td>
+<td></td>
+<td>✔</td>
+<td>X</td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="職務ロールについて"><a href="#職務ロールについて" class="headerlink" title="職務ロールについて"></a>職務ロールについて</h3><p>機能セキュリティ権限とデータセキュリティポリシーは、職務ロールによって付与されます。</p>
+<h4 id="機能セキュリティ権限"><a href="#機能セキュリティ権限" class="headerlink" title="機能セキュリティ権限"></a>機能セキュリティ権限</h4><p>機能を使用するための権限のこと。</p>
+<p>一部のユーザインタフェースはデータセキュリティの対象ではないため、一部の機能セキュリティ権限には同等のデータセキュリティポリシーがありません。</p>
+<h4 id="データセキュリティポリシー"><a href="#データセキュリティポリシー" class="headerlink" title="データセキュリティポリシー"></a>データセキュリティポリシー</h4><ul>
+<li>ロール。データセキュリティポリシーは、ジョブ・ロール、抽象ロール、職務ロールと集計権限に付与できます。</li>
+<li>アクセスされているビジネスオブジェクト。データセキュリティポリシーは、リソースをテーブル名で識別します。</li>
+<li>ビジネスオブジェクトの特定インスタンスへのアクセスを制御する条件。</li>
+<li>データセキュリティ権限は、データに対してのアクション許可を定義する。</li>
+</ul>
+<h4 id="事前定義の職務ロール"><a href="#事前定義の職務ロール" class="headerlink" title="事前定義の職務ロール"></a>事前定義の職務ロール</h4><p>事前定義の職務ロールは、グループして管理したいかもの権限グループ。</p>
+<p>例：事前定義の職務ロール「親」に、職務ロール「子」が含まれ、「子」の権限を外したい場合以下の手順を実施します。</p>
+<ol>
+<li>「親」をコピーします。</li>
+<li>コピーした職務ロールから「子」を削除します。</li>
+</ol>
+<h3 id="集計権限について"><a href="#集計権限について" class="headerlink" title="集計権限について"></a>集計権限について</h3><h4 id="集計権限の名称"><a href="#集計権限の名称" class="headerlink" title="集計権限の名称"></a>集計権限の名称</h4><p>集計権限の名称は、含まれている機能セキュリティ権限の名称に基づく。</p>
+<p>例：「Promote Worker」集計権限には、「Promote Worker」機能セキュリティ権限が含まれています。</p>
+<h4 id="ロール階層への適用"><a href="#ロール階層への適用" class="headerlink" title="ロール階層への適用"></a>ロール階層への適用</h4><p>ジョブ・ロールと抽象ロールのほとんどの機能とデータセキュリティは、集計権限にて提供され、かつ集計権限はほかのロールを継承できないため、ロール階層は少なく済みます。</p>
+<h4 id="カスタムロールへの適用"><a href="#カスタムロールへの適用" class="headerlink" title="カスタムロールへの適用"></a>カスタムロールへの適用</h4><p>集計権限をビルドインブロックとして使用できます。</p>
+<h4 id="新規作成、編集、コピー"><a href="#新規作成、編集、コピー" class="headerlink" title="新規作成、編集、コピー"></a>新規作成、編集、コピー</h4><p>集計権限は新規作成、編集、コピーできません。<br>集計権限を単一エンティティとして使用する必要があります。</p>
+<p>ジョブ・ロールまたは抽象ロールをコピーする場合、コピー元ロールの集計権限はコピーされません。 その代わり、コピーされたロールの集計権限にロールメンバーシップが自動追加されます。</p>
+<h2 id="セキュリティ構成の考慮事項"><a href="#セキュリティ構成の考慮事項" class="headerlink" title="セキュリティ構成の考慮事項"></a>セキュリティ構成の考慮事項</h2><p>Oracle Cloud Applications製品には、ジョブ・ロールと抽象ロールがデジタル・キーリングとして機能することで、セキュリティを強化します。<br>各製品は、単独のセキュリティリファレンスがあります。</p>
+<p>また、全ての製品に共通のロールがあります。</p>
+<ul>
+<li>Application Implementation Consultant</li>
+<li>IT Security Manager</li>
+</ul>
+<p>ロールはロールコードの接頭辞で簡単に識別できます。（接頭辞の例：ORA_）</p>
+<h3 id="所属企業のジョブに適合しない場合"><a href="#所属企業のジョブに適合しない場合" class="headerlink" title="所属企業のジョブに適合しない場合"></a>所属企業のジョブに適合しない場合</h3><p>カスタムジョブ・ロールを新規作成します。適切な集計権限と職務ロールを追加してください。</p>
+<h3 id="新しい権限が必要な場合"><a href="#新しい権限が必要な場合" class="headerlink" title="新しい権限が必要な場合"></a>新しい権限が必要な場合</h3><p>独自バージョンを作成します。事前定義のロールをコピーし、編集します。必要に応じて集計権限、職務ロール、機能セキュリティ権限、およびデータセキュリティポリシーを追加または削除できます。</p>
+<h2 id="公式セキュリティリファレンスマニュアル"><a href="#公式セキュリティリファレンスマニュアル" class="headerlink" title="公式セキュリティリファレンスマニュアル"></a>公式セキュリティリファレンスマニュアル</h2><p>公式セキュリティリファレンスマニュアルには、事前定義のジョブ・ロールと抽象ロールの説明が記載されています。各ロールの以下内容を確認できます。</p>
+<ul>
+<li>職務ロールと集計権限</li>
+<li>ロール階層</li>
+<li>機能セキュリティ権限</li>
+<li>データセキュリティポリシー</li>
+</ul>
+<h3 id="リファレンスマニュアルにアクセス"><a href="#リファレンスマニュアルにアクセス" class="headerlink" title="リファレンスマニュアルにアクセス"></a>リファレンスマニュアルにアクセス</h3><ol>
+<li><a href="https://docs.oracle.com" target="_blank" rel="noopener">docs.oracle.com</a></li>
+<li>[select application name] -&gt; “Books” -&gt; “Security” 見出し</li>
+</ol>
+<h2 id="データセキュリティポリシーの定義"><a href="#データセキュリティポリシーの定義" class="headerlink" title="データセキュリティポリシーの定義"></a>データセキュリティポリシーの定義</h2><p>ユーザがデータ利用可能にするポリシーは、二つのタイプがあります。</p>
+<ul>
+<li>事前定義のロールを介して利用許可を定義するポリシー</li>
+<li>アプリケーションコードで定義されたポリシー</li>
+</ul>
+<p>データセキュリティポリシーを見る最も簡単な方法は、「誰がどのデータセットで何ができますか？」(“Who can do what on which set of data”)を質問します。</p>
+<table>
+<thead>
+<tr>
+<th>Who</th>
+<th>Can Do</th>
+<th>What</th>
+<th>On Which Set of Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>買掛金管理者</td>
+<td>表示</td>
+<td>AP支出</td>
+<td>事業単位</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://atprogrammer.com/2020/03/11/Oracle-Cloud-Applications-ロール/" data-id="ck7n7562n000w6sasdqqn25jx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle-Cloud/">Oracle Cloud</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/06/Warshall-Floyd-Algorithm-华沙弗洛伊德算法/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Warshall-Floyd algorithm (华沙弗洛伊德算法)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AtCoder/">AtCoder</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Book/">Book</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cloud/">Cloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Effective-Python/">Effective Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kaggle/">Kaggle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Learning-Python/">Learning Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/">LeetCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Modern-Java-Recipes/">Modern Java Recipes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle-Cloud/">Oracle Cloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Philosophy/">Philosophy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Machine-Learning/">Python Machine Learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/The-Pragmatic-Programmer/">The Pragmatic Programmer</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Algorithm/" style="font-size: 17.5px;">Algorithm</a> <a href="/tags/AtCoder/" style="font-size: 10px;">AtCoder</a> <a href="/tags/Book/" style="font-size: 17.5px;">Book</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/Effective-Python/" style="font-size: 10px;">Effective Python</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Kaggle/" style="font-size: 15px;">Kaggle</a> <a href="/tags/Learning-Python/" style="font-size: 15px;">Learning Python</a> <a href="/tags/LeetCode/" style="font-size: 15px;">LeetCode</a> <a href="/tags/Modern-Java-Recipes/" style="font-size: 12.5px;">Modern Java Recipes</a> <a href="/tags/Oracle-Cloud/" style="font-size: 10px;">Oracle Cloud</a> <a href="/tags/Philosophy/" style="font-size: 10px;">Philosophy</a> <a href="/tags/Python-Machine-Learning/" style="font-size: 12.5px;">Python Machine Learning</a> <a href="/tags/The-Pragmatic-Programmer/" style="font-size: 20px;">The Pragmatic Programmer</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/03/11/Oracle-Cloud-Applications-ロール/">Oracle Cloud Applications ロール</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/06/Warshall-Floyd-Algorithm-华沙弗洛伊德算法/">Warshall-Floyd algorithm (华沙弗洛伊德算法)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/05/Dijkstra-s-algorithm-狄克斯特拉算法/">Dijkstra&#39;s algorithm (狄克斯特拉算法)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/25/Pythonic-Thinking/">Pythonic Thinking</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/22/312-Burst-Balloons/">312. Burst Balloons</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Hui Li<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

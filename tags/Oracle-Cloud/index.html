@@ -18,20 +18,15 @@ ga('send', 'pageview');
 
 
   
-  <title>Feature Preprocessing and Generation with respect to models | @programmer</title>
+  <title>Tag: Oracle Cloud | @programmer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Feature preprocessing and generation with respect to models Feature Preprocessing New Feature Generation  Both feature preprocessing and feature generation depend on the model you are going to use.  n">
-<meta name="keywords" content="Kaggle">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Feature Preprocessing and Generation with respect to models">
-<meta property="og:url" content="https://atprogrammer.com/2019/09/27/Feature-Preprocessing-and-Generation-with-respect-to-models/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="@programmer">
+<meta property="og:url" content="https://atprogrammer.com/tags/Oracle-Cloud/index.html">
 <meta property="og:site_name" content="@programmer">
-<meta property="og:description" content="Feature preprocessing and generation with respect to models Feature Preprocessing New Feature Generation  Both feature preprocessing and feature generation depend on the model you are going to use.  n">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-27T08:08:30.878Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Feature Preprocessing and Generation with respect to models">
-<meta name="twitter:description" content="Feature preprocessing and generation with respect to models Feature Preprocessing New Feature Generation  Both feature preprocessing and feature generation depend on the model you are going to use.  n">
+<meta name="twitter:title" content="@programmer">
   
     <link rel="alternate" href="/atom.xml" title="@programmer" type="application/atom+xml">
   
@@ -78,151 +73,40 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Feature-Preprocessing-and-Generation-with-respect-to-models" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/09/27/Feature-Preprocessing-and-Generation-with-respect-to-models/" class="article-date">
-  <time datetime="2019-09-27T08:02:45.000Z" itemprop="datePublished">2019-09-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      Feature Preprocessing and Generation with respect to models
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2020/03/11/Oracle-Cloud-Applications-ロール/" class="archive-article-date">
+  <time datetime="2020-03-11T10:41:49.000Z" itemprop="datePublished">Mar 11</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/03/11/Oracle-Cloud-Applications-ロール/">Oracle Cloud Applications ロール</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Feature-preprocessing-and-generation-with-respect-to-models"><a href="#Feature-preprocessing-and-generation-with-respect-to-models" class="headerlink" title="Feature preprocessing and generation with respect to models"></a>Feature preprocessing and generation with respect to models</h2><ul>
-<li>Feature Preprocessing</li>
-<li>New Feature Generation</li>
-</ul>
-<p>Both feature preprocessing and feature generation depend on the model you are going to use.</p>
-<ul>
-<li>numeric features (数字)</li>
-<li>categorical features (分類)</li>
-<li>datatime features (日時)</li>
-<li>coordinate features (座標)</li>
-</ul>
-<h3 id="Numric-features"><a href="#Numric-features" class="headerlink" title="Numric features"></a>Numric features</h3><h4 id="Preprocessing"><a href="#Preprocessing" class="headerlink" title="Preprocessing"></a>Preprocessing</h4><ul>
-<li><p>Scaling and Rank for numeric features:</p>
-<ul>
-<li>Tree-based models doesn’t depend on them.</li>
-<li>Non-tree-based models hugely depend on them.</li>
-</ul>
-</li>
-<li><p>MinMaxScaler - to [0,1]</p>
-<ul>
-<li>X = (X  X.min())/(X.max()  X.min())</li>
-<li>sklearn.preprocessing.MinMaxScaler</li>
-</ul>
-</li>
-<li>StandardScaler - to mean==0, std==1<ul>
-<li>X = (X  X.mean())/X.std()</li>
-<li>sklearn.preprocessing.StandardScaler</li>
-</ul>
-</li>
-<li>Rank - sets spaces between sorted values to be equal</li>
-<li>np.log(1+x) and np.sqrt(1+x)</li>
-</ul>
-<h4 id="Feature-generation"><a href="#Feature-generation" class="headerlink" title="Feature generation"></a>Feature generation</h4><ul>
-<li>Prior knowledge</li>
-<li>EDA (Exploratory Data Analysis)</li>
-</ul>
-<h3 id="Categorical-features"><a href="#Categorical-features" class="headerlink" title="Categorical features"></a>Categorical features</h3><ul>
-<li>Values in ordinal features are sorted in some meaningful order.</li>
-<li>Label encoding maps categories to numbers.</li>
-<li>Frequency encoding maps categories to their frequencies.</li>
-<li>Label and Frequency encodings are often used for treebased models.</li>
-<li>One-hot encoding is often used for non-tree-based models.</li>
-<li>Interactions of categorical features can help linear models and KNN.</li>
-</ul>
-<h3 id="Datatime-and-Coordinate-features"><a href="#Datatime-and-Coordinate-features" class="headerlink" title="Datatime and Coordinate features"></a>Datatime and Coordinate features</h3><ul>
-<li>Datetime<ul>
-<li>Periodicity</li>
-<li>Time since row-independent/dependent event</li>
-<li>Difference between dates</li>
-</ul>
-</li>
-<li>Coordinates<ul>
-<li>Interesting places from train/test data or additional data</li>
-<li>Centers of clusters</li>
-<li>Aggregated statistics</li>
-</ul>
-</li>
-</ul>
-<h3 id="Handling-missing-values"><a href="#Handling-missing-values" class="headerlink" title="Handling missing values"></a>Handling missing values</h3><ul>
-<li>The choice of method to fill NaN depends on the situation</li>
-<li>Usual way to deal with missing values is to replace them with -999, mean or median</li>
-<li>Missing values already can be replaced with something by organizers</li>
-<li>Binary feature “isnull” can be beneficial</li>
-<li>In general, avoid filling nans before feature generation</li>
-<li>Xgboost can handle NaN</li>
-</ul>
-<h2 id="Feature-extraction-from-text-and-images"><a href="#Feature-extraction-from-text-and-images" class="headerlink" title="Feature extraction from text and images"></a>Feature extraction from text and images</h2><h3 id="Texts"><a href="#Texts" class="headerlink" title="Texts"></a>Texts</h3><ul>
-<li>Preprocessing<ul>
-<li>Lowercase, stemming, lemmarization, stopwords</li>
-</ul>
-</li>
-<li>Bag of words<ul>
-<li>Huge vectors</li>
-<li>Ngrams can help to use local context</li>
-<li>TFiDF can be of use as postprocessing</li>
-</ul>
-</li>
-<li>Word2vec<ul>
-<li>Relatively small vectors</li>
-<li>Pretrained models</li>
-</ul>
-</li>
-</ul>
-<h3 id="Images"><a href="#Images" class="headerlink" title="Images"></a>Images</h3><ul>
-<li>Features can be extracted from different layers</li>
-<li>Careful choosing of pretrained network can help</li>
-<li>Finetuning allows to refine pretrained models</li>
-<li>Data augmentation can improve the model</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/09/27/Feature-Preprocessing-and-Generation-with-respect-to-models/" data-id="ck7n75627000i6sasui03iwr5" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kaggle/">Kaggle</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2019/11/22/312-Burst-Balloons/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          312. Burst Balloons
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/09/11/IT業務知識-財務会計-Part-2/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">IT業務知識-財務会計 Part.2</div>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
+
 
 </section>
         
