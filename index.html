@@ -75,6 +75,53 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-Interval-DP-区間DP" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/13/Interval-DP-区間DP/" class="article-date">
+  <time datetime="2020-03-13T06:28:16.000Z" itemprop="datePublished">2020-03-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/13/Interval-DP-区間DP/">Interval DP (区間DP)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h2><p>在一段区间上的dp，通过枚举左右子区间来求解。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>先求出小区间（部分）最优解，然后逐步加大区间的范围，将小区间合并成稍微大点的大区间，最后合成总区间。</p>
+<p>复杂度一般为O(n^3)。(某些可以优化为O(n^2))</p>
+<h2 id="Python代码"><a href="#Python代码" class="headerlink" title="Python代码"></a>Python代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dp[l][r]</span></span><br><span class="line">dp = [[<span class="number">0</span>] * n <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)]</span><br><span class="line"></span><br><span class="line"><span class="comment"># size : [2, n]</span></span><br><span class="line"><span class="keyword">for</span> size <span class="keyword">in</span> range(<span class="number">2</span>, n + <span class="number">1</span>):</span><br><span class="line">    <span class="comment"># left : [0, n)</span></span><br><span class="line">    <span class="keyword">for</span> l <span class="keyword">in</span> range(n):</span><br><span class="line">        r = l + size</span><br><span class="line">        <span class="keyword">if</span> r &gt; n:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="comment"># do something</span></span><br><span class="line">        <span class="keyword">for</span> mid <span class="keyword">in</span> range(l, r):</span><br><span class="line">            <span class="comment"># Example :</span></span><br><span class="line">            dp[l][r] = max(dp[l][r], dp[l][mid] + dp[mid][r])</span><br></pre></td></tr></table></figure>
+<h2 id="相关问题"><a href="#相关问题" class="headerlink" title="相关问题"></a>相关问题</h2><ul>
+<li><a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_B&amp;lang=en" target="_blank" rel="noopener">Matrix Chain Multiplication</a></li>
+<li><a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1611&amp;lang=en" target="_blank" rel="noopener">Daruma Otoshi</a></li>
+<li><a href="https://atcoder.jp/contests/joi2015ho/tasks/joi2015ho_b" target="_blank" rel="noopener">JOI 2015 本選 2 - ケーキの切り分け 2(日语)</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://atprogrammer.com/2020/03/13/Interval-DP-区間DP/" data-id="ck7pu5d1h000to8asoacs2vtb" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Oracle-Cloud-Applications-ロール" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/03/11/Oracle-Cloud-Applications-ロール/" class="article-date">
@@ -240,7 +287,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2020/03/11/Oracle-Cloud-Applications-ロール/" data-id="ck7n7562n000w6sasdqqn25jx" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2020/03/11/Oracle-Cloud-Applications-ロール/" data-id="ck7pu5d1b000lo8asfntp1g1y" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle-Cloud/">Oracle Cloud</a></li></ul>
@@ -300,7 +347,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2020/03/06/Warshall-Floyd-Algorithm-华沙弗洛伊德算法/" data-id="ck7n7562z001c6sasve1huilf" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2020/03/06/Warshall-Floyd-Algorithm-华沙弗洛伊德算法/" data-id="ck7pu5d1s0018o8astww15gca" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li></ul>
@@ -360,7 +407,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2020/03/05/Dijkstra-s-algorithm-狄克斯特拉算法/" data-id="ck7n75629000j6sasc6g423ai" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2020/03/05/Dijkstra-s-algorithm-狄克斯特拉算法/" data-id="ck7pu5d0s0005o8as8zkjg63u" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li></ul>
@@ -459,7 +506,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/11/25/Pythonic-Thinking/" data-id="ck7n7562r00106sasl236ao5e" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/11/25/Pythonic-Thinking/" data-id="ck7pu5d1o0013o8aszwuf7ml5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Effective-Python/">Effective Python</a></li></ul>
@@ -501,7 +548,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/11/22/312-Burst-Balloons/" data-id="ck7n7561b00006sas92mstljp" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/11/22/312-Burst-Balloons/" data-id="ck7pu5d0o0003o8as994c6ytm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li></ul>
@@ -628,7 +675,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/09/27/Feature-Preprocessing-and-Generation-with-respect-to-models/" data-id="ck7n75627000i6sasui03iwr5" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/09/27/Feature-Preprocessing-and-Generation-with-respect-to-models/" data-id="ck7pu5d11000do8asfs8utwre" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kaggle/">Kaggle</a></li></ul>
@@ -768,7 +815,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/09/11/IT業務知識-財務会計-Part-2/" data-id="ck7n7562h000p6sasa7fgoclc" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/09/11/IT業務知識-財務会計-Part-2/" data-id="ck7pu5d1e000po8as9035ij9b" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Book/">Book</a></li></ul>
@@ -907,7 +954,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/09/10/IT業務知識-財務会計-Part-1/" data-id="ck7n7562k000r6sas2va7ik0z" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/09/10/IT業務知識-財務会計-Part-1/" data-id="ck7pu5d1c000no8as0n0bt0uq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Book/">Book</a></li></ul>
@@ -996,66 +1043,10 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/09/09/IT業務知識-会社経営/" data-id="ck7n7562b000l6sas5uomylto" class="article-share-link">Share</a>
+      <a data-url="https://atprogrammer.com/2019/09/09/IT業務知識-会社経営/" data-id="ck7pu5d19000jo8asq2k4qtpy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Book/">Book</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Training-Simple-Machine-Learning-Algorithms-for-Classification" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/09/06/Training-Simple-Machine-Learning-Algorithms-for-Classification/" class="article-date">
-  <time datetime="2019-09-06T07:46:14.000Z" itemprop="datePublished">2019-09-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/06/Training-Simple-Machine-Learning-Algorithms-for-Classification/">Training Simple Machine Learning Algorithms for Classification</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>パーセプトロン</li>
-<li>ADALINE (Adaptive Linear Neuron)</li>
-</ul>
-<h2 id="Artificial-neurons-–-a-brief-glimpse-into-the-early-history-of-machine-learning"><a href="#Artificial-neurons-–-a-brief-glimpse-into-the-early-history-of-machine-learning" class="headerlink" title="Artificial neurons – a brief glimpse into the early history of machine learning"></a>Artificial neurons – a brief glimpse into the early history of machine learning</h2><h3 id="The-formal-definition-of-an-artificial-neuron"><a href="#The-formal-definition-of-an-artificial-neuron" class="headerlink" title="The formal definition of an artificial neuron"></a>The formal definition of an artificial neuron</h3><ul>
-<li>決定関数 (decision function)</li>
-<li>総入力 (net input)</li>
-<li>単位ステップ関数 (unit step function)</li>
-<li>バイアスユニット (bias unit)</li>
-</ul>
-<h3 id="The-perceptron-learning-rule"><a href="#The-perceptron-learning-rule" class="headerlink" title="The perceptron learning rule"></a>The perceptron learning rule</h3><ol>
-<li>重みを０または小さい乱数で初期化する。</li>
-<li>トレーニングサンプルごとに次の手順を実行する。<ol>
-<li>出力値を計算する。</li>
-<li>重みを更新する。</li>
-</ol>
-</li>
-</ol>
-<h2 id="Implementing-a-perceptron-learning-algorithm-in-Python"><a href="#Implementing-a-perceptron-learning-algorithm-in-Python" class="headerlink" title="Implementing a perceptron learning algorithm in Python"></a><a href="https://github.com/fastso/learning-python/blob/master/python_machine_learning/chapter02.ipynb" target="_blank" rel="noopener">Implementing a perceptron learning algorithm in Python</a></h2><h2 id="Adaptive-linear-neurons-and-the-convergence-of-learning"><a href="#Adaptive-linear-neurons-and-the-convergence-of-learning" class="headerlink" title="Adaptive linear neurons and the convergence of learning"></a><a href="https://github.com/fastso/learning-python/blob/master/python_machine_learning/chapter02.ipynb" target="_blank" rel="noopener">Adaptive linear neurons and the convergence of learning</a></h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://atprogrammer.com/2019/09/06/Training-Simple-Machine-Learning-Algorithms-for-Classification/" data-id="ck7n7562u00156sas5njr62d8" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Machine-Learning/">Python Machine Learning</a></li></ul>
 
     </footer>
   </div>
@@ -1092,7 +1083,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Algorithm/" style="font-size: 17.5px;">Algorithm</a> <a href="/tags/AtCoder/" style="font-size: 10px;">AtCoder</a> <a href="/tags/Book/" style="font-size: 17.5px;">Book</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/Effective-Python/" style="font-size: 10px;">Effective Python</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Kaggle/" style="font-size: 15px;">Kaggle</a> <a href="/tags/Learning-Python/" style="font-size: 15px;">Learning Python</a> <a href="/tags/LeetCode/" style="font-size: 15px;">LeetCode</a> <a href="/tags/Modern-Java-Recipes/" style="font-size: 12.5px;">Modern Java Recipes</a> <a href="/tags/Oracle-Cloud/" style="font-size: 10px;">Oracle Cloud</a> <a href="/tags/Philosophy/" style="font-size: 10px;">Philosophy</a> <a href="/tags/Python-Machine-Learning/" style="font-size: 12.5px;">Python Machine Learning</a> <a href="/tags/The-Pragmatic-Programmer/" style="font-size: 20px;">The Pragmatic Programmer</a>
+      <a href="/tags/Algorithm/" style="font-size: 20px;">Algorithm</a> <a href="/tags/AtCoder/" style="font-size: 10px;">AtCoder</a> <a href="/tags/Book/" style="font-size: 17.5px;">Book</a> <a href="/tags/Cloud/" style="font-size: 10px;">Cloud</a> <a href="/tags/Effective-Python/" style="font-size: 10px;">Effective Python</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/Kaggle/" style="font-size: 15px;">Kaggle</a> <a href="/tags/Learning-Python/" style="font-size: 15px;">Learning Python</a> <a href="/tags/LeetCode/" style="font-size: 15px;">LeetCode</a> <a href="/tags/Modern-Java-Recipes/" style="font-size: 12.5px;">Modern Java Recipes</a> <a href="/tags/Oracle-Cloud/" style="font-size: 10px;">Oracle Cloud</a> <a href="/tags/Philosophy/" style="font-size: 10px;">Philosophy</a> <a href="/tags/Python-Machine-Learning/" style="font-size: 12.5px;">Python Machine Learning</a> <a href="/tags/The-Pragmatic-Programmer/" style="font-size: 20px;">The Pragmatic Programmer</a>
     </div>
   </div>
 
@@ -1114,6 +1105,10 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2020/03/13/Interval-DP-区間DP/">Interval DP (区間DP)</a>
+          </li>
+        
+          <li>
             <a href="/2020/03/11/Oracle-Cloud-Applications-ロール/">Oracle Cloud Applications ロール</a>
           </li>
         
@@ -1127,10 +1122,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2019/11/25/Pythonic-Thinking/">Pythonic Thinking</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/22/312-Burst-Balloons/">312. Burst Balloons</a>
           </li>
         
       </ul>
