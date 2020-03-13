@@ -18,15 +18,20 @@ ga('send', 'pageview');
 
 
   
-  <title>Tag: Cloud | @programmer</title>
+  <title>Interval DP (区间DP) | @programmer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="@programmer">
-<meta property="og:url" content="https://atprogrammer.com/tags/Cloud/index.html">
+  <meta name="description" content="概要在一段区间上的dp，通过枚举左右子区间来求解。 方法先求出小区间（部分）最优解，然后逐步加大区间的范围，将小区间合并成稍微大点的大区间，最后合成总区间。dp[l][r]储存区间[l,r]的状态。 复杂度一般为O(n^3)。(某些可以优化为O(n^2)) Python代码1234567891011121314# dp[l][r]dp = [[0] * n for _ in range(n)]#">
+<meta name="keywords" content="Algorithm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Interval DP (区间DP)">
+<meta property="og:url" content="https://atprogrammer.com/2020/03/13/Interval-DP-区间DP/index.html">
 <meta property="og:site_name" content="@programmer">
+<meta property="og:description" content="概要在一段区间上的dp，通过枚举左右子区间来求解。 方法先求出小区间（部分）最优解，然后逐步加大区间的范围，将小区间合并成稍微大点的大区间，最后合成总区间。dp[l][r]储存区间[l,r]的状态。 复杂度一般为O(n^3)。(某些可以优化为O(n^2)) Python代码1234567891011121314# dp[l][r]dp = [[0] * n for _ in range(n)]#">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-03-13T08:52:33.729Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="@programmer">
+<meta name="twitter:title" content="Interval DP (区间DP)">
+<meta name="twitter:description" content="概要在一段区间上的dp，通过枚举左右子区间来求解。 方法先求出小区间（部分）最优解，然后逐步加大区间的范围，将小区间合并成稍微大点的大区间，最后合成总区间。dp[l][r]储存区间[l,r]的状态。 复杂度一般为O(n^3)。(某些可以优化为O(n^2)) Python代码1234567891011121314# dp[l][r]dp = [[0] * n for _ in range(n)]#">
   
     <link rel="alternate" href="/atom.xml" title="@programmer" type="application/atom+xml">
   
@@ -73,40 +78,66 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/13/云结构核心概念-Cloud-Architecture-Core-Concepts/" class="archive-article-date">
-  <time datetime="2019-05-13T13:37:35.000Z" itemprop="datePublished">May 13</time>
+        <section id="main"><article id="post-Interval-DP-区间DP" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/13/Interval-DP-区间DP/" class="article-date">
+  <time datetime="2020-03-13T08:52:05.000Z" itemprop="datePublished">2020-03-13</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/13/云结构核心概念-Cloud-Architecture-Core-Concepts/">云结构核心概念 (Cloud Architecture Core Concepts)</a>
+    <h1 class="article-title" itemprop="name">
+      Interval DP (区间DP)
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h2><p>在一段区间上的dp，通过枚举左右子区间来求解。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>先求出小区间（部分）最优解，然后逐步加大区间的范围，将小区间合并成稍微大点的大区间，最后合成总区间。<br>dp[l][r]储存区间[l,r]的状态。</p>
+<p>复杂度一般为O(n^3)。(某些可以优化为O(n^2))</p>
+<h2 id="Python代码"><a href="#Python代码" class="headerlink" title="Python代码"></a>Python代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dp[l][r]</span></span><br><span class="line">dp = [[<span class="number">0</span>] * n <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)]</span><br><span class="line"></span><br><span class="line"><span class="comment"># size : [2, n]</span></span><br><span class="line"><span class="keyword">for</span> size <span class="keyword">in</span> range(<span class="number">2</span>, n + <span class="number">1</span>):</span><br><span class="line">    <span class="comment"># left : [0, n)</span></span><br><span class="line">    <span class="keyword">for</span> l <span class="keyword">in</span> range(n):</span><br><span class="line">        r = l + size</span><br><span class="line">        <span class="keyword">if</span> r &gt; n:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="comment"># do something</span></span><br><span class="line">        <span class="keyword">for</span> mid <span class="keyword">in</span> range(l, r):</span><br><span class="line">            <span class="comment"># Example :</span></span><br><span class="line">            dp[l][r] = max(dp[l][r], dp[l][mid] + dp[mid][r])</span><br></pre></td></tr></table></figure>
+<h2 id="相关问题"><a href="#相关问题" class="headerlink" title="相关问题"></a>相关问题</h2><ul>
+<li><a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_10_B&amp;lang=en" target="_blank" rel="noopener">Matrix Chain Multiplication</a></li>
+<li><a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1611&amp;lang=en" target="_blank" rel="noopener">Daruma Otoshi</a></li>
+<li><a href="https://leetcode-cn.com/problems/minimum-cost-tree-from-leaf-values/" target="_blank" rel="noopener">[leetcode]1130. 叶值的最小代价生成树</a></li>
+<li><a href="https://atcoder.jp/contests/joi2015ho/tasks/joi2015ho_b" target="_blank" rel="noopener">JOI 2015 本選 2 - ケーキの切り分け 2(日语)</a></li>
+<li><a href="https://atcoder.jp/contests/dp/tasks/dp_n" target="_blank" rel="noopener">[Atcoder]EDPC Slimes</a></li>
+<li><a href="https://tdpc.contest.atcoder.jp/tasks/tdpc_iwi" target="_blank" rel="noopener">[Atcoder]TDPC イウィ(日语)</a></li>
+<li><a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0303" target="_blank" rel="noopener">[AOJ]Mighty Man(日语)</a></li>
+</ul>
 
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://atprogrammer.com/2020/03/13/Interval-DP-区间DP/" data-id="ck7py16t6000qr8askqvwl3po" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/11/Oracle-Cloud-Applications-ロール/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Oracle Cloud Applications ロール</div>
+    </a>
+  
+</nav>
+
+  
+</article>
 
 </section>
         
